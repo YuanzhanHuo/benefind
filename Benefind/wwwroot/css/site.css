@@ -20,13 +20,37 @@ body {
 }
 
 
-/* Hide/rearrange for smaller screens */
+ /*Hide/rearrange for smaller screens 
 @media screen and (max-width: 767px) {
-    /* Hide captions */
+    /* Hide captions 
     .carousel-caption {
         display: none;
     }
+}*/
+
+/* Adjust the relevent postions of navbar buttons */
+/*#nav-btn li a {
+    padding: 4px;
+    margin: 15px;
+}*/
+
+    /* Add bg color to navbar buttons when it is selected*/
+    /*#nav-btn li a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+    }*/
+
+/* Adjust the font,color and size of the navbar text*/
+/*#nav-btn li a {
+    color: black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-
+.navbar-brand {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 40px !important;
+    font-weight: bold;
+}*/
 

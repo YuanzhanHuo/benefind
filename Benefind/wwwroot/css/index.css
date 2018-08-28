@@ -1,6 +1,6 @@
 ﻿/* adjust landing back ground image*/
 #bg-container {
-    background: url(../images/benefind-landing-bg.jpg) no-repeat center center fixed;
+    background: url(../images/Index-category/duy-pham-704498-unsplash.jpg) no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -28,7 +28,7 @@
     margin-top: 50vh;
     margin-left: 40vw;
     margin-right: 20vw;
-    margin-bottom: 50vw;
+    margin-bottom: 50vh;
 }
 
 #bg-desc.h1{
@@ -43,13 +43,23 @@
 }
 
 /* layout for category icons and descreptions */
-.icon-container{
+.icon-container {
     margin-bottom: 10vh;
-    padding:30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;   
+    align-items: center;
 }
 
-.descr-container{
-    padding:20px;
+.descr-container {
+    background: url(../images/Index-bg/ev-232339-unsplash.jpg) center center fixed;
+    background-size: cover;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    width: 100vw;
 }
 
 #NDIS-descr{
@@ -67,7 +77,16 @@
     height:90px;
 }
 
-.categ-flex{
-    background: url(../images/debby-hudson-557741-unsplash.jpg) center center fixed;
-    background-size:cover;
+.categ-container {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.icon-col {
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-top: 10vh;
 }

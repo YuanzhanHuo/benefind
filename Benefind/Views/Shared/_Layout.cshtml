@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Benefind</title>
 
-    <environment include="Development">
+    <environment include="Development,Staging,Production">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
@@ -37,7 +37,6 @@
             </div>
         </div>
     </nav>
-
     <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">
@@ -48,7 +47,7 @@
         </footer>
     </div>
 
-    <environment include="Development">
+    <environment include="Development,Staging,Production">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
