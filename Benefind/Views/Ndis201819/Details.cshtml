@@ -1,0 +1,72 @@
+﻿@model Benefind.Models.Ndis201819
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ndis201819</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationGroup)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationGroup)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SupportItem)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SupportItem)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SupportItemDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SupportItemDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitOfMeasure)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UnitOfMeasure)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Quote)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceLimit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PriceLimit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceControl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PriceControl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SupportCategories)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SupportCategories)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SupportCategoryNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SupportCategoryNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.SupportItemNumber">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
