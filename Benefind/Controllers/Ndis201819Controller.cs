@@ -19,10 +19,31 @@ namespace Benefind.Controllers
         }
 
         // GET: Ndis201819
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? category)
         {
+            var benefits = from b in _context.Ndis201819
+                           select b;
+            if (!String.IsNullOrEmpty(category.ToString()))
+            {
+                benefits = benefits.Where(b => b.SupportCategoryNumber.Contains(category.ToString()));
+                return View(await benefits.AsNoTracking().ToListAsync());
+            }
             return View(await _context.Ndis201819.ToListAsync());
         }
+
+        //[HttpGet("Ndis201819/Index/{category}")]
+        //public async Task<IActionResult> Category(string category)
+        //{
+        //    var benefits = from b in _context.Ndis201819
+        //                   select b;
+        //    if (!String.IsNullOrEmpty(category))
+        //    {
+        //        benefits = benefits.Where(b => b.SupportCategoryNumber.Equals(category));
+        //    }
+
+
+        //    return View(await benefits.AsNoTracking().ToListAsync());
+        //}
 
         // GET: Ndis201819/Details/5
         public async Task<IActionResult> Details(string id)

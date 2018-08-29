@@ -14,6 +14,6 @@ namespace Benefind.Models
         public double? PriceLimit { get; set; }
         public string PriceControl { get; set; }
         public string SupportCategories { get; set; }
-        public double? SupportCategoryNumber { get; set; }
+        public string SupportCategoryNumber { get; set; }
     }
 }
