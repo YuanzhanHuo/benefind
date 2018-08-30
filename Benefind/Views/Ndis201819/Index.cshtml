@@ -4,26 +4,28 @@
     ViewData["Title"] = "Index";
 }
 <!-- Style sheet for Datatable-->
-<link rel="stylesheet" href= https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css />
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />
+@*<link rel="stylesheet" href= https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css />*@
+@*<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />*@
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+
 <!-- JS library for Datatable -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="~/js/DataTable.js"></script>
-
+<div class="benefits-datatable">
 <h2>Benefits</h2>
-
+ <hr />
 <div class="row">
     <div class="btn-group" role="group" aria-label="Category button">
-        <button type="button" class="btn btn-secondary" asp-action="#">Health</button>
-        <button type="button" class="btn btn-secondary" asp-action="#">Community</button>
-        <button type="button" class="btn btn-secondary" asp-action="#">Equipment</button>
-        <button type="button" class="btn btn-secondary" asp-action="#">Education</button>
+        <a type="button" class="btn btn-secondary" href="/Ndis201819/index?category=1">Health</a>
+        <a type="button" class="btn btn-secondary" href="/Ndis201819/index?category=4">Community</a>
+        <a type="button" class="btn btn-secondary" href="/Ndis201819/index?category=5">Equipment</a>
+        <a type="button" class="btn btn-secondary" href="/Ndis201819/index?category=15">Education</a>
 
     </div>
 </div>
+
+<div class="d-flex" >
 <table class="table table-hover table-bordered table-striped" id="tb-benefits">
     <thead class="thead-dark">
         <tr>
@@ -56,12 +58,12 @@
                 </td>
                 <td>
                     @*<a asp-action="Edit" asp-route-id="@item.SupportItemNumber">Edit</a> |*@
-                    <a asp-action="Details" asp-route-id="@item.SupportItemNumber">Details</a> |
+                    <a asp-action="Details" asp-route-id="@item.SupportItemNumber">Details</a> 
                     @*<a asp-action="Delete" asp-route-id="@item.SupportItemNumber">Delete</a>*@
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
-
+    </div>
+</div>

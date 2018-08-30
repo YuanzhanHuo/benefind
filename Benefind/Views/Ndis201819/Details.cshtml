@@ -4,69 +4,69 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2></h2>
 
-<div>
-    <h4>Ndis201819</h4>
+<div id="benefit-detial">
+    <h4>Details</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
+    <dl class="row">
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.RegistrationGroup)
         </dt>
-        <dd>
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.RegistrationGroup)
         </dd>
-        <dt>
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.SupportItem)
         </dt>
-        <dd>
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.SupportItem)
         </dd>
-        <dt>
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.SupportItemDescription)
         </dt>
-        <dd>
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.SupportItemDescription)
         </dd>
-        <dt>
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.UnitOfMeasure)
         </dt>
-        <dd>
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.UnitOfMeasure)
         </dd>
-        <dt>
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.Quote)
         </dt>
-        <dd>
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.Quote)
         </dd>
-        <dt>
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.PriceLimit)
         </dt>
-        <dd>
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.PriceLimit)
         </dd>
-        <dt>
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.PriceControl)
         </dt>
-        <dd>
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.PriceControl)
         </dd>
-        <dt>
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.SupportCategories)
         </dt>
-        <dd>
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.SupportCategories)
         </dd>
-        <dt>
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.SupportCategoryNumber)
         </dt>
-        <dd>
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.SupportCategoryNumber)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.SupportItemNumber">Edit</a> |
+    @*<a asp-action="Edit" asp-route-id="@Model.SupportItemNumber">Edit</a> |*@
     <a asp-action="Index">Back to List</a>
 </div>

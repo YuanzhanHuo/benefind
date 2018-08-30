@@ -1,23 +1,17 @@
-﻿/* adjust landing back ground image*/
-#bg-container {
-    background: url(../images/Index-category/duy-pham-704498-unsplash.jpg) no-repeat center center fixed;
+﻿
+
+    /* adjust landing back ground image*/
+    #bg-container {
+    background: url(../images/Landing/zoltan-tasi-690184-unsplash.jpg) no-repeat center center ;
     background-size: cover;
 }
 
-/*#landing-bg {
-    background-image: url(../images/benefind-landing-bg.jpg);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}*/
+
 
 /* justify the size of the container of background image to cover the full screen*/
 #bg-container {
     display:flex;
-    height: 100vh;
+    height: 88vh;
     width: 100vw;
     /* cover the navbar */
     margin-top:-10vh;
@@ -25,15 +19,13 @@
 }
 /* justify text description of landing page */
 #bg-desc {
-    margin-top: 20vh;
-    margin-left: 40vw;
-    margin-right: 20vw;
-    margin-bottom: 50vh;
-}
-
-#bg-desc.h1{
+    display:flex;
+    margin-left:30vw;
+    flex-direction:column;
     color:white;
 }
+
+
 /* justify layout of four categories*/
 #categories {
     display: flex;
@@ -52,7 +44,7 @@
 }
 
 .descr-container {
-    background: url(../images/Index-bg/ev-232339-unsplash.jpg) center center fixed;
+    /*background: url(../images/Index-bg/ev-232339-unsplash.jpg) center center fixed;*/
     background-size: cover;
     display: flex;
     padding: 20px;
