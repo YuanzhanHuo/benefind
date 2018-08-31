@@ -3,21 +3,21 @@
 
 //Catgory icons scroll down to certain element by clicking
 
-    document.getElementById("icon-health").addEventListener("click", function () {
-        document.getElementById("descr-health").scrollIntoView()
-    });
+//    document.getElementById("icon-health").addEventListener("click", function () {
+//        document.getElementById("descr-health").scrollIntoView()
+//    });
 
-    document.getElementById("icon-community").addEventListener("click", function () {
-        document.getElementById("descr-health").scrollIntoView()
-});
+//    document.getElementById("icon-community").addEventListener("click", function () {
+//        document.getElementById("descr-health").scrollIntoView()
+//});
 
-    document.getElementById("icon-equipment").addEventListener("click", function () {
-        document.getElementById("descr-health").scrollIntoView()
-});
+//    document.getElementById("icon-equipment").addEventListener("click", function () {
+//        document.getElementById("descr-health").scrollIntoView()
+//});
 
-    document.getElementById("icon-education").addEventListener("click", function () {
-        document.getElementById("descr-education").scrollIntoView()
-});
+//    document.getElementById("icon-education").addEventListener("click", function () {
+//        document.getElementById("descr-education").scrollIntoView()
+//});
 
 
 

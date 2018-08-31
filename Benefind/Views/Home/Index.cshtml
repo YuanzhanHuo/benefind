@@ -32,7 +32,7 @@
         </div>
         <!-- four icons -->
         <div class="row ">
-            <div class="icon-col col-lg-3 col-md-3 col-sm-6 col-xm-6">
+            <div class="icon-col col-lg-3 col-md-3 col-sm-6 col-xm-6" id="icon-health">
                 <img id="icon-health" class="img img-icon" src="~/images/png/008-doctor.png" alt="Category icons" />
                 <div class="card-body">
                     <h5> Health</h5>
@@ -140,14 +140,43 @@
 
 <!-- Navbar changes bg color when scoll down-->
 <script>
-        $(window).scroll(function () {
-            $('nav').toggleClass('scrolled', $(this).scrollTop() > 500);
+    $(window).scroll(function () {
+        $('nav').toggleClass('scrolled', $(this).scrollTop() > 500);
 
-        });
+    });
 </script>
 
-
-
+<!-- Scroll to icon descreptions on clicking icons-->
+<script>
+    $(document).ready(function () {
+        $("#icon-health").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#descr-health").offset().top
+            }, 1000);
+        });
+    });
+    $(document).ready(function () {
+        $("#icon-community").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#descr-community").offset().top
+            }, 1000);
+        });
+    });
+    $(document).ready(function () {
+        $("#icon-equipment").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#descr-equipment").offset().top
+            }, 1000);
+        });
+    });
+    $(document).ready(function () {
+        $("#icon-education").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#descr-education").offset().top
+            }, 1000);
+        });
+    });
+</script>
 @*<div class="row">
         <div class="col-md-3">
             <h2>Application uses</h2>
