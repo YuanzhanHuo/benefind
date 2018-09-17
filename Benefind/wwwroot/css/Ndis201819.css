@@ -1,0 +1,12 @@
+﻿
+/* filter content flex attributes */
+.quize-container {
+    flex-direction:column;
+    justify-content:center;
+    border:initial;
+}
+
+/* quize content */
+.Single-Quize-Container{
+    margin:2rem;
+}

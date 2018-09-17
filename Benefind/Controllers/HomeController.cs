@@ -5,11 +5,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Benefind.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Benefind.Controllers
-{
+{   
+    
     public class HomeController : Controller
     {
+
         public IActionResult Index()
         {
             return View();
@@ -20,6 +23,7 @@ namespace Benefind.Controllers
             ViewData["Message"] = "Your application description page.";
 
             return View();
+
         }
 
         public IActionResult Contact()

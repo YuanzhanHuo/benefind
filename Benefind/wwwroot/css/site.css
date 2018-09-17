@@ -5,6 +5,14 @@ body {
     padding-bottom: 20px;
 }
 
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
@@ -22,7 +30,7 @@ body {
 
 /* Navbar adds bg color when scroll down*/
 .navbar-bg {
-    background: #9E9E9E;
+    background: #4169e1;
 }
 
 .navbar-bg.scrolled {
@@ -50,7 +58,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left:20vw;
+    margin-left: 5rem;
+    width: 90vw;
 }
 
 /* for datatable details*/

@@ -22,6 +22,7 @@
     <h2>Access & Contatct</h2>
     <hr />
     <div id="access-img">
+        <img src="~/images/Access NDIS/NDIS_How_To.png" class="img-fluid" />
     </div>
     <hr />
     <dl class="row">
@@ -171,7 +172,8 @@
         //var marker = new google.maps.Marker({ position: Melbourne, map: map });
 
         var infowindow = new google.maps.InfoWindow();
-
+        var geocoder = new google.maps.Geocoder;
+        var aloc;
         var marker, i;
         //new google.maps.Marker({ position: lat: })
         for (i = 0; i < locations.length; i++) {
@@ -180,17 +182,18 @@
                 position: new google.maps.LatLng(locations[i][0], locations[i][1]),
                 map: map
             });
-            var geocoder = new google.maps.Geocoder;
 
             geocoder.geocode({ 'location': location[i] }, function (results, status) {
+                
                 if (status === 'OK') {
+                    window.alert("status is ok");
                     if (results[0]) {
-                        var loc = results[0]
+                        aloc = results[0]
                         google.maps.event.addListener(marker, 'click', (function (marker, i) {
                             return function () {
                                 //infowindow.setContent(locations[i][0]);
                                 //infowindow.open(map, marker);
-                                infowindow.setContent(loc.formatted_address);
+                                infowindow.setContent(aloc.formatted_address);
                                 infowindow.open(map, marker);
                             }
                         })(marker, i));

@@ -17,5 +17,10 @@ namespace Benefind.Controllers
         {
             return View();
         }
+
+        public IActionResult Eligbility()
+        {
+            return View();
+        }
     }
 }
