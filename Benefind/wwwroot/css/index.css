@@ -19,10 +19,10 @@
 }
 /* justify text description of landing page */
 #bg-desc {
-    display:flex;
-    margin-left:30vw;
-    flex-direction:column;
-    color:white;
+    display: flex;
+    margin-left:35.5vw;
+    flex-direction: column;
+    color: white;
 }
 
 

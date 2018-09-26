@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+
+    <form>
+
+        Password:<br>
+        <input type="text" name="Password" id="Password">
+        <input type="button" value="Login" id="btnaa">
+
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnaa").on("click", function () {
+                var Password = $("#Password").val();
+                if (Password != null) {
+                    if (Password === '123') {
+                        window.location.href = "/Home/Index";
+
+                    }
+
+                }
+            });
+        });
+    </script>
+</body>
+</html>

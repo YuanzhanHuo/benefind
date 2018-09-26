@@ -117,7 +117,7 @@ function initMap() {
         [-38.3824268, 142.4885336],
         [-36.1141144, 146.8635033],
         [-38.6057203, 145.5924069],
-        [-36.312674, 146.838858]
+        [-36.312674, 146.838858]]
 
     var card = document.getElementById('pac-card');
     var input = document.getElementById('pac-input');

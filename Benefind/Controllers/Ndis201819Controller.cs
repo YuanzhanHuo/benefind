@@ -79,17 +79,30 @@ namespace Benefind.Controllers
             }
             else if (model[0].Option.Equals("gt6lt18"))
             {
-                result = result.Union(benefits.Where(b => b.SupportItemDescription.Contains("adult")));
+                //result = result.Union(benefits.Where(b => b.SupportItemDescription.Contains("child")));
+                result = result.Union(from b in _context.Ndis201819
+                         where b.SupportItemNumber == "05_122306127_0105_1_2" || b.SupportItemNumber == "05_122306132_0105_1_2"
+                         || b.SupportItemNumber == "05_122306136_0105_1_2" || b.SupportItemNumber == "05_300303288_0112_1_2"
+                         || b.SupportItemNumber == "03_092488056_0103_1_1" || b.SupportItemNumber == "03_092403054_0103_1_1"
+                          || b.SupportItemNumber == "01_012_0107_1_1" || b.SupportItemNumber == "01_016_0104_1_1"
+
+                         select b);
+
+
 
             }
             else if (model[0].Option.Equals("gt18lt65"))
             {
-                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
-                                            select b;
-                result = result.Union(a);
+                result = result.Union(from b in _context.Ndis201819
+                                      where b.SupportItemNumber == "03_092403055_0103_1_1" || b.SupportItemNumber == "03_092406061_0103_1_1"
+                                      || b.SupportItemNumber == "03_092406062_0103_1_1" || b.SupportItemNumber == "03_092406063_0103_1_1"
+                                      || b.SupportItemNumber == "03_092489060_0103_1_1" || b.SupportItemNumber == "03_093021077_0103_1_1"
+                                       || b.SupportItemNumber == "05_122306129_0105_1_2" || b.SupportItemNumber == "05_122306125_0105_1_2"
+
+                                      select b);
 
             }
-         
+
 
             // question:Do you need assistance with daily personal activities due to disability?
             if (model[3].Option.Equals("yes"))

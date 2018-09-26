@@ -9,11 +9,15 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Benefind.Controllers
 {   
-    
     public class HomeController : Controller
     {
 
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Login()
         {
             return View();
         }
@@ -43,5 +47,6 @@ namespace Benefind.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }

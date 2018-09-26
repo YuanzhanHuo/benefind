@@ -22,10 +22,6 @@ body {
 }
 
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
-}
 
 
 /* Navbar adds bg color when scroll down*/

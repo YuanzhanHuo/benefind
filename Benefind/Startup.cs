@@ -32,43 +32,6 @@ namespace Benefind
         public void ConfigureServices(IServiceCollection services)
         {
 
-            //login
-            services
-              .AddAuthentication(BasicAuthenticationDefaults.AuthenticationScheme)
-              .AddBasicAuthentication(
-                options =>
-                {
-                    options.Realm = "Benefind";
-                    options.Events = new BasicAuthenticationEvents
-                    {
-                        OnValidatePrincipal = context =>
-                        {
-                            if ((context.UserName.ToLower() == "name")
-                          && (context.Password == "123"))
-                            {
-                                var claims = new List<Claim>
-                        {
-                new Claim(ClaimTypes.Name,
-                          context.UserName,
-                          context.Options.ClaimsIssuer)
-                        };
-
-                                var ticket = new AuthenticationTicket(
-                        new ClaimsPrincipal(new ClaimsIdentity(
-                          claims,
-                          BasicAuthenticationDefaults.AuthenticationScheme)),
-                        new Microsoft.AspNetCore.Authentication.AuthenticationProperties(),
-                        BasicAuthenticationDefaults.AuthenticationScheme);
-
-                                return Task.FromResult(AuthenticateResult.Success(ticket));
-                            }
-
-                            return Task.FromResult(AuthenticateResult.Fail("Authentication failed."));
-                        }
-                    };
-                });
-            // end of login
-
 
             services.AddDbContext<DbBenefit>(options => options.UseSqlServer(Configuration.GetConnectionString("DbNenefitDatabase")));
 
@@ -112,8 +75,9 @@ namespace Benefind
             {
                 routes.MapRoute(
                     name: "default",
-                    //template: "{controller=Home}/{action=Login}/{id?}");
-                    template: "{controller=Home}/{action=Index}/{id?}");
+            template: "{controller=Home}/{action=Index}/{id?}");
+            //template: "{controller=Home}/{action=Login}/{id?}");
+
             });
         }
     }

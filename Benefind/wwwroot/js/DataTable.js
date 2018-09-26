@@ -89,42 +89,37 @@ $("#nav-showresult-tab").on('click', function () {
 
     });
 });
-$('form').submit(e => {
-    let json = GetJsonData();
-    $('#results').html(JSON.stringify(json));
 
-    e.preventDefault();
-});
 
-$('form').submit(function (event) {
+//$('form').submit(function (event) {
 
-    /* stop form from submitting normally */
-    event.preventDefault();
-    console.log("enter function");
+//    /* stop form from submitting normally */
+//    event.preventDefault();
+//    console.log("enter function");
 
-    var contents = GetJsonData();
+//    var contents = GetJsonData();
 
-    //test
-    console.log("enter function");
-    console.log(contents);
+//    //test
+//    console.log("enter function");
+//    console.log(contents);
 
-    $.ajax({
-        type: 'post',
-        url: "Ndis201819/Filter",
-        data: JSON.stringify(contents),
-        contentType: "application/json; charset=utf - 8",
-        success: function (response) {
-            console.log('Data received: ');
-            console.log(response.responseText);
+//    $.ajax({
+//        type: 'post',
+//        url: "/Ndis201819/Filter",
+//        data: JSON.stringify(contents),
+//        contentType: "application/json; charset=utf - 8",
+//        success: function (response) {
+//            console.log('Data received: ');
+//            console.log(response.responseText);
 
-            $("form").html(response);
-        },
-        failure: function () {
-            alert("json response error");
-        }
+//            $("form").html(response);
+//        },
+//        failure: function () {
+//            alert("json response error");
+//        }
 
-    });
-});
+//    });
+//});
 
 
 function GetJsonData() {
