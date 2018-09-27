@@ -1,0 +1,622 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Generic - Spectral by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <noscript><link rel="stylesheet" href="~/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1><a asp-controller="Home" asp-action="Index">BENEFIND</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li class="special">
+                        <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                        <div id="menu">
+                            <ul>
+                                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                <li><a href="benefits.html">Benefits</a></li>
+                                <li><a asp-controller="Home" asp-action="WhatisNDIS">What's NDIS</a></li>
+                                <li><a asp-controller="Home" asp-action="JoinNDIS">Join NDIS</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main -->
+
+        <article id="main">
+            <header>
+                <h2>Join NDIS</h2>
+                <p>
+                    Check your eligbility to join NDIS <br>
+                    <a href="https://www.ndis.gov.au/people-disability/access-requirements.html" class="btn"> Find more in NDIS website</a>
+                </p>
+            </header>
+            <section id="three" class="wrapper style3 special">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Accessing the NDIS</h2>
+                        <p>
+                            People who meet the NDIS access requirements are called participants. <br />
+                            Participants receive funded supports and an individual plan.
+                        </p>
+                        <p>
+                            If you are a person with disability and want to join the NDIS, you need to meet the access requirements. <br />
+                            These include: availability of the Scheme where you live; your age; your residency status;<br /> your disability and in some cases your early intervention requirements.
+                        </p>
+                    </header>
+                    <ul class="features">
+                        <li class="icon fa-paper-plane-o">
+                            <h3>
+                                Availability in your area
+                            </h3>
+                            <p>
+                                To access the NDIS right now, you must live in an area where the NDIS is available. In some of these areas, you also need to be a certain age to access the Scheme.
+                            </p>
+                            <p style="margin:0.5rem">
+                                - Australian Capital Territory
+                            </p>
+                            <p style="margin:0.5rem">
+                                - New South Wales
+                            </p>
+                            <p style="margin:0.5rem">
+                                - Queensland
+                            </p>
+                            <p style="margin:0.5rem">
+                                - South Australia
+                            </p>
+                            <p style="margin:0.5rem">
+                                - Tasmania
+                            </p>
+                            <p style="margin:0.5rem">
+                                - Victoria
+                            </p>
+                            <p style="margin:0.5rem">- Western Australia</p>
+                        </li>
+                        <li class="icon fa-laptop">
+                            <h3>
+                                Disability
+                            </h3>
+                            <p>
+                                You may meet the disability requirements if:
+                            </p>
+                            <p style="margin:0.5rem">
+                                - you have an impairment or condition that is likely to be permanent (i.e. it is likely to be life long) and
+                            </p>
+                            <p style="margin:0.5rem">
+                                - your impairment substantially reduces your ability to participate effectively in activities, or perform tasks or actions.
+
+                            </p>
+                            <p style="margin:0.5rem">
+                                - your impairment affects your capacity for social and economic participation and
+                            </p>
+                            <p style="margin:0.5rem">
+                                - you are likely to require support under the NDIS for your lifetime.
+                            </p>
+
+                        </li>
+                        <li class="icon fa-code">
+                            <h3>
+                                Age
+                            </h3>
+                            <p>
+                                You must be under 65 years of age when you apply to join the Scheme.
+                            </p>
+                        </li>
+                        <li class="icon fa-headphones">
+                            <h3>
+                                Residency
+                            </h3>
+                            <p>
+                                To meet the residency requirements, you must live in Australia and:
+                                be an Australian citizen OR
+                                hold a Permanent Visa OR
+                                hold a Protected Special Category Visa
+                            </p>
+                        </li>
+
+                    </ul>
+                </div>
+            </section>
+            @*<section class="wrapper style5">
+
+            <div class="inner">
+
+                <h3>Age</h3>
+                <p>You must be under 65 years of age when you apply to join the Scheme.</p>
+
+                <hr />
+                <h3>Residency</h3>
+                <p>
+                    To meet the residency requirements, you must live in Australia and:
+                </p>
+                <p>- be an Australian citizen OR</p>
+                <p>- hold a Permanent Visa OR</p>
+                <p>- hold a Protected Special Category Visa</p>
+                <hr />
+                <h3>Disability</h3>
+                <p>You may meet the disability requirements if:</p>
+                <p>- you have an impairment or condition that is likely to be permanent (i.e. it is likely to be life long) and</p>
+                <p>- your impairment substantially reduces your ability to participate effectively in activities</p>
+                <p>- your impairment affects your capacity for social and economic participation and</p>
+                <p>
+                    - you are likely to require support under the NDIS for your lifetime.
+                </p>
+                <a href="https://www.ndis.gov.au/people-disability/access-requirements.html" class="btn"> Find more in NDIS website</a>
+
+                <hr />
+            </div>
+        </section>*@
+
+
+
+            <div id="map"></div>
+
+            <script>
+                var locations = [[-35.264144, 149.1324313, 'Braddon', '212 Northbourne Ave, Braddon ACT 2612', 'N/A', 'N/A', 'N/A', 'N/A'],
+                [-35.4204753, 149.0699921, 'Tuggeranong', '(sharing with DHS) Cnr Anketell and Sheerin Street, Greenway ACT 2900', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-35.3380262, 149.042431, 'Florey (ECEI Partner/EACH)', '26 Weingarth Street, Holder ACT 2611', 'Open 9am - 5pm', 'Monday - Friday', '1300 003 224', 'info@each.com.au'],
+                [-35.3521554, 149.0902497, 'Phillip (LAC Partner/Feros Care ACT)', '6 Shea Street, Phillip ACT 2606', 'Open 8.30am - 4.30pm', 'Monday - Friday', '1300 986 970', 'N/A'],
+                [-36.0769552, 146.9236079, 'Albury', '(sharing with DHS) 430 Wilson Street, Albury NSW 2640', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-33.9170212, 151.0309293, 'Bankstown', '(sharing with DHS) 2 - 14 Meredith Street, Bankstown NSW 2200', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-35.7096996, 150.1784488, 'Batemans Bay', '(sharing with DHS) 3 Flora Crescent, Batemans Bay NSW 2536', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-33.4168194, 149.5772027, 'Bathurst', '(sharing with DHS) Centrelink Buidling, 168 Russell St, Bathurst NSW 2795', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-36.673658, 149.8417408, 'Beg', '49 - 61 Church Street, Bega NSW 2550', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-33.7676507, 150.90894, 'Blacktown', '(Sharing with DHS) 8 First Avenue, Blacktown NSW 2148', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-33.8773087, 151.1008643, 'Burwood', 'Level 5, 56 Railway Parade Burwood NSW 2134', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-34.0652041, 150.817169, 'Campbelltown', '(sharing with DHS) 8 - 10 Browne Street, Campbelltown NSW 2560', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-32.9616943, 151.6949419, 'Charlestown', 'Shop 1, Hilltop Plaza, Charlestown NSW 2290', 'N/A', 'N/A', 'N/A', 'N/A'],
+                [-33.7980837, 151.181697, 'Chatswood', 'Level 3 67 Albert Avenue, Chatswood NSW 2067', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-30.29679299999999, 153.1187377, 'Coffs harbour', '(Sharing with DHS) 21-25 Duke Street, Coffs Harbour, NSW, 2450', 'N/A', 'N/A', 'N/A', 'N/A'],
+                [-32.2492866, 148.6044696, 'Dubbo', '(Sharing with DHS) Centrelink Buidling, 64 Wingewarra St, Dubbo NSW 2830', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-33.4289855, 151.3407553, 'Gosford', 'Ground floor 99 Georgiana Terrace, Gosford NSW 2250', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-33.9660999, 151.103266, 'Hurstville', 'Level 4 6 Crofts Avenue Hurstville NSW 2220', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-33.71735, 150.3094801, 'Katoomb', '(sharing with DHS) 33 - 35 Waratah St, Katoomba NSW 2780', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-28.812121, 153.276966, 'Lismore', '(sharing with DHS) 47 Conway Street, Lismore NSW 2480', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-33.9236137, 150.9239139, 'Liverpool', '244 Macquarie Street, Liverpool NSW 2170', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-32.7377766, 151.5620911, 'Maitland', '(sharing with DHS) 226 High St, Maitland NSW 2320', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-29.4609002, 149.8397699, 'Moree', '11 Auburn Street, Moree NSW 2400', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-32.927791, 151.7706957, 'Newcastle', '14 Auckland Street, Newcastle, NSW, 2300', 'N/A', 'N/A', 'N/A', 'N/A'],
+                [-33.8140401, 151.0008737, 'Parramatt', 'Ground Floor, 2 - 12 Macquarie Street, Parramatta NSW 2150', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-33.7516528, 150.6964244, 'Penrith', 'Ground level and Level 2 121 Henry Street, Penrith NSW 2750', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-31.4296048, 152.9065938, 'Port Macquarie', '(Sharing with DHS) 5/7 Short Street, Port Macquarie, NSW, 2444', 'N/A', 'N/A', 'N/A', 'N/A'],
+                [-33.8763764, 151.2155679, 'Redfern', '(Sharing with DHS) 137-153 Crown Street Darlinghurst NSW 2010', 'Open 8.30am - 4.30pm', 'N/A', 'N/A', 'N/A'],
+                [-31.08113599999999, 150.9223257, 'Tamworth', 'Suite 2, 4 Bligh Street Tamworth, NSW, 2340', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-31.9137745, 152.4608975, 'Taree', 'Centrelink Buidling, 184 - 188 Victoria Street, Taree NSW 2430', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-33.6091731, 150.8164588, 'Windsor', '(sharing with DHS) 309 George St, Windsor NSW 2756', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-36.0801501, 146.9198475, 'Albury (ECEI Partner/Intereach)', '533 David Street, Albury NSW 2640', 'N/A', 'N/A', '02 6051 7800', 'N/A'],
+                [-33.7576794, 151.2433052, 'Allambie Heights (ECEI Partner/CPA)', '187 Allambie Road, Allambie Heights NSW 2100', 'Open 7am - 6pm', 'Monday - Friday', '02 9975 8400', 'N/A'],
+                [-33.9206987, 151.0353366, 'Bankstown (ECEI Partner/EACH)', '138 Stanley Street, Bankstown NSW 2200', 'Open 9am - 5pm', 'Monday - Friday', '02 9722 9300', 'N/A'],
+                [-36.674808, 149.840988, 'Bega (ECEI Partner/EACH)', 'Sapphire Marketplace Suite 3 106 Auckland Street, Bega NSW 2550', 'Open 9am - 5pm', 'Monday - Friday', '02 6492 7800', 'N/A'],
+                [-30.2898006, 153.1222937, 'Coffs Harbour (ECEI Partner/Northcott)', 'Suite 1 169-171 Rose Ave, Coffs Harbour NSW 2450', 'Open 9am - 5pm', 'Monday - Friday', '1800 818 286', 'N/A'],
+                [-34.067188, 150.8141944, 'Campbelltown (ECEI Partner/EACH)', 'Unit 5 and 6 192 Queen Street, Campbelltown NSW 2560', 'Open 9am - 5pm', 'Monday - Friday', '02 4640 7900', 'N/A'],
+                [-35.530828, 144.9594717, 'Deniliquin (ECEI Partner/Intereach)', 'Corner Trickett Street and Napier Street, Deniliquin NSW 2710', 'N/A', 'N/A', '03 5890 5200', 'N/A'],
+                [-34.0698175, 150.794505, 'Goulburn (ECEI Partner/EACH)', '34 Goldsmith Street, Campbelltown NSW 2021', 'Open 9am - 5pm', 'Monday - Friday', '02 4823 1400', 'N/A'],
+                [-34.2891683, 146.0478399, 'Griffith (ECEI Partner/Intereach)', 'Shop 2 63 Yambil Street, Griffith NSW 2680', 'N/A', 'N/A', '02 6969 7200', 'N/A'],
+                [-28.8111114, 153.2749327, 'Lismore (ECEI Partner/Northcott)', 'Suite 8A 21 Conway St, Lismore NSW 2480', 'Open 9am - 5pm', 'Monday - Friday', '1800 818 286', 'N/A'],
+                [-32.9005671, 151.7379045, 'Mayfield (ECEI Partner/Northcott)', '13 Valencia St, Mayfield NSW 2304', 'Open 9am - 5pm', 'Monday - Friday', '1800 818 286', 'N/A'],
+                [-33.9660678, 151.2422023, 'Malabar (ECEI Partner/Lifestart)', 'Chifley Public School, Mitchell Street, Malabar NSW 2036', 'N/A', 'N/A', '1800 953 390', 'N/A'],
+                [-34.0370526, 151.1032304, 'Miranda (ECEI Partner/Lifestart)', 'Suite 2a, 18 Gibbs Street, Miranda NSW 2228', 'N/A', 'N/A', '1800 953 390', 'N/A'],
+                [-29.46434309999999, 149.8412707, 'Moree (ECEI Partner/Northcott)', 'Suite 8, 147 Balo Street, Moree NSW 2400', 'Open 9am - 5pm', 'Monday - Friday', '1800 818 286', 'N/A'],
+                [-33.8052889, 151.0014125, 'North Parramatta (ECEI Partner/Northcott)', '1 Fennel Street, North Parramatta NSW 2150', 'Open 9am - 5pm', 'Monday - Friday', '1800 818 286', 'N/A'],
+                [-33.8569054, 151.092533, 'North Strathfield (ECEI Partner/Lifestart)', 'Ardill House, 132 Davidson Ave, North Strathfield NSW 2137', 'N/A', 'N/A', '1800 953 390', 'N/A'],
+                [-33.7524803, 150.6971934, 'Penrith (ECEI Partner/Lifestart)', 'Suite 104, 114-116 Henry Street, Penrith NSW 2750', 'Open 9am - 5pm', 'Monday - Friday', '1800 953 390', 'nepean@lifestart.org.au'],
+                [-31.4322674, 152.9067555, 'Port Macquarie (ECEI Partner/Northcott)', 'Shop 3 17 Short Street, Port Macquarie NSW 2444', 'Open 9am - 5pm', 'Monday - Friday', '1800 818 286', 'N/A'],
+                [-33.8005488, 151.1099877, 'Seven Hills (ECEI Partner/CPA)', '3A Smalls Road, Seven Hills NSW 2147', 'Open 8am - 6pm', 'Monday - Friday', '02 8878 3500', 'N/A'],
+                [-33.7675305, 150.7729724, 'St Marys (ECEI Partner/Lifestart)', '8-10 Carinya Ave, St Marys NSW 2760', 'N/A', 'N/A', '1800 953 390', 'N/A'],
+                [-31.08439, 150.927447, 'Tamworth (ECEI Partner/Northcott)', '3/126 Marius St, Tamworth NSW 2340', 'Open 9am - 5pm', 'Monday - Friday', '1800 818 286', 'N/A'],
+                [-31.9147905, 152.4583294, 'Taree (ECEI Partner/Northcott)', '3A 225-227 Victoria St, Taree NSW 2430', 'Open 9am - 5pm', 'Monday - Friday', '1800 818 286', 'N/A'],
+                [-28.178556, 153.5157018, 'Tweed Heads (ECEI Partner/Northcott)', '3A 225-227 Victoria St, Tweed Heads NSW 2485', 'Open 9am - 5pm', 'Monday - Friday', '1800 818 286', 'N/A'],
+                [-34.4553935, 150.8447978, 'Unanderra (ECEI Partner/Lifestart)', '123 Princes Hwy, Unanderra NSW 2526', 'N/A', 'N/A', '1800 953 390', 'N/A'],
+                [-35.1176594, 147.3671767, 'Wagga Wagga (ECEI Partner/Intereach)', '20 Peter Street, Wagga Wagga NSW 2650', 'N/A', 'N/A', '02 6932 8300', 'N/A'],
+                [-36.0784422, 146.9208178, 'Albury (LAC Partner/Social Futures)', 'Suite 1, 553 David Street, Albury, NSW 2640', 'Open 9am - 5pm', 'Monday - Friday', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-30.5139589, 151.6656576, 'Armidale (LAC Partner/St Vincent de Paul Society)', 'Armidale Business Centre, Cinders Ln Armidale, NSW 2350', 'N/A', 'N/A', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-28.87164, 153.5637596, 'Ballina (LAC Partner/Social Futures)', '29 River Street, Ballina, NSW 2478', 'Open 9am - 5pm', 'Monday - Friday', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-33.9168273, 151.0310068, 'Bankstown (LAC Partner/St Vincent de Paul Society NSW)', 'Level 3, 2 - 14 Meredith Street, Bankstown NSW 2200', 'Open 9am - 5pm', 'Monday - Friday', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-35.7138009, 150.1777237, 'Batemans Bay (LAC Partner/Uniting)', 'Shop 2, 25 Old Princess Highway, Batemans Bay NSW 2536', 'N/A', 'N/A', 'N/A', 'N/A'],
+                [-33.4199202, 149.5811954, 'Bathurst (LAC Partner/Social Futures)', '191 Russell Street, Bathurst, NSW 2795', 'N/A', 'N/A', '(02) 6620 1800', 'contact@socialfutures.org.au'],
+                [-33.73138369999999, 150.9659117, 'Baulkham Hills (LAC Partner/Uniting)', 'Suite 201, 29 - 31 Solent Circuit, Baulkham Hills, NSW 2153', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-33.7727941, 150.9077691, 'Blacktown (LAC Partner/Uniting)', 'Suite 301, Level 3, 83 Flushcombe Road, Blacktown, NSW 2148', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-34.48241300000001, 150.4154538, 'Bowral (LAC Partner/St Vincent de Paul Society NSW)', 'Unit 5, 44 - 48 Bowral Street, Bowral, NSW 2576', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-31.9491666, 141.4544632, 'Broken Hill (LAC Partner/Social Futures)', '181 Thomas Street, Broken Hill, NSW 2880', 'Open 9am - 5pm', 'Monday - Friday', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-33.7668962, 151.2626167, 'Brookvale (LAC Partner/Uniting)', 'Suite 156, Level 2, 117 Old Pittwater Rd, Brookvale, NSW 2100', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-34.1712578, 142.1821681, 'Buronga (LAC Partner/Social Futures)', 'Shop 2, 6-10 Sturt Highway, Buronga, NSW 2739', 'Open 9am - 5pm', 'Monday - Friday', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-33.8753667, 151.1026116, 'Burwood (LAC Partner/St Vincent de Paul Society)', 'Suite 8, 1-17 Elsie Street Burwood, NSW 2134', 'N/A', 'N/A', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-34.0633841, 150.8177613, 'Campbelltown (LAC Partner/St Vincent de Paul Society)', '86-88 Queen Street, Campbelltown, NSW 2560', 'N/A', 'N/A', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-28.8624908, 153.0503438, 'Casino (LAC Partner/Social Futures)', 'Shop 6 164-170 Canterbury Street, Casino, NSW 2470', 'N/A', 'N/A', '(02) 6620 1800', 'contact@socialfutures.org.au'],
+                [-32.9605302, 151.6972108, 'Charlestown (LAC Partner/St Vincent de Paul Society)', 'Suite 3, Ground Floor, 240 Pacific Highway Charlestown, NSW 2290', 'N/A', 'N/A', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-30.2997942, 153.1161073, 'Coffs Harbour (LAC Partner/Social Futures)', 'Suite 2, 38-40 Park Avenue, Coffs Harbour, NSW 2450', 'N/A', 'N/A', '(02) 6620 1800', 'contact@socialfutures.org.au'],
+                [-33.0891262, 147.1471407, 'Condoblin (LAC Partner/Social Futures)', '34 William Street, Condoblin, NSW 2830', 'Open 9am - 5pm', 'Monday - Friday', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-36.2350298, 149.1293364, 'Cooma (LAC Partner/Uniting)', 'Room 7.G.08 TAFE Illawarra 66 Commissioner St, Cooma, NSW 2630', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-31.2730489, 149.27677, 'Coonabarabran (LAC Partner/Social Futures)', 'Shop 7, 86-90 John Street, Coonabarabran, NSW 2357', 'Open 9am - 5pm', 'Monday - Friday', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-34.6388483, 148.0253375, 'Cootamundra (LAC Partner/Social Futures)', 'Shop 4, 91-94 Wallendoon St Cootamundra, NSW 2590', 'Open 9am - 5pm', 'Monday - Friday', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-35.99811, 146.3913852, 'Corowa (LAC Partner/Social Futures)', 'Shops 18-20 Corowa Arcade, 111 Sanger Street, Corowa, NSW 2646', 'Open 9am - 5pm', 'Monday - Friday', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-33.835005, 148.6916856, 'Cowra (LAC Partner/Social Futures)', 'Shop 6, 119 Kendal Street, Cowra, NSW 2794', 'Open 9am - 5pm', 'Monday - Friday', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-35.5310941, 144.9595254, 'Deniliquin (LAC Partner/Social Futures)', '366 Trickett Street, Deniliquin, NSW 2710', 'N/A', 'N/A', '02 6620 1800', 'contact@socialfutures.org.au'],
+                [-32.2470391, 148.6042233, 'Dubbo (LAC Partner/Social Futures)', '152 Brisbane Street, Dubbo, NSW 2830', 'N/A', 'N/A', '(02) 6620 1800', 'contact@socialfutures.org.au'],
+                [-34.7468031, 150.8286377, 'Gerringong (LAC Partner/Uniting)', '5b / 25 Noble Street, Gerringong, NSW 2534', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-34.7502144, 149.7199553, 'Goulburn (LAC Partner/Uniting)', '49 Goldsmith Street, Goulburn, NSW 2580', 'N/A', 'N/A', '1800 864 846', 'lacinfo@uniting.org'],
+                [-29.6925335, 152.9336539, 'Grafton (LAC Partner/Social Futures)', '50 Victoria Street, Grafton, NSW 2460', 'Open 9am - 5pm', 'Monday - Friday', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-34.2891683, 146.0478999, 'Griffith (LAC Partner/Social Futures)', '63 Yambil Street, Griffith, NSW 2680', 'Open 9am - 5pm', 'Monday - Friday', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-33.42235, 151.3429395, 'Gosford (LAC Partner/St Vincent de Paul Society NSW)', '273 - 275 Mann St, Gosford, NSW 2250', 'Open 9am - 5pm', 'Monday - Friday', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-33.7020759, 151.100609, 'Hornsby (LAC Partner/Uniting)', 'Level 2 Suite 4a 45 Hunter Street, Hornsby, NSW 2077', 'N/A', 'N/A', 'N/A', 'N/A'],
+                [-33.9654978, 151.1012565, 'Hurstville (LAC Partner/St Vincent de Paul Society)', 'Suite 2E, 34 MacMahon Street Hurstville, NSW 2220', 'N/A', 'N/A', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-29.7724135, 151.114015, 'Inverell (LAC Partner/St Vincent de Paul Society NSW)', 'Shop 8, 121 Byron Street, Inverell, NSW 2360', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'LAC@vinnies.org.au'],
+                [-31.0799456, 152.8390311, 'Kempsey (LAC Partner/Social Futures)', 'Suite 7 41 Belgrave Street, Kempsey NSW 2440', 'N/A', 'N/A', '02 6620 1800', 'contact@socialfutures.org.au'],
+                [-32.819278, 151.482462, 'Kurri Kurri (LAC Partner/St Vincent de Paul Society)', 'Suite 4 and 5, 3/114 Barton Street, Kurri Kurri, NSW 2327', 'N/A', 'N/A', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-28.6195884, 153.0025297, 'Kyogle (LAC Partner/Social Futures)', 'Grove House 8 Geneva Street, Kyogle, NSW 2474', 'Open 9am - 5pm', 'Monday - Friday', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-33.813809, 151.170696, 'Lane Cove (LAC Partner/Uniting)', 'Ryde Council Community Centre 180 Longueville Rd, Lane Cove, NSW 2066', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-33.7202612, 150.4290385, 'Lawson (LAC Partner/Uniting)', 'Shop 3, 297 Great Western Highway, Lawson NSW 2783', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-33.8870454, 151.1595276, 'Leichhardt (LAC Partner/St Vincent de Paul Society)', 'Suite 2, 23 Balmain Road, Leichhardt, NSW 2040', 'Open 9am - 5pm', 'Monday - Friday', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-28.8117791, 153.2743431, 'Lismore (LAC Partner/Social Futures)', '256 Molesworth Street, Lismore, NSW 2480', 'N/A', 'N/A', '(02) 6620 1800', 'contact@socialfutures.org.au'],
+                [-33.4787116, 150.1553016, 'Lithgow (LAC Partner/Uniting)', 'PCYC Building, 7 Hoskins Ave, Lithgow, NSW 2790', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-33.9248634, 150.9248195, 'Liverpool (LAC Partner/St Vincent de Paul Society NSW)', 'Level 1, 45 Scott Street Liverpool, NSW 2170', 'N/A', 'N/A', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-33.9388012, 151.239165, 'Maroubra (LAC Partner/St Vincent de Paul Society NSW)', 'Suite 601 806-812 Anzac Parade Maroubra NSW 2035', 'Open 9am - 5pm', 'Monday - Friday', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-36.8908989, 149.909421, 'Merimbula (LAC Partner/Uniting)', '14 Cabarita Place (Library), Merimbula, NSW 2548', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-34.0361315, 151.1036128, 'Miranda (LAC Partner/St Vincent de Paul Society NSW)', 'Level 1 38-40 Urunga Parade Miranda NSW 2228', 'N/A', 'N/A', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-29.4617969, 149.8411927, 'Moree (LAC Partner/St Vincent de Paul Society NSW)', 'Shop 7, 95 Balo Street, Moree, NSW 2400', 'Open 9am - 5pm', 'Monday - Friday', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-28.5516613, 153.4995919, 'Mullumbimby (LAC Partner/Social Futures)', 'Mullumbimby Neighborhood Centre, 55 Dallet Street, Mullumbimby, NSW 2482', 'Open 9am - 5pm', 'Monday - Friday', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-32.2665184, 150.8920558, 'Muswellbrook (LAC Partner/St Vincent de Paul Society NSW)', 'Shop 6, 6 Market Lane, Muswellbrook, NSW 2333', 'Open 9am - 5pm', 'Monday - Friday', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-30.6543092, 152.9882126, 'Nambucca Heads (LAC Partner/Social Futures)', 'Shop 5b, Nambucca Plaza, 10 Pacific Highway, Nambucca Heads, NSW 2448', 'N/A', 'N/A', '(02) 6620 1800', 'contact@socialfutures.org.au'],
+                [-32.9241352, 151.7560273, 'Newcastle (LAC Partner/St Vincent de Paul Society NSW)', 'Level 3, 1 Tudor Street, Newcastle, NSW 2302', 'Open 9am - 5pm', 'Monday - Friday', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-34.8706675, 150.6019305, 'Nowra (LAC Partner/Uniting)', 'Suite 2b, 57 Graham Street, Nowra, NSW 2541', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-33.2840718, 149.1003056, 'Orange (LAC Partner/Social Futures)', 'Suite 4 and 5, 226-232 Summer Street, Orange, NSW 2800', 'N/A', 'N/A', '(02) 6620 1800', 'contact@socialfutures.org.au'],
+                [-33.1353746, 148.1733641, 'Parkes (LAC Partner/Social Futures)', '31 Bogan Street, Parkes, NSW 2800', 'N/A', 'N/A', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-33.8146022, 150.9994149, 'Parramatta (LAC Partner/Uniting)', 'Level 1, 17 - 21 Macquarie St, Parramatta, NSW 2150', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-33.752497, 150.699745, 'Penrith (LAC Partner/Uniting)', 'Level 1, 83 Henry St, Penrith, NSW 2750', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-31.4355613, 152.9172361, 'Port Macquarie (LAC Partner/Social Futures)', 'Suite 5, 53 Lord Street, Port Macquarie, NSW 2444', 'Open 9am - 5pm', 'Monday - Friday', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-33.7506847, 151.1446447, 'Pymble (LAC Partner/Uniting)', 'Building 1, Level 3, Suite 4, 20 Bridge St, Pymble, NSW 2073', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-35.3482281, 149.2310178, 'Queanbeyan (LAC Partner/Uniting)', 'Suite 3, Level 1, 114 Crawford St, Queanbeyan, NSW 2620', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-32.7616499, 151.7411399, 'Raymond Terrace (LAC Partner/St Vincent de Paul Society NSW)', 'Shop 3, 82 Port Stephens Street, Raymond Terrace, NSW 2324', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'LAC@vinnies.org.au'],
+                [-31.09432, 150.9160538, 'Tamworth (LAC Partner/St Vincent de Paul Society NSW)', '202 Bridge Street, Tamworth, NSW 2340', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'LAC@vinnies.org.au'],
+                [-31.9136621, 152.4578068, 'Taree (LAC Partner/St Vincent de Paul Society)', '9 Albert Lane, Taree, NSW 2430', 'N/A', 'N/A', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-28.1731242, 153.5423206, 'Tweed Heads (LAC Partner/Social Futures)', '77 Wharf Street, Tweed Heads, NSW 2485', 'N/A', 'N/A', '(02) 6620 1800', 'contact@socialfutures.org.au'],
+                [-35.1176594, 147.36723669999998, 'Wagga Wagga (LAC Partner/Social Futures)', '20 Peter Street, Wagga Wagga, NSW 2650', 'Open 9am - 5pm', 'Monday - Friday', '1800 522 679', 'enquiries@socialfutures.org.au'],
+                [-33.609891, 150.8173851, 'Windsor (LAC Partner/Uniting)', '6 Christie Street, Hawkesbury House Windsor, NSW 2756', 'N/A', 'N/A', '1800 864 846', 'lacinfo@uniting.org'],
+                [-34.4232814, 150.8907906, 'Wollongong (LAC Partner/Uniting)', 'Level 3 87/89 Market Street, Wollongong, NSW 2500', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-33.8733147, 151.2192272, 'Woolloomooloo (LAC Partner/St Vincent de Paul Society)', '99 Forbes Street, Woolloomooloo, NSW 2011', 'Open 9am - 5pm', 'Monday - Friday', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-33.2805799, 151.4249893, 'Wyong (LAC Partner/St Vincent de Paul Society NSW)', '28 Hely Street, Wyong, NSW 2259', 'Open 9am - 5pm', 'Monday - Friday', '1800 794 934', 'LAC@vinnies.org.au'],
+                [-34.843996, 148.9152769, 'Yass (LAC Partner/Uniting)', 'Room D.G.4 Yass TAFE, 51 Church St, Yass, NSW 2582', 'Open 9am - 5pm', 'Monday - Friday', '1800 864 846', 'lacinfo@uniting.org'],
+                [-23.698904, 133.882474, 'Alice Springs', '(Co-located with PMC) Level 3, 14 Parsons Street, Alice Springs NT 0870', 'Open 8.30am - 4.30pm', 'N/A', 'N/A', 'N/A'],
+                [-12.464333, 130.846236, 'Darwin', 'Level 2, 22 Harry Chan Ave Darwin NT 0800', 'Open 8.30am - 4.30pm', 'N/A', 'N/A', 'N/A'],
+                [-14.4646281, 132.2664059, 'Katherine', '(Co-located with DHS) 4 Second Street, Katherine, NT, 0850', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-12.183347, 136.7857185, 'Nhulunbuy', '(Co-located with PMC) 74 Chesterfield Street, Nhulunbuy, NT, 0880', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-19.651775, 134.1882268, 'Tennant Creek', 'Indigenous Coordination Centre, 1 - 9 Paterson St, Tennant Creek NT 0860', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-27.3812131, 153.0291991, 'Chermside', '960 Gympie Road Chermside QLD 4032', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-24.86632, 152.354169, 'Bundaberg', '(Sharing with DHS) 26 Woongarra Street, Bundaberg QLD 4670', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-27.6171427, 152.7604501, 'Ipswich', '(sharing with DHS) 78 East Street, Ipswich QLD 4305', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-27.6141853, 152.759566, 'Ipswich', 'Level 1, 117 Brisbane Street Ipswich QLD 4305', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-21.1383749, 149.178127, 'Mackay', 'Shop 2514 Level 1 Canelands Shopping Centre, Corner Victoria and Mangrove Road, Mackay, QLD 4740', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-20.7249286, 139.490977, 'Mount Isa', '30-32 West Street, Mount Isa QLD 4825', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-27.5534223, 152.9743288, 'Oxley', 'Level 1, Oxley Village Shopping Centre Oxley QLD 4075', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-18.7330986, 146.5779482, 'Palm Island', '49a Beach Road, Palm Island QLD 4816', 'N/A', 'N/A', 'N/A', 'N/A'],
+                [-23.3617563, 150.5229693, 'Rockhampton', '190 - 194 Musgrave Street, North Rockhampton QLD 4701', 'N/A', 'N/A', 'N/A', 'N/A'],
+                [-28.073433, 153.379541, 'Robin', 'The Rocket, Level 4 203 Town Centre Drive QLD 4230', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-27.5641409, 151.9566225, 'Toowoomb', 'Level 1 173 Hume Street, Toowoomba QLD 4350', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-19.2590596, 146.8130018, 'Townsville', '235 Stanley St, Townsville QLD 4810', 'Open 9am - 5.00pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-27.6395144, 153.1070334, 'Woodridge', 'Ground Floor, 6 Ewing Road Logan Central QLD, 4114', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-24.3944515, 150.5126051, 'Biloela (ECEI Partner/BUSHkids)', 'By appointment only 102 Rainbow Street, Biloela, QLD 4715', 'N/A', 'N/A', '07 3870 7288', 'info@bushkids.org.au'],
+                [-24.875878, 152.354709, 'Bundaberg (ECEI Partner/BUSHkids)', '110 Targo Street, Bundaberg, QLD 4670', 'N/A', 'N/A', '07 4152 3799', 'N/A'],
+                [-23.5249259, 148.1560857, 'Emerald (ECEI Partner/EACH)', '5 Claremont Street, Emerald, QLD 4720', 'N/A', 'N/A', '07 4913 1090', 'emeraldecei@bushkids.org.au'],
+                [-23.8417168, 151.2541355, 'Gladstone (ECEI Partner/BUSHkids)', '65-67 Goondoon Street, Gladstone, QLD 4680', 'N/A', 'N/A', 'N/A', 'N/A'],
+                [-27.6136564, 152.7614622, 'Ipswich (ECEI Partner/EACH)', 'Level 1, 24 East Street, Ipswich, QLD 4305', 'N/A', 'N/A', '1300 003 224', 'N/A'],
+                [-21.1458902, 149.1874811, 'Mackay (ECEI Partner/Mackay UnitingCare Community)', '34 Brisbane Street, Mackay, QLD 4740', 'Open 9am - 5pm', 'Monday - Friday', '1300 778 081', 'N/A'],
+                [-27.4705212, 153.0079974, 'Milton (ECEI Partner/Benevolent Society)', 'Ground Floor 189 Coronation Drive, Milton, QLD 4064', 'N/A', 'N/A', '1300 00 3234', 'N/A'],
+                [-23.379372, 150.5130224, 'Rockhampton (ECEI Partner/BUSHkids)', 'Shop 1 171 Bolsover Street, Rockhampton QLD 4700', 'N/A', 'N/A', 'N/A', 'N/A'],
+                [-27.554327, 151.9500364, 'Toowoomba (ECEI Partner/Toowoomba UnitingCare Community)', '134 Mort Street, Toowoomba, QLD 4350', 'Open 9am - 5pm', 'Monday - Friday', '1300 778 081', 'N/A'],
+                [-19.2994021, 146.7657543, 'Townsville (ECEI Partner/Townsville UnitingCare Community)', '56 - 69 Patrick Street, Townsville, QLD 4814', 'Open 9am - 5pm', 'Monday - Friday', '1300 778 081', 'N/A'],
+                [-24.8885824, 152.3581583, 'Bundaberg (LAC Partner/Indigenous Wellness Centre)', '184 Barolin Street, Bundaberg QLD 4670', 'N/A', 'N/A', '1300 492 492', 'N/A'],
+                [-27.6155004, 152.7650158, 'Ipswich (LAC Partner/Carers QLD)', '28 - 30 Thorn Street, Ipswich QLD 4305', 'N/A', 'N/A', '(07) 3454 0500', 'ipswichLAC@carersqld.asn.au'],
+                [-21.1423881, 149.1854168, 'Mackay (LAC Partner/Feros Care QLD)', 'Shop 5, 74 Wood Street Mackay QLD 4740', 'Open 9am-5pm', 'Monday-Friday', '1300 986 970', 'FEROSLAC@ndis.gov.au'],
+                [-23.3765141, 150.5126437, 'Rockhampton (LAC Partner/Carers QLD)', 'Level 2 39 East Street, Rockhampton QLD 4700', 'N/A', 'N/A', 'N/A', 'rockhamptonLAC@carersqld.asn.au'],
+                [-27.5677782, 151.9526929, 'Toowoomba (LAC Partner/Carers QLD)', '632 Ruthven Street, Toowoomba QLD 4350', 'N/A', 'N/A', '(07) 4646 2800', 'toowoombaLAC@carersqld.asn.au'],
+                [-19.2645911, 146.8130627, 'Townsville (LAC Partner/Feros Care QLD)', 'Suite 2, 520 Flinders Street, Townsville QLD 4810', 'N/A', 'N/A', '1300 986 970', 'FEROSLAC@ndis.gov.au'],
+                [-31.9575952, 141.4618799, 'Broken Hill', '(sharing with DHS) 180 Beryl St, Broken Hill NSW 2880', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-34.7153317, 138.667064, 'Elizabeth', '47 - 49 Elizabeth Way, Elizabeth SA 5112', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-34.8719784, 138.6014257, 'Enfield', '(sharing with DHS) 298-302 Main North Rd , Prospect, Enfield SA 5082', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-35.0138787, 138.5421352, 'Marion', '(sharing with DHS) 8 Warracowie Way , Marion SA 5043', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-34.8343048, 138.6872345, 'Modbury', '(sharing with DHS) 96 Reservoir Road, Modbury SA 5092', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-37.8281561, 140.7825206, 'Mount Gambier', '(sharing with DHS) 5 Percy Street Mount Gambier SA 5290', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-35.1213901, 139.2783037, 'Murray Bridge', '2 Sturt Reserve Rd, Murray Bridge SA 5253', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-35.138485, 138.498793, 'Noarlung', '(sharing with DHS) 9 Alexander Kelly Drive, Noarlunga Centre SA 5168', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-34.920601, 138.634109, 'Norwood', '(sharing with DHS) 49 Edward St, Norwood SA 5067', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-34.8468231, 138.5089459, 'Port Adelaide', '(sharing with DHS) v 72 Lipson St, Port Adelaide SA 5015', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-32.4980518, 137.7699611, 'Port August', '(sharing with PM &amp; C) 34 Stirling Road Port Augusta SA 5700', 'Open 9.00am - 5.00pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-35.0103476, 138.5782241, 'St Marys', '15 - 31 Ayliffes Rd, St Marys SA 5042', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-34.9920473, 138.5840538, 'Daw Park (ECEI partner/DHS)', '180 Daws Road, Daw Park SA 5041', 'N/A', 'N/A', '1800 931 190', 'SouthAustralia@ndis.gov.au'],
+                [-34.8539433, 138.6527429, 'Gillies Plains (ECEI partner/DHS)', '31 Blacks Road, Gillies Plains SA 5086', 'N/A', 'N/A', '1800 931 190', 'SouthAustralia@ndis.gov.au'],
+                [-34.8694714, 138.5671068, 'Regency Park (ECEI partner/DHS)', '171 Days Road, Regency Park SA 5010', 'N/A', 'N/A', '1800 931 190', 'SouthAustralia@ndis.gov.au'],
+                [-34.9989098, 138.574942, 'Clovelly Park (LAC partner/Mission Australia)', '1194-1196 South Road, Clovelly Park, SA 5042', 'N/A', 'N/A', '1800 931 543', 'LACClovellyPark@missionaustralia.com.au'],
+                [-34.5995999, 138.7494637, 'Gawler (LAC partner/Feros Care SA)', 'Unit 3, Level 1 83-85 Murray Street, Gawler SA 5118', 'N/A', 'N/A', '1300 986 970', 'FEROSLAC@ndis.gov.au'],
+                [-33.963176, 137.711825, 'Kadina (LAC Partner/Baptcare)', '4a Draper Street, Kadina SA 5554', 'N/A', 'N/A', '1800 960 595', 'N/A'],
+                [-34.9240911, 138.5683689, 'Mile End (LAC Partner/Baptcare)', 'Unit 1, 101 Henley Beach Road, Mile End SA 5031', 'Open 9am-5pm', 'Monday-Friday', 'N/A', 'sa@ndis.gov.au'],
+                [-35.0698132, 138.8630023, 'Mount Barker (LAC Partner/Mission Australia)', 'Mount Barker Village Shopping Centre, Shop T3, corner of Hutchinson Street and Victoria Crescent, Mount Barker SA 5251', 'N/A', 'N/A', '1800 931 543', 'LACMountBarker@missionaustralia.com.au'],
+                [-37.8315868, 140.7840913, 'Mount Gambier (LAC Partner/Mission Australia)', '15a Sturt Street, Mount Gambier SA 5290', 'N/A', 'N/A', '1800 931 543', 'LACMountGambier@missionaustralia.com.au'],
+                [-35.1213901, 139.2783637, 'Murray Bridge (LAC Partner/Mission Australia)', '2 Sturt Reserve Rd, Murray Bridge SA 5253', 'N/A', 'N/A', '1800 931 543', 'LACMurrayBridge@missionaustralia.com.au'],
+                [-32.4929705, 137.7659914, 'Port Augusta (LAC Partner/Mission Australia)', '40 Flinders Terrace, Port Augusta SA 5700', 'N/A', 'N/A', '1800 931 543', 'EWFNSA@ndis.gov.au'],
+                [-34.7636857, 138.6491275, 'Salisbury (LAC Partner/Feros Care SA)', '34 Commercial Road, Salisbury SA 5108', 'N/A', 'N/A', '1300 986 970', 'FEROSLAC@ndis.gov.au'],
+                [-35.1415983, 138.4967171, 'Southern Adelaide (LAC Partner/Mission Australia)', 'Commonwealth House, Office 1, Lower Ground, 54 Beach Road, Colonnades Shopping Centre, Noarlunga SA 5168', 'N/A', 'N/A', '1800 931 543', 'LACNoarlunga@missionaustralia.com.au'],
+                [-35.5537372, 138.623174, 'Victor Harbor (LAC Partner/Mission Australia)', 'Tenancy 1, Unit 7, 46 Ocean Street, Victor Harbor SA 5211', 'N/A', 'N/A', '1800 931 543', 'LACVictorHarbor@missionaustralia.com.au'],
+                [-33.0365374, 137.5742855, 'Whyalla (LAC Partner/Mission Australia)', '80b Essington Lewis Avenue, Whyalla SA 5600', 'N/A', 'N/A', '1800 931 543', 'EWFNSA@ndis.gov.au'],
+                [-41.1803943, 146.3620482, 'Devonport', '11 - 13 Stewart Street, Devonport TAS 7310', 'N/A', 'N/A', 'N/A', 'N/A'],
+                [-42.8859783, 147.3227877, 'Hobart', '(sharing with DHS) 30-38 Barrack Street, Hobart TAS 7000', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-41.4336001, 147.137962, 'Launceston', '6 - 18 George Street, Launceston TAS 7250', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-41.180357, 146.3617254, 'Devonport (ECEI Partner/Mission Australia)', '21-23 Stewart Street, Devonport, TAS 7310', 'N/A', 'N/A', '1800 572 152 ', 'eceitasmania@ndis.gov.au'],
+                [-42.8854419, 147.3242857, 'Hobart (ECEI Partner/Baptcare)', '175 Collins Street, Hobart, TAS 7000', 'N/A', 'N/A', '03 6283 5700', 'N/A'],
+                [-41.4313109, 147.1405433, 'Launceston (ECEI Partner/Baptcare)', 'Level 1, 8 Boland St, Launceston, TAS 7250', 'N/A', 'N/A', '03 6283 5700', 'N/A'],
+                [-42.8668244, 147.3703687, 'Rosny Park (ECEI Partner/Mission Australia)', '1/11 Bayfield Street, Rosny Park, TAS 7018', 'N/A', 'N/A', '1800 572 152', 'ECEITASMANIA@ndis.gov.au'],
+                [-41.180357, 146.3617854, 'Devonport (LAC Partner/Mission Australia)', '21-23 Stewart Street, Devonport, TAS 7310', 'N/A', 'N/A', '03 6420 6850', 'NDISLACnorthwest@missionaustralia.com.au'],
+                [-42.8854419, 147.32434569999998, 'Hobart (LAC Partner/Baptcare)', '175 Collins St, Hobart, TAS 7000', 'Open 9am - 5pm', 'Monday - Friday', '1800 290 555', 'info@baptcare.org.au'],
+                [-41.4313109, 147.14060329999998, 'Launceston (LAC Partner/Baptcare)', 'Level 1, 8 Boland St, Launceston, TAS 7250', 'Open 9am - 5pm', 'Monday - Friday', '1800 290 555', 'info@baptcare.org.au'],
+                [-42.8668244, 147.3704287, 'Rosny Park (LAC Partner/Mission Australia)', '1/11 Bayfield Street, Rosny Park, TAS 7018', 'N/A', 'N/A', '03 6212 6850', 'NDISLACsoutheast@missionaustralia.com.au'],
+                [-36.0769552, 146.9236679, 'Albury', '(sharing with DHS) 430 Wilson Street, Albury NSW 2640', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-37.2854916, 142.936474, 'Ararat', '(Sharing with DHS) Cnr King Street &amp; High Street, Ararat VIC 3377', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-37.563325, 143.8587894, 'Ballarat', '(Sharing with DHS) 12 Albert St, Ballarat VIC 3350', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-36.7635313, 144.2782535, 'Bendigo', '56-65 King Street, Bendigo VIC 3550', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-37.85891, 145.28449, 'Boroni', '(Sharing with DHS) 3 William Street, Boronia Victoria 3155', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-37.8211569, 145.1241375, 'Box Hill', '(Sharing with DHS) 3-13 Harrow Street, Box Hill Victoria 3128', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-38.3404861, 143.5827208, 'Colac', '13 Connor St, Colac VIC 3250', 'N/A', 'N/A', 'N/A', 'N/A'],
+                [-38.07405610000001, 144.3577917, 'Corio', '(sharing with DHS) Corio Village Shopping Centre, corner Bacchus Marsh and Purnell Roads, Geelong VIC 3214', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-37.738176, 145.0022301, 'Darebin', '(sharing with DHS) 251 Murray Road, Preston VIC 3072', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-36.1263583, 144.7478992, 'Echuc', '466-474 High Street Echuca VIC 3564', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-37.6543494, 145.0236128, 'Epping', '560-650 High Street, Epping Vic 3076', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-38.1495674, 144.364313, 'Geelong', '168 - 170 Little Malop Street, Geelong VIC 3220', 'N/A', 'N/A', 'N/A', 'N/A'],
+                [-36.7135089, 142.2004277, 'Horsham', '(Sharing with DHS) Cnr Darlot Street &amp; Mclachlan Street Horsham VIC 3400', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-38.1957452, 146.5363795, 'Traralgon', '(Sharing with Medicare) 88 Seymour Street, Traralgon VIC 3844', 'Open 9am - 5pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-38.3827013, 142.4857092, 'Warrnambool', '(Sharing with DHS) 109 Lava Street, Warrnambool VIC 3280', 'Open 8.30am - 4.30pm', 'Monday - Friday', 'N/A', 'N/A'],
+                [-37.2825952, 142.9308082, 'Ararat (ECEI Partner/Latrobe Community Health Service)', '62 High Street, Ararat, VIC 3377', 'N/A', 'N/A', '1800 242 696', 'N/A'],
+                [-37.6535191, 144.4221067, 'Bacchus Marsh (ECEI Partner/Latrobe Community Health Service)', '182 Hallets Way, Bacchus Marsh, VIC 3340', 'N/A', 'N/A', '1800 242 696', 'N/A'],
+                [-37.5631869, 143.85593989999998, 'Ballarat (ECEI Partner/Latrobe Community Health Services)', 'Central Square Ballarat Level 2 18 Armstrong Street South Ballarat, VIC 3350', 'Open 9.00am - 5.00pm', 'Monday - Friday', '1800 242 696', 'N/A'],
+                [-38.047735, 144.17064499999998, 'Bannockburn (ECEI Partner/Latrobe Community Health Service)', '33 High Street, Bannockburn, VIC 3331', 'N/A', 'N/A', '1800 242 696', 'N/A'],
+                [-37.4397074, 143.38025589999998, 'Beaufort (ECEI Partner/Latrobe Community Health Service)', 'Beaufort Community Bank Complex 49 Park Road, Beaufort, VIC 3373', 'N/A', 'N/A', '1800 242 696', 'N/A'],
+                [-36.7614149, 144.2780776, 'Bendigo (ECEI Partner/Intereach)', '384 Hargreaves Street Bendigo, VIC 3550', 'Open 9.00am - 5.00pm', 'Monday - Friday', '1300 488 226', 'N/A'],
+                [-37.6754895, 144.9208866, 'Broadmeadows (ECEI Partner/Brotherhood of St Laurence)', '1H Homemaker Centre Broadmeadows, VIC 3047', 'Open 9am - 5pm', 'Monday - Friday', '1300 275 634', 'N/A'],
+                [-38.2316148, 143.1462534, 'Camperdown (ECEI Partner/Latrobe Community Health Service)', '194 Manifold Street Camperdown, VIC 3260', 'N/A', 'N/A', '1800 242 696', 'N/A'],
+                [-37.8763142, 145.0992289, 'Chadstone (ECEI Partner/Link Health &amp; Community)', '94 Batesford Road, Chadstone, VIC 3148', 'N/A', 'N/A', '1300 552 509', 'N/A'],
+                [-37.9276151, 145.1174516, 'Clayton (ECEI Partner/Link Health &amp; Community)', 'Level 1 9-15 Cooke Street, Clayton, VIC 3168', 'N/A', 'N/A', '1300 552 509', 'N/A'],
+                [-37.7444682, 144.96466819999998, 'Coburg (ECEI Partner/Brotherhood of St Laurence)', '1A Louisa Street, Coburg, VIC 3058', 'Open 9am - 5pm', 'Monday - Friday', '1300 275 634', 'info@bsl.org.au'],
+                [-38.3411076, 143.5866017, 'Colac (ECEI Partner/Barwon Child, Youth &amp; Family Services)', '54C Bromfield Street, Colac, VIC 3250', 'Open 9.00am - 5.00pm', 'Monday - Friday', '(03) 5231 4740', 'N/A'],
+                [-37.3408974, 144.1442823, 'Daylesford (ECEI Partner/Latrobe Community Health Service)', '22 Howe Street, Daylesford, VIC 3460', 'N/A', 'N/A', '1800 242 696', 'N/A'],
+                [-38.1364193, 145.8580921, 'Drouin (ECEI Partner/Link Health &amp; Community)', 'By appointment only 8-9 Commerican Place, Drouin, VIC 3818', 'N/A', 'N/A', '(1800 546 532 34', 'linkhc@linkhc.org.au'],
+                [-36.1256301, 144.74875459999998, 'Echuca (ECEI Partner/Intereach)', '203 - 205 Hare St, Echuca, VIC 3564', 'Open 9.00am - 5.00pm', 'Monday - Friday', '1300 968 140', 'N/A'],
+                [-37.036447, 141.297586, 'Edenhope (ECEI Partner/Latrobe Community Health Service)', 'Appointment only 49 Elizabeth Street, Edenhope, VIC 3318', 'N/A', 'N/A', '1800 242 696', 'N/A'],
+                [-37.8046756, 144.9772304, 'Fitzroy (ECEI Partner/Brotherhood of St Laurence)', '95 Brunswick Street, Fitzroy, VIC 3065', 'N/A', 'N/A', '1300 275 634', 'N/A'],
+                [-38.145125, 145.12232999999998, 'Frankston (ECEI Partner/Brotherhood of St Laurence)', '38 Playne Street, Frankston, VIC 3199', 'Open 9am - 5pm', 'Monday - Friday', '1300 275 634', 'N/A'],
+                [-38.1447229, 144.3491698, 'Geelong West (ECEI Partner/Barwon Child, Youth &amp; Family Services)', '12-14 Halstead Place, Geelong West, VIC 3216', 'Open 9.00am - 5.00pm', 'Monday - Friday', '03 5226 8600', 'info@bcyf.org.au'],
+                [-37.8784044, 145.1626021, 'Glen Waverley (ECEI Partner/Link Health &amp; Community)', '2 Euneva Avenue, Glen Waverley, VIC 3150', 'N/A', 'N/A', '1300 552 509', 'N/A'],
+                [-37.7029651, 145.1044589, 'Greensborough (ECEI Partner/Brotherhood of St Laurence)', '65 Main Street, Greensborough, VIC 3088', 'N/A', 'N/A', '1300 275 634', 'N/A'],
+                [-37.7438982, 142.022648, 'Hamilton (ECEI Partner/Latrobe Community Health Service)', '81 Gray Street, Hamilton, VIC 3300', 'N/A', 'N/A', '1800 242 696', 'N/A'],
+                [-37.9500576, 145.0804372, 'Heatherton (ECEI Partner/Brotherhood of St Laurence)', '19 Corporate Drive, Heatherton, VIC 3202', 'Open 9am - 5pm', 'Monday - Friday', '1300 275 634', 'N/A'],
+                [-36.7174508, 142.1993631, 'Horsham (ECEI Partner/Latrobe Community Health Service)', '142 Firebrace Street, Horsham, VIC 3400', 'Open 9am - 5pm', 'Monday - Friday', '1800 242 696', 'westLAC@ndis.gov.au'],
+                [-37.244086, 144.4468743, 'Kyneton (ECEI Partner/Intereach)', '89E Piper Street, Kyneton, VIC 3444', 'Open 9.00am - 5.00pm', 'Monday - Friday', '1300 968 140', 'N/A'],
+                [-37.767244, 145.326558, 'Mooroolbark (ECEI Partner/Link Health &amp; Community)', 'By appointment only Rolling Hills Family &amp; Children Services, Landscape Drive Mooroolbark, VIC 3138', 'N/A', 'N/A', '(1800 546 532 34', 'linkhc@linkhc.org.au'],
+                [-36.334389, 141.654723, 'Nhill (ECEI Partner/Latrobe Community Health Service)', 'Appointment only 80 McPherson Street Nhill, VIC 3418', 'N/A', 'N/A', '1802 242 696', 'N/A'],
+                [-38.34522150000001, 141.6013885, 'Port Fairy (ECEI Partner/Latrobe Community Health Service)', '66A Hurd Street Port Fairy, VIC 3284', 'N/A', 'N/A', '1802 242 696', 'N/A'],
+                [-38.38285, 142.2381311, 'Portland (ECEI Partner/Latrobe Community Health Service)', 'Appointment only Port Fairy Community House Railway Place Portland, VIC 3305', 'N/A', 'N/A', '1802 242 696', 'N/A'],
+                [-37.7431432, 145.0028125, 'Preston (ECEI Partner/Brotherhood of St Laurence)', '2/293 High St, Preston, VIC 3072', 'Open 9am - 5pm', 'Monday - Friday', '(1300 275 323', 'N/A'],
+                [-38.354306, 144.912138, 'Rosebud (ECEI Partner/Brotherhood of St Laurence)', 'Ground Floor 843-849 Pt Nepean Road, Rosebud, VIC 3939', 'Open 9am - 5pm', 'Monday - Friday', '1300 275 634', 'N/A'],
+                [-37.783111, 144.8321327, 'Sunshine (ECEI Partner/Brotherhood of St Laurence)', '301 Hampshire Road, Sunshine, VIC 3020', 'Open 9am - 5pm', 'Monday - Friday', '1300 275 634', 'N/A'],
+                [-37.682755, 145.0165695, 'Thomastown (ECEI Partner/Brotherhood of St Laurence)', '1/1 Latitude Boulevard Thomastown, VIC 3074', 'N/A', 'N/A', '1300 275 634', 'N/A'],
+                [-38.1956143, 146.5386185, 'Traralgon (ECEI Partner/Link Health &amp; Community)', 'Suite 1, Level 1, 7-13 Post Office Place, Traralgon, VIC 3844', 'N/A', 'N/A', '(1800 546 532 34', 'linkhc@linkhc.org.au'],
+                [-37.832982, 145.208542, 'Vermont (ECEI Partner/Link Health &amp; Community)', 'Appointment only 1/607 Canterbury Road Vermont, VIC 3133', 'N/A', 'N/A', '1300 552 509', 'N/A'],
+                [-36.3550413, 146.323453, 'Wangaratta (ECEI Partner/Merri Community Health Service)', 'Wangaratta Government Centre 62 - 68 Ovens Street, Wangaratta, VIC 3677', 'Open 9am - 5pm', 'Monday - Friday', '1300 665 437', 'N/A'],
+                [-36.250983, 142.3838792, 'Warracknabeal (ECEI Partner/Latrobe Community Health Service)', 'Appointment only 2 Cox Street Warracknabeal, VIC 3393', 'N/A', 'N/A', '1800 242 696', 'N/A'],
+                [-38.3824268, 142.4885936, 'Warrnambool (ECEI Partner/Latrobe Community Health Service)', '1/505 Raglan Parade Warrnambool, VIC 3280', 'Open 9am - 5pm', 'Monday - Friday', '1800 242 696', 'N/A'],
+                [-37.782113, 145.6121121, 'Yarra Junction (ECEI Partner/Link Health &amp; Community)', 'By appointment only Upper Yarra Family Centre, 2444', 'N/A', 'N/A', '(1800 546 532 34', 'linkhc@linkhc.org.au'],
+                [-37.2825952, 142.9307482, 'Ararat (LAC Partner/Latrobe Community Health Services)', '62 High Street, Ararat VIC 3377', 'Open 9am - 5pm', 'Monday - Friday', '1800 242 696', 'ndis@lchs.com.au'],
+                [-37.6535191, 144.4221667, 'Bacchus Marsh (LAC Partner/Latrobe Community Health Services)', '182 Hallets Way, Bacchus Marsh, VIC 3340', 'Open 9am - 5pm', 'Monday - Friday', '1800 242 696', 'ndis@lchs.com.au'],
+                [-37.5631869, 143.8558799, 'Ballarat (LAC Partner/Latrobe Community Health Services)', 'Central Square Ballarat, Level 2, 18 Armstrong Street, South Ballarat, VIC 3350', 'Open 9am - 5pm', 'Monday - Friday', '1800 242 696', 'ndis@lchs.com.au'],
+                [-38.047735, 144.170585, 'Bannockburn (LAC Partner/Latrobe Community Health Services)', '33 High Street, Bannockburn VIC 3331', 'Open 9am - 5pm', 'Monday - Friday', '1800 242 696', 'ndis@lchs.com.au'],
+                [-37.8423243, 145.2664807, 'Bayswater (LAC Partner/Latrobe Community Health Services)', 'Mountain High Shopping Centre Bayswater VIC 3153', 'N/A', 'N/A', '1800 242 696', 'N/A'],
+                [-37.4397074, 143.3801959, 'Beaufort (LAC Partner/Latrobe Community Health Services)', 'Beaufort Community Bank Complex, 49 Park Road, Beaufort, VIC 3373', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-36.5498459, 145.9832477, 'Benalla (LAC Partner/Latrobe Community Health Services)', '24 Church Street, Benalla, VIC 3672', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-36.7614149, 144.27813759999998, 'Bendigo (LAC Partner/Intereach)', '384 Hargreaves Street, Bendigo, VIC 3550', 'N/A', 'N/A', '1300 488 226', 'N/A'],
+                [-37.8177671, 145.117496, 'Box Hill (LAC Partner/Latrobe Community Health Services)', '26-28 Prospect Street, Box Hill, VIC 3128', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-36.7315402, 146.9688293, 'Bright (LAC Partner/Latrobe Community Health Services)', 'Alpine Fitness Centre, Hawthorn Lane, Bright VIC 3741', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-37.6754895, 144.9208266, 'Broadmeadows (LAC Partner/Brotherhood of St Laurence)', '1H Homemaker Centre Broadmeadows, VIC 3047', 'Open 9am - 5pm', 'Monday - Friday', '1300 275 634', 'info@bsl.org.au'],
+                [-38.2316148, 143.1463134, 'Camperdown (LAC Partner/Latrobe Community Health Services)', '194 Manifold Street, Camperdown, VIC 3260', 'Open 9am - 5pm', 'Monday - Friday', '1800 242 696', 'westLAC@ndis.gov.au'],
+                [-37.051243, 144.220742, 'Castlemaine (LAC Partner/Intereach)', '1A &amp; 5, 9 Halford Street, Castlemaine, VIC 3450', 'N/A', 'N/A', '1300 488 226', 'lac_loddon@intereach.com.au'],
+                [-37.7634738, 145.3092516, 'Chirnside Park (LAC Partner/Latrobe Community Health Services)', '1 Eastridge Street, Chirnside Park, VIC 3116', 'N/A', 'N/A', '1800 242 696', 'N/A'],
+                [-38.3137811, 146.4211687, 'Churchill (LAC Partner/Latrobe Community Health Services)', '20-24 Philip Parade, Churchill VIC 3842', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-37.7444682, 144.9646082, 'Coburg (LAC Partner/Brotherhood of St Laurence)', '1A Louisa Street, Coburg, VIC 3058', 'Open 9am - 5pm', 'Monday - Friday', '1300 275 634', 'info@bsl.org.au'],
+                [-38.3404861, 143.5826608, 'Colac (LAC Partner/Latrobe Community Health Services)', '13 Connor Street, Colac, VIC 3250', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-36.199312, 147.902714, 'Corryong (LAC Partner/Latrobe Community Health Services)', 'Upper Murray Health &amp; Community Services, Kiell Street, Corryong VIC 3707', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-37.3408974, 144.14434229999998, 'Daylesford (LAC Partner/Latrobe Community Health Services)', '22 Howe Street, Daylesford, VIC 3460', 'N/A', 'N/A', '1800 242 696', 'ndis@lchs.com.au'],
+                [-37.7887825, 145.1255993, 'Doncaster (LAC Partner/Latrobe Community Health Services)', '90 Tram Road, Doncaster VIC 3108', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-36.1256301, 144.7486946, 'Echuca (LAC Partner/Intereach)', '203 - 205 Hare Street, Echuca, VIC 3564', 'Open 9am - 5pm', 'Monday - Friday', '1300 968 140', 'lac_loddon@intereach.com.au'],
+                [-37.0360827, 141.2974518, 'Edenhope (LAC Partner/Latrobe Community Health Services)', '49 Elizabeth Street, Edenhope, VIC 3318', 'N/A', 'N/A', '1800 242 696', 'westLAC@ndis.gov.au'],
+                [-37.8046756, 144.9771704, 'Fitzroy (LAC Partner/Brotherhood of St Laurence)', '95 Brunswick Street, Fitzroy, VIC 3065', 'Open 9am - 5pm', 'Monday - Friday', '1300 275 634', 'info@bsl.org.au'],
+                [-38.145125, 145.12227, 'Frankston (LAC Partner/Brotherhood of St Laurence)', '38 Playne Street, Frankston, VIC 3199', 'Open 9am - 5pm', 'Monday - Friday', '1300 275 634', 'info@bsl.org.au'],
+                [-38.1513385, 144.3637067, 'Geelong (LAC Partner/Latrobe Community Health Services)', 'Level 1, 73-79 Little Ryrie Street, Geelong VIC 3220', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-37.8992463, 145.1424982, 'Glen Waverley (LAC Partner/Latrobe Community Health Services)', '541 Blackburn Road, Glen Waverley, VIC 3149', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-37.7029651, 145.1045189, 'Greensborough (LAC Partner/Brotherhood of St Laurence)', '65 Main St, Greensborough, VIC 3088', 'Open 9am - 5pm', 'Monday - Friday', '(1300 275 634', 'N/A'],
+                [-37.7438982, 142.022588, 'Hamilton (LAC Partner/Latrobe Community Health Services)', '81 Gray Street, Hamilton VIC 3300', 'N/A', 'N/A', '1800 242 696', 'westLAC@ndis.gov.au'],
+                [-37.8213025, 145.0218226, 'Hawthorn (LAC Partner/Latrobe Community Health Services)', '40 Burwood Street, Hawthorn, VIC 3122', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-37.6555974, 145.5244438, 'Healesville (LAC Partner/Latrobe Community Health Services)', 'Healesville Living &amp; Learning Centre, 1 Badger Creek Road, Healesville VIC 3777', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-37.9500576, 145.0804972, 'Heatherton (LAC Partner/Brotherhood of St Laurence)', '19 Corporate Drive, Heatherton, VIC 3202', 'Open 9am - 5pm', 'Monday - Friday', '1300 275 634', 'N/A'],
+                [-36.7174508, 142.1994231, 'Horsham (LAC Partner/Latrobe Community Health Services)', '142 Firebrace Street, Horsham, VIC 3400', 'Open 9am - 5pm', 'Monday - Friday', '1800 242 696', 'westLAC@ndis.gov.au'],
+                [-37.244086, 144.44693429999998, 'Kyneton (LAC Partner/Intereach)', '89E Piper Street, Kyneton VIC 3444', 'N/A', 'N/A', '1300 488 226', 'N/A'],
+                [-38.4753295, 145.9554613, 'Leongatha (LAC Partner/Latrobe Community Health Services)', 'Community College Gippsland Howard Street, Leongatha, VIC 3953', 'N/A', 'N/A', '1800 242 696', 'N/A'],
+                [-37.0523788, 146.0913203, 'Mansfield (LAC Partner/Latrobe Community Health Service)', '13 High Street, Mansfield, VIC 3722', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-37.0491211, 143.7405678, 'Maryborough (LAC Partner/Intereach)', '88 Burke Street, Maryborough VIC 3465', 'Open 9am - 5pm', 'Monday - Friday', '1300 488 226', 'N/A'],
+                [-38.1802778, 146.2606384, 'Moe (LAC Partner/Latrobe Community Health Service)', '42-44 Fowler Street, Moe, VIC 3825', 'Open 9am - 5pm', 'Monday - Friday', '1800 242 696', 'info@lchs.com.au'],
+                [-38.2353949, 146.3998085, 'Morwell (LAC Partner/Latrobe Community Health Service)', '81-87 Buckley Street, Morwell, VIC 3840', 'Open 9am - 5pm', 'Monday - Friday', '1800 242 696', 'info@lchs.com.au'],
+                [-38.0235007, 145.3137975, 'Narre Warren (LAC Partner/Latrobe Community Health Service)', 'Appointment only Waterman Business Centre 64 Victor Crescent, Narre Warren, VIC 3805', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-36.334389, 141.654663, 'Nhill (LAC Partner/Latrobe Community Health Services)', '80 McPherson Street, Nhill, VIC 3418', 'N/A', 'N/A', '1800 242 696', 'westLAC@ndis.gov.au'],
+                [-38.38285, 142.2380711, 'Port Fairy (LAC Partner/Latrobe Community Health Services)', 'Port Fairy Community House, Railway Place, Port Fairy, VIC 3953', 'N/A', 'N/A', '1800 242 696', 'westLAC@ndis.gov.au'],
+                [-38.34522150000001, 141.6014485, 'Portland (LAC Partner/Latrobe Community Health Services)', '66A Hurd Street, Portland, VIC 3305', 'N/A', 'N/A', '1800 242 696', 'westLAC@ndis.gov.au'],
+                [-37.7431432, 145.0027525, 'Preston (LAC Partner/Brotherhood of St Laurence)', '293 High St, Preston, VIC 3072', 'Open 9am - 5pm', 'Monday - Friday', '(1300 275 634', 'info@bsl.org.au'],
+                [-38.2688928, 144.6631427, 'Queenscliff (LAC Partner/Latrobe Community Health Services)', '3 Tobin Drive, Queenscliff VIC 3225', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-37.8169753, 145.2250145, 'Ringwood (LAC Partner/Latrobe Community Health Services)', '88 Maroondah Highway, Ringwood, VIC 3134', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-38.354306, 144.912078, 'Rosebud (LAC Partner/Brotherhood of St Laurence)', 'Ground Floor 843-849 Point Nepean Road, Rosebud, VIC 3939', 'Open 9am - 5pm', 'Monday - Friday', '1300 275 634', 'N/A'],
+                [-37.9141226, 145.2196865, 'Scoresby (LAC Partner/Latrobe Community Health Service)', 'Waterman Business Centre, 1330 Ferntree Gully Road, Scoresby, VIC 3179', 'Open 9am - 5pm', 'Monday - Friday', '1800 242 696', 'info@lchs.com.au'],
+                [-37.8306139, 144.959214, 'South Melbourne (LAC Partner/Brotherhood of St Laurence)', '4/200 Clarendon Street, South Melbourne, VIC 3205', 'Open 9am - 5pm', 'Monday - Friday', '1300 275 634', 'info@bsl.org.au'],
+                [-37.6517556, 145.0859519, 'South Morang (LAC Partner/Brotherhood of St Laurence)', '16/797 Plenty Road, South Morang, VIC 3752', 'Open 9am - 5pm', 'Monday - Friday', '(1300 275 634', 'info@bsl.org.au'],
+                [-37.0557155, 142.781878, 'Stawell (LAC Partner/Latrobe Community Health Services)', '134 Main Street, Stawell, VIC 3380', 'Open 9am - 5pm', 'Monday - Friday', '1800 242 696', 'westLAC@ndis.gov.au'],
+                [-37.682755, 145.0166295, 'Thomastown (LAC Partner/Brotherhood of St Laurence)', '1/1 Latitude Boulevard, Thomastown, VIC 3074', 'Open 9am - 5pm', 'Monday - Friday', '(1300 275 634', 'info@bsl.org.au'],
+                [-38.3245964, 144.3183912, 'Torquay (LAC Partner/Latrobe Community Health Service)', 'Tristar Medical Clinic, 2/136 Geelong Road, Torquay VIC 3228', 'Open 9am - 5pm', 'Monday - Friday', '1800 242 696', 'info@lchs.com.au'],
+                [-36.3527891, 146.3268187, 'Wangaratta (LAC Partner/Latrobe Community Health Services)', '90-100 Ovens St, Wangaratta, Vic 3677', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-36.2508256, 142.3841099, 'Warracknabeal (LAC Partner/Latrobe Community Health Services)', '2 Cox Street, Warracknabeal, VIC 3393', 'N/A', 'N/A', '1800 242 696', 'westLAC@ndis.gov.au'],
+                [-38.1624699, 145.9333328, 'Warragul (LAC Partner/Latrobe Community Health Services)', '31 Mason Street, Warragul VIC 3820', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-38.3824268, 142.4885336, 'Warrnambool (LAC Partner/Latrobe Community Health Services)', '505 Raglan Parade, Warrnambool, VIC 3280', 'Open 9am - 5pm', 'Monday - Friday', '1800 242 696', 'westLAC@ndis.gov.au'],
+                [-36.1141144, 146.8635033, 'Wodonga (LAC Partner/Latrobe Community Health Services)', '1b Footmark Street, Wodonga, VIC 3690', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-38.6057203, 145.5924069, 'Wonthaggi (LAC Partner/Latrobe Community Health Services)', '86-88 Graham Street, Wonthaggi, VIC 3995', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-36.312674, 146.838858, 'Yackandandah (LAC Partner/Latrobe Community Health Services)', 'Yackandandah Community Centre, 29 High Street, Yackandandah VIC 3749', 'N/A', 'N/A', '1800 242 696', 'info@lchs.com.au'],
+                [-31.8923058, 116.0046077, 'Midland', '78 - 80 Railway Parade, (entrance Marion St) Midland WA 6056', 'N/A', 'N/A', 'N/A', 'N/A']];
+
+                // function to generate infowindow messages
+                function getinfo(office) {
+                    var hours, days, phone, email
+
+                    // 4_hours
+                    if (office[4] != 'N/A') {
+                        hours = office[4] + "<br><br>"
+                    } else {
+                        hours = ""
+                    };
+
+                    // 5_days
+                    if (office[5] != 'N/A') {
+                        days = office[5] + "<br><br>"
+                    } else {
+                        days = ""
+                    };
+
+                    // 6_phone
+                    if (office[6] != 'N/A') {
+                        phone = office[6] + "<br><br>"
+                    } else {
+                        phone = ""
+                    };
+
+                    '<a href=mailto:westLAC@ndis.gov.au>westLAC@ndis.gov.au</a>'
+
+                    // 7_email
+                    if (office[7] != 'N/A') {
+                        email = "<a href=mailto:" + office[7] + ">" + office[7] + "</a>"
+                    } else {
+                        email = ""
+                    };
+
+                    var result =
+                        '<div id="content">' +
+                        '<div id="siteNotice">' +
+                        '</div>' +
+
+                        // 2_name
+                        '<h3 id="firstHeading" class="firstHeading">' + office[2] + '</h3>' +
+                        '<div id="bodyContent">' +
+                        // 3_address
+                        office[3] + '<br><br>' +
+                        // 4_hours
+                        hours +
+                        // 5_days
+                        days +
+                        // 6_phone
+                        phone +
+                        // 7_email
+                        email +
+                        '</div>' +
+                        '</div>';
+
+                    return result
+                }
+
+                function initMap() {
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 4,
+                        center: new google.maps.LatLng(-26.509500, 134.930378),
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    });
+
+                    var infowindow = new google.maps.InfoWindow({ maxWidth: 250 });
+                    var marker, i;
+
+                    function toggleBounce(marker) {
+                        if (marker.getAnimation() != null) {
+                            marker.setAnimation(null);
+                        } else {
+                            marker.setAnimation(google.maps.Animation.BOUNCE);
+                            setTimeout(function () {
+                                marker.setAnimation(null);
+                            }, 750);
+                        }
+                    }
+                    var markers = []
+                    var bounds = new google.maps.LatLngBounds()
+                    for (i = 0; i < locations.length; i++) {
+                        marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(locations[i][0], locations[i][1]),
+                            map: map
+                        });
+                        bounds.extend(marker.getPosition());
+                        markers.push(marker)
+
+                        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                            return function () {
+                                toggleBounce(marker);
+                                infowindow.setContent(getinfo(locations[i]));
+                                infowindow.open(marker.get('map'), marker);
+                            }
+                        })(marker, i));
+                    }
+                    var options = {
+                        imagePath: 'https://cdn.rawgit.com/googlemaps/v3-utility-library/cdde3b25/markerclustererplus/images/m'
+                    };
+                    var markerCluster = new MarkerClusterer(map, markers, options);
+                }
+            </script>
+
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq3dAnNzFMQHd8rPZuKGUCR2UYpbRjvZ8&callback=initMap"></script>
+
+            <script src="https://cdn.rawgit.com/googlemaps/v3-utility-library/cdde3b25/markerclustererplus/src/markerclusterer.js"></script>
+
+
+            <font face="arial">
+                <div style="color:darkblue;">
+                    <h2 style="margin:2rem"> &nbsp;&nbsp; NDIS Office Locations</h2>
+                </div>
+            </font>
+            <style>
+                /* Set the size of the div element that contains the map */
+                #map {
+                    height: 450px; /* The height is 400 pixels */
+                    width: 80%; /* The width is the width of the web page */
+                    margin: 3rem;
+                }
+            </style>
+        </article>
+
+        <!-- Footer -->
+        <footer id="footer">
+
+            <ul class="copyright">
+                <li>&copy; Benefind</li>
+                <li>About US: <a href="#">Infinite Technology</a></li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery.min.js"></script>
+    <script src="~/lib/jquery.scrollex.min.js"></script>
+    <script src="~/lib/jquery.scrolly.min.js"></script>
+    <script src="~/lib/browser.min.js"></script>
+    <script src="~/lib/breakpoints.min.js"></script>
+    <script src="~/js/util.js"></script>
+    <script src="~/js/main.js"></script>
+
+</body>
+</html>

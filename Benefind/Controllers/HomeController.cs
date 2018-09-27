@@ -6,20 +6,27 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Benefind.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 
 namespace Benefind.Controllers
 {   
     public class HomeController : Controller
     {
+        private readonly DbBenefit _context;
+
+        public HomeController(DbBenefit context)
+        {
+            _context = context;
+        }
 
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Login()
+        public IActionResult WhatisNDIS()
         {
-            return View();
+            return View("WhatisNDIS");
         }
 
         public IActionResult About()
@@ -30,16 +37,23 @@ namespace Benefind.Controllers
 
         }
 
-        public IActionResult Contact()
+        public IActionResult JoinNDIS()
         {
-            ViewData["Message"] = "Your contact page.";
 
-            return View();
+            return View("JoinNDIS");
         }
 
-        public IActionResult Privacy()
+        public async Task<IActionResult> Benefits(int? category)
         {
-            return View();
+            var benefits = from b in _context.Ndis201819
+                           select b;
+            if (!String.IsNullOrEmpty(category.ToString()))
+            {
+                benefits = benefits.Where(b => b.SupportCategoryNumber.Contains(category.ToString()));
+                return View(await benefits.AsNoTracking().ToListAsync());
+            }
+            return View(await _context.Ndis201819.ToListAsync());
+            //return View("Benefits");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

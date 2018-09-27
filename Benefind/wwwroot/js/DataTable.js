@@ -64,12 +64,14 @@ $(document).ready(function () {
 //ajax call for filtered results when "show result" is clicked
 $("#nav-showresult-tab").on('click', function () {
 
+    var hostString = window.location.protocol + "//" + window.location.host + "/";
     var filteredResult = getQuizValue();
     console.log(JSON.stringify(filteredResult));
 
     $.ajax({
         type: 'POST',
-        url: "Ndis201819/Filter",
+        //url: "Ndis201819/Filter",
+        url: "/Ndis201819/Filter/",
         data: JSON.stringify(filteredResult),
         contentType: "application/json; charset=utf-8",
         dataType: "json",   
