@@ -249,8 +249,329 @@ namespace Benefind.Controllers
                 result = result.Union(a);
             }
 
+            //QUIZL: REAL home modifications
+            if (model[20].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "06_183015389_0103_2_2" || b.SupportItemNumber == "06_183015390_0103_2_2"
+                                            || b.SupportItemNumber == "06_183015391_0103_2_2" || b.SupportItemNumber == "06_183015392_0103_2_2"
+                                            || b.SupportItemNumber == "06_183015393_0103_2_2" || b.SupportItemNumber == "06_183015394_0103_2_2"
+                                            || b.SupportItemNumber == "06_183015395_0103_2_2" || b.SupportItemNumber == "06_121703375_0111_2_2"
+                                            select b;
+                result = result.Union(a);
+            }
+
+            if (model[21].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "06_181806381_0111_2_2" || b.SupportItemNumber == "06_181806382_0111_2_2"
+                                            || b.SupportItemNumber == "06_182403383_0111_2_2" || b.SupportItemNumber == "06_182488376_0111_2_2"
+                                            || b.SupportItemNumber == "06_182488377_0111_2_2" || b.SupportItemNumber == "06_182488378_0111_2_2"
+                                            || b.SupportItemNumber == "06_183315404_0111_2_2"
+                                            select b;
+                result = result.Union(a);
+            }
+
+            if (model[22].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "06_182488379_0111_2_2"
+                                            select b;
+                result = result.Union(a);
+            }
+
+            if (model[23].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "06_183003384_0111_2_2" || b.SupportItemNumber == "06_183005385_0111_2_2" || b.SupportItemNumber == "06_183007386_0111_2_2"
+                                            || b.SupportItemNumber == "06_183010387_0111_2_2" || b.SupportItemNumber == "06_183011388_0111_2_2" || b.SupportItemNumber == "06_183018396_0111_2_2"
+                                            || b.SupportItemNumber == "06_183018397_0111_2_2" || b.SupportItemNumber == "06_183018398_0111_2_2" || b.SupportItemNumber == "06_183018399_0111_2_2"
+                                            || b.SupportItemNumber == "06_183018400_0111_2_2" || b.SupportItemNumber == "06_183018401_0111_2_2" || b.SupportItemNumber == "06_183018401_0111_2_2"
+                                            || b.SupportItemNumber == "06_183018403_0111_2_2"
+                                            select b;
+                result = result.Union(a);
+            }
+
+            if (model[24].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "06_431_0131_2_2" || b.SupportItemNumber == "06_432_0131_2_2"
+                                            select b;
+                result = result.Union(a);
+            }
+
+            if (model[25].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "06_182488380_0111_2_2"
+                                            select b;
+                result = result.Union(a);
+            }
+
+            // generalised modification support
+            if (model[20].Option.Equals("yes") || (model[21].Option.Equals("yes")) || (model[22].Option.Equals("yes")) || (model[23].Option.Equals("yes")) || (model[25].Option.Equals("yes")))
+    {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "06_405_0111_2_2" || b.SupportItemNumber == "06_406_0111_2_2"
+                                            || b.SupportItemNumber == "06_407_0111_2_2" || b.SupportItemNumber == "06_408_0111_2_2"
+                                            select b;
+                result = result.Union(a);
+            }
 
 
+            //QUIZ: Consumables
+            if (model[26].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "03_050903053_0103_1_1" || b.SupportItemNumber == "03_092403054_0103_1_1" || b.SupportItemNumber == "03_092403055_0103_1_1"
+                                            || b.SupportItemNumber == "03_092406057_0103_1_1" || b.SupportItemNumber == "03_092406058_0103_1_1" || b.SupportItemNumber == "03_092406059_0103_1_1"
+                                            || b.SupportItemNumber == "03_092406061_0103_1_1" || b.SupportItemNumber == "03_092406062_0103_1_1" || b.SupportItemNumber == "03_092406063_0103_1_1"
+                                            || b.SupportItemNumber == "03_092488056_0103_1_1" || b.SupportItemNumber == "03_092489060_0103_1_1" || b.SupportItemNumber == "03_092718064_0103_1_1"
+                                            || b.SupportItemNumber == "03_093012065_0103_1_1" || b.SupportItemNumber == "03_093012066_0103_1_1" || b.SupportItemNumber == "03_093012067_0103_1_1"
+                                            || b.SupportItemNumber == "03_093012068_0103_1_1" || b.SupportItemNumber == "03_093012069_0103_1_1" || b.SupportItemNumber == "03_093012070_0103_1_1"
+                                            || b.SupportItemNumber == "03_093018071_0103_1_1" || b.SupportItemNumber == "03_093018072_0103_1_1" || b.SupportItemNumber == "03_093018073_0103_1_1"
+                                            || b.SupportItemNumber == "03_093018074_0103_1_1" || b.SupportItemNumber == "03_093018075_0103_1_1" || b.SupportItemNumber == "03_093018076_0103_1_1"
+                                            || b.SupportItemNumber == "03_093018077_0103_1_1" || b.SupportItemNumber == "03_093036132_0103_1_1" || b.SupportItemNumber == "03_093045133_0103_1_1"
+                                            || b.SupportItemNumber == "03_710930093_0103_1_1" || b.SupportItemNumber == "03_710930094_0103_1_1"
+                                            select b;
+                result = result.Union(a);
+            }
+
+            if (model[27].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "03_131_0103_1_1" || b.SupportItemNumber == "03_150930084_0103_1_1" || b.SupportItemNumber == "03_150930085_0103_1_1"
+                                            || b.SupportItemNumber == "03_150930086_0103_1_1" || b.SupportItemNumber == "03_150930087_0103_1_1"
+                                            select b;
+
+                result = result.Union(a);
+            }
+
+
+
+            if (model[28].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "03_089_0121_1_1" || b.SupportItemNumber == "03_090_0121_1_1" || b.SupportItemNumber == "03_091_0121_1_1"
+                                            select b;
+
+                result = result.Union(a);
+            }
+
+
+
+            //QUIZ: Assistive Technology
+            if (model[29].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "05_900101023_0130_1_2"
+                                            select b;
+                result = result.Union(a);
+            }
+
+            if (model[30].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "05_353_0108_1_2" || b.SupportItemNumber == "05_090703371_0109_1_2" || b.SupportItemNumber == "05_121204356_0109_1_2"
+                                            || b.SupportItemNumber == "05_121205357_0109_1_2" || b.SupportItemNumber == "05_121207358_0109_1_2" || b.SupportItemNumber == "05_121208359_0109_1_2"
+                                            || b.SupportItemNumber == "05_121209360_0109_1_2" || b.SupportItemNumber == "05_121212355_0109_1_2" || b.SupportItemNumber == "05_121212361_0109_1_2"
+                                            || b.SupportItemNumber == "05_121215362_0109_1_2" || b.SupportItemNumber == "05_121218363_0109_1_2" || b.SupportItemNumber == "05_121218364_0109_1_2"
+                                            || b.SupportItemNumber == "05_121218365_0109_1_2" || b.SupportItemNumber == "05_121218366_0109_1_2" || b.SupportItemNumber == "05_121221354_0109_1_2"
+                                            || b.SupportItemNumber == "05_121221367_0109_1_2" || b.SupportItemNumber == "05_121224368_0109_1_2" || b.SupportItemNumber == "05_121227369_0109_1_2"
+                                            || b.SupportItemNumber == "05_121230370_0109_1_2" || b.SupportItemNumber == "05_501212373_0109_1_2" 
+                                            select b;
+                result = result.Union(a);
+            }
+
+
+
+            if (model[31].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "05_121809102_0112_1_2" || b.SupportItemNumber == "05_121821103_0112_1_2" || b.SupportItemNumber == "05_122203291_0112_1_2"
+                                            || b.SupportItemNumber == "05_061826297_0112_1_2" || b.SupportItemNumber == "05_121805101_0112_1_2" || b.SupportItemNumber == "05_121806409_0112_1_2"
+                                            || b.SupportItemNumber == "05_122218293_0112_1_2" || b.SupportItemNumber == "05_223088289_0112_1_2" || b.SupportItemNumber == "05_300303288_0112_1_2"
+                                            || b.SupportItemNumber == "05_300303290_0112_1_2" || b.SupportItemNumber == "05_300303302_0112_1_2" || b.SupportItemNumber == "05_300309296_0112_1_2"
+                                            || b.SupportItemNumber == "05_300900292_0112_1_2" || b.SupportItemNumber == "05_300903294_0112_1_2" || b.SupportItemNumber == "05_300912300_0112_1_2"
+                                            || b.SupportItemNumber == "05_308800285_0112_1_2" || b.SupportItemNumber == "05_503000316_0112_1_2" || b.SupportItemNumber == "05_703000332_0112_1_2"
+                                            || b.SupportItemNumber == "05_713000342_0112_1_2" || b.SupportItemNumber == "05_803000349_0112_1_2"
+                                            select b;
+
+                result = result.Union(a);
+            }
+
+            if (model[32].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "05_150600320_0123_1_2" || b.SupportItemNumber == "05_158800321_0123_1_2" || b.SupportItemNumber == "05_222704219_0123_1_2"
+                                            || b.SupportItemNumber == "05_222712259_0123_1_2" || b.SupportItemNumber == "05_222716260_0123_1_2" || b.SupportItemNumber == "05_241303281_0123_1_2"
+                                            || b.SupportItemNumber == "05_241303282_0123_1_2" || b.SupportItemNumber == "05_241306283_0123_1_2" || b.SupportItemNumber == "05_702413331_0123_1_2"
+                                            || b.SupportItemNumber == "05_712413341_0123_1_2" || b.SupportItemNumber == "05_802413323_0123_1_2"
+                                            select b;
+
+                result = result.Union(a);
+            }
+
+            if (model[33].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "05_801812347_0103_1_2" || b.SupportItemNumber == "05_801809436_0103_1_2"
+                                            || b.SupportItemNumber == "05_801288434_0103_1_2" || b.SupportItemNumber == "05_800912344_0103_1_2" || b.SupportItemNumber == "05_718888439_0103_1_2"
+                                            || b.SupportItemNumber == "05_711812339_0103_1_2" || b.SupportItemNumber == "05_710912335_0103_1_2" || b.SupportItemNumber == "05_701812329_0103_1_2"
+                                            || b.SupportItemNumber == "05_701809338_0103_1_2" || b.SupportItemNumber == "05_701809328_0103_1_2" || b.SupportItemNumber == "05_700912325_0103_1_2"
+                                            || b.SupportItemNumber == "05_501812311_0103_1_2" || b.SupportItemNumber == "05_500933306_0103_1_2" || b.SupportItemNumber == "05_181288206_0103_1_2"
+                                            || b.SupportItemNumber == "05_223612273_0103_1_2" || b.SupportItemNumber == "05_188800051_0103_1_2" || b.SupportItemNumber == "05_241303281_0123_1_2"
+                                            || b.SupportItemNumber == "05_181288205_0103_1_2" || b.SupportItemNumber == "05_181233208_0103_1_2" || b.SupportItemNumber == "05_181227207_0103_1_2"
+                                            || b.SupportItemNumber == "05_181227206_0103_1_2" || b.SupportItemNumber == "05_181224204_0103_1_2" || b.SupportItemNumber == "05_181221203_0103_1_2"
+                                            || b.SupportItemNumber == "05_180921181_0103_1_2" || b.SupportItemNumber == "05_180939183_0103_1_2" || b.SupportItemNumber == "05_180939184_0103_1_2"
+                                            || b.SupportItemNumber == "05_180939187_0103_1_2" || b.SupportItemNumber == "05_181210197_0103_1_2" || b.SupportItemNumber == "05_181210199_0103_1_2"
+                                            || b.SupportItemNumber == "05_181210200_0103_1_2" || b.SupportItemNumber == "05_181210201_0103_1_2" || b.SupportItemNumber == "05_181212202_0103_1_2"
+                                            || b.SupportItemNumber == "05_098800044_0103_1_2" || b.SupportItemNumber == "05_123109155_0103_1_2" || b.SupportItemNumber == "05_123109156_0103_1_2"
+                                            || b.SupportItemNumber == "05_123109157_0103_1_2" || b.SupportItemNumber == "05_123121160_0103_1_2" || b.SupportItemNumber == "05_150300318_0103_1_2"
+                                            || b.SupportItemNumber == "05_150900319_0103_1_2" || b.SupportItemNumber == "05_180315322_0103_1_2" || b.SupportItemNumber == "05_180903180_0103_1_2"
+                                            || b.SupportItemNumber == "05_093307072_0103_1_2" || b.SupportItemNumber == "05_093307073_0103_1_2" || b.SupportItemNumber == "05_093307074_0103_1_2"
+                                            || b.SupportItemNumber == "05_093312075_0103_1_2" || b.SupportItemNumber == "05_093312080_0103_1_2" || b.SupportItemNumber == "05_093312081_0103_1_2"
+                                            || b.SupportItemNumber == "05_093318082_0103_1_2" || b.SupportItemNumber == "05_093327083_0103_1_2" || b.SupportItemNumber == "05_093330084_0103_1_2"
+                                            || b.SupportItemNumber == "05_091221065_0103_1_2" || b.SupportItemNumber == "05_091221066_0103_1_2" || b.SupportItemNumber == "05_091221067_0103_1_2"
+                                            || b.SupportItemNumber == "05_091224068_0103_1_2" || b.SupportItemNumber == "05_091225069_0103_1_2" || b.SupportItemNumber == "05_093300317_0103_1_2"
+                                            || b.SupportItemNumber == "05_093303078_0103_1_2" || b.SupportItemNumber == "05_093303079_0103_1_2" || b.SupportItemNumber == "05_093304076_0103_1_2"
+                                            || b.SupportItemNumber == "05_093305077_0103_1_2" || b.SupportItemNumber == "05_093307070_0103_1_2" || b.SupportItemNumber == "05_093307071_0103_1_2"
+                                            || b.SupportItemNumber == "05_091221065_0103_1_2" || b.SupportItemNumber == "05_091221066_0103_1_2" || b.SupportItemNumber == "05_091221067_0103_1_2"
+                                            || b.SupportItemNumber == "05_091224068_0103_1_2" || b.SupportItemNumber == "05_091225069_0103_1_2" || b.SupportItemNumber == "05_093300317_0103_1_2"
+                                            || b.SupportItemNumber == "05_093303078_0103_1_2" || b.SupportItemNumber == "05_093303079_0103_1_2" || b.SupportItemNumber == "05_093304076_0103_1_2"
+                                            || b.SupportItemNumber == "05_093305077_0103_1_2" || b.SupportItemNumber == "05_093307070_0103_1_2" || b.SupportItemNumber == "05_093307071_0103_1_2"
+                                            || b.SupportItemNumber == "05_091203053_0103_1_2" || b.SupportItemNumber == "05_091203054_0103_1_2" || b.SupportItemNumber == "05_091203055_0103_1_2"
+                                            || b.SupportItemNumber == "05_091203056_0103_1_2" || b.SupportItemNumber == "05_091203057_0103_1_2" || b.SupportItemNumber == "05_091203058_0103_1_2"
+                                            || b.SupportItemNumber == "05_091203059_0103_1_2" || b.SupportItemNumber == "05_091203060_0103_1_2" || b.SupportItemNumber == "05_091212061_0103_1_2"
+                                            || b.SupportItemNumber == "05_091212062_0103_1_2" || b.SupportItemNumber == "05_091218063_0103_1_2" || b.SupportItemNumber == "05_091221064_0103_1_2"
+                                            || b.SupportItemNumber == "05_043006001_0103_1_2" || b.SupportItemNumber == "05_043306002_0103_1_2" || b.SupportItemNumber == "05_043306003_0103_1_2"
+                                            || b.SupportItemNumber == "05_043306004_0103_1_2" || b.SupportItemNumber == "05_043306005_0103_1_2" || b.SupportItemNumber == "05_043318006_0103_1_2"
+                                            || b.SupportItemNumber == "05_053603008_0103_1_2" || b.SupportItemNumber == "05_053603009_0103_1_2" || b.SupportItemNumber == "05_053603010_0103_1_2"
+                                            || b.SupportItemNumber == "05_090603045_0103_1_2" || b.SupportItemNumber == "05_090900046_0103_1_2" || b.SupportItemNumber == "05_091203047_0103_1_2"
+                                            || b.SupportItemNumber == "05_091203048_0103_1_2" || b.SupportItemNumber == "05_091203049_0103_1_2" || b.SupportItemNumber == "05_091203052_0103_1_2"
+                                            select b;
+
+                result = result.Union(a);
+            }
+
+
+
+            if (model[34].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "05_220903233_0124_1_2" || b.SupportItemNumber == "05_220906234_0124_1_2" || b.SupportItemNumber == "05_221224237_0124_1_2"
+                                            || b.SupportItemNumber == "05_221833248_0124_1_2" || b.SupportItemNumber == "05_222100249_0124_1_2" || b.SupportItemNumber == "05_222102250_0124_1_2"
+                                            || b.SupportItemNumber == "05_222102251_0124_1_2" || b.SupportItemNumber == "05_222103252_0124_1_2" || b.SupportItemNumber == "05_222106253_0124_1_2"
+                                            || b.SupportItemNumber == "05_222109254_0124_1_2" || b.SupportItemNumber == "05_222109255_0124_1_2" || b.SupportItemNumber == "05_222109256_0124_1_2"
+                                            || b.SupportItemNumber == "05_222421257_0124_1_2" || b.SupportItemNumber == "05_223003279_0124_1_2" || b.SupportItemNumber == "05_223030280_0124_1_2"
+                                            || b.SupportItemNumber == "05_223603267_0124_1_2" || b.SupportItemNumber == "05_223612268_0124_1_2" || b.SupportItemNumber == "05_223612269_0124_1_2"
+                                            || b.SupportItemNumber == "05_223618270_0124_1_2" || b.SupportItemNumber == "05_223621271_0124_1_2" || b.SupportItemNumber == "05_223621272_0124_1_2"
+                                            || b.SupportItemNumber == "05_223907277_0124_1_2" || b.SupportItemNumber == "05_223907278_0124_1_2" || b.SupportItemNumber == "05_242403284_0124_1_2"
+                                            || b.SupportItemNumber == "05_502200312_0124_1_2" || b.SupportItemNumber == "05_702288440_0124_1_2" || b.SupportItemNumber == "05_802200437_0124_1_2"
+                                            select b;
+
+
+                result = result.Union(a);
+            }
+
+
+            if (model[35].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "05_060318012_0135_1_2" || b.SupportItemNumber == "05_060606010_0135_1_2" || b.SupportItemNumber == "05_060688011_0135_1_2"
+                                            || b.SupportItemNumber == "05_061203015_0135_1_2" || b.SupportItemNumber == "05_061203041_0135_1_2" || b.SupportItemNumber == "05_061203042_0135_1_2"
+                                            || b.SupportItemNumber == "05_061203043_0135_1_2" || b.SupportItemNumber == "05_061206016_0135_1_2" || b.SupportItemNumber == "05_061206017_0135_1_2"
+                                            || b.SupportItemNumber == "05_061206018_0135_1_2" || b.SupportItemNumber == "05_061206019_0135_1_2" || b.SupportItemNumber == "05_061206020_0135_1_2"
+                                            || b.SupportItemNumber == "05_061209021_0135_1_2" || b.SupportItemNumber == "05_061212022_0135_1_2" || b.SupportItemNumber == "05_061213023_0135_1_2"
+                                            || b.SupportItemNumber == "05_061215024_0135_1_2" || b.SupportItemNumber == "05_061216025_0135_1_2" || b.SupportItemNumber == "05_061217026_0135_1_2"
+                                            || b.SupportItemNumber == "05_061218013_0135_1_2" || b.SupportItemNumber == "05_061218027_0135_1_2" || b.SupportItemNumber == "05_061219028_0135_1_2"
+                                            || b.SupportItemNumber == "05_061803029_0135_1_2" || b.SupportItemNumber == "05_061806030_0135_1_2" || b.SupportItemNumber == "05_061809031_0135_1_2"
+                                            || b.SupportItemNumber == "05_061815032_0135_1_2" || b.SupportItemNumber == "05_061821033_0135_1_2" || b.SupportItemNumber == "05_062403035_0135_1_2"
+                                            || b.SupportItemNumber == "05_062406036_0135_1_2" || b.SupportItemNumber == "05_062409037_0135_1_2" || b.SupportItemNumber == "05_062415038_0135_1_2"
+                                            || b.SupportItemNumber == "05_062418039_0135_1_2" || b.SupportItemNumber == "05_062421040_0135_1_2" || b.SupportItemNumber == "05_062488034_0135_1_2"
+                                            || b.SupportItemNumber == "05_062488298_0135_1_2" || b.SupportItemNumber == "05_062488299_0135_1_2" || b.SupportItemNumber == "05_500612441_0135_1_2"
+                                            || b.SupportItemNumber == "05_500624304_0135_1_2" || b.SupportItemNumber == "05_500624305_0135_1_2" || b.SupportItemNumber == "05_800612438_0135_1_2"
+                                            select b;
+
+                result = result.Union(a);
+            }
+
+            if (model[36].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "05_220627222_0122_1_2" || b.SupportItemNumber == "05_220627227_0122_1_2" || b.SupportItemNumber == "05_220627228_0122_1_2"
+                                            || b.SupportItemNumber == "05_220627230_0122_1_2" || b.SupportItemNumber == "05_220627232_0122_1_2" || b.SupportItemNumber == "05_221830247_0122_1_2"
+                                            || b.SupportItemNumber == "05_221836223_0122_1_2" || b.SupportItemNumber == "05_222106442_0122_1_2" || b.SupportItemNumber == "05_222106443_0122_1_2"
+                                            || b.SupportItemNumber == "05_222403225_0122_1_2" || b.SupportItemNumber == "05_222421226_0122_1_2" || b.SupportItemNumber == "05_222704266_0122_1_2"
+                                            || b.SupportItemNumber == "05_222721231_0122_1_2" || b.SupportItemNumber == "05_222721231_0122_1_2" || b.SupportItemNumber == "05_222721231_0122_1_2"
+                                            || b.SupportItemNumber == "05_222721231_0122_1_2" || b.SupportItemNumber == "05_177_0119_1_2" || b.SupportItemNumber == "05_178_0119_1_2"
+                                            || b.SupportItemNumber == "05_220600213_0119_1_2" || b.SupportItemNumber == "05_220618229_0119_1_2" || b.SupportItemNumber == "05_220621217_0119_1_2"
+                                            || b.SupportItemNumber == "05_220621218_0119_1_2" || b.SupportItemNumber == "05_220621443_0119_1_2" || b.SupportItemNumber == "05_220627221_0119_1_2"
+                                            || b.SupportItemNumber == "05_221824246_0119_1_2" || b.SupportItemNumber == "05_352_0119_1_2" || b.SupportItemNumber == "05_502206313_0119_1_2"
+                                            select b;
+
+                result = result.Union(a);
+            }
+
+
+
+            if (model[37].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "05_120303085_0105_1_2" || b.SupportItemNumber == "05_120303086_0105_1_2" || b.SupportItemNumber == "05_120306087_0105_1_2"
+                                            || b.SupportItemNumber == "05_120309088_0105_1_2" || b.SupportItemNumber == "05_120603089_0105_1_2" || b.SupportItemNumber == "05_120603090_0105_1_2"
+                                            || b.SupportItemNumber == "05_120606091_0105_1_2" || b.SupportItemNumber == "05_120606095_0105_1_2" || b.SupportItemNumber == "05_120606096_0105_1_2"
+                                            || b.SupportItemNumber == "05_120606097_0105_1_2" || b.SupportItemNumber == "05_120609099_0105_1_2" || b.SupportItemNumber == "05_120612100_0105_1_2"
+                                            || b.SupportItemNumber == "05_122203104_0105_1_2" || b.SupportItemNumber == "05_122203105_0105_1_2" || b.SupportItemNumber == "05_122203106_0105_1_2"
+                                            || b.SupportItemNumber == "05_122203107_0105_1_2" || b.SupportItemNumber == "05_122203108_0105_1_2" || b.SupportItemNumber == "05_122203110_0105_1_2"
+                                            || b.SupportItemNumber == "05_122203111_0105_1_2" || b.SupportItemNumber == "05_122203112_0105_1_2" || b.SupportItemNumber == "05_122203113_0105_1_2"
+                                            || b.SupportItemNumber == "05_122203114_0105_1_2" || b.SupportItemNumber == "05_122203115_0105_1_2" || b.SupportItemNumber == "05_122203117_0105_1_2"
+                                            || b.SupportItemNumber == "05_122203118_0105_1_2" || b.SupportItemNumber == "05_122203119_0105_1_2" || b.SupportItemNumber == "05_122203120_0105_1_2"
+                                            || b.SupportItemNumber == "05_122209119_0105_1_2" || b.SupportItemNumber == "05_122212120_0105_1_2" || b.SupportItemNumber == "05_122303121_0105_1_2"
+                                            || b.SupportItemNumber == "05_122303122_0105_1_2" || b.SupportItemNumber == "05_122303123_0105_1_2" || b.SupportItemNumber == "05_122306124_0105_1_2"
+                                            || b.SupportItemNumber == "05_122306125_0105_1_2" || b.SupportItemNumber == "05_122306127_0105_1_2" || b.SupportItemNumber == "05_122306129_0105_1_2"
+                                            || b.SupportItemNumber == "05_122306131_0105_1_2" || b.SupportItemNumber == "05_122306132_0105_1_2" || b.SupportItemNumber == "05_122306134_0105_1_2"
+                                            || b.SupportItemNumber == "05_122306136_0105_1_2" || b.SupportItemNumber == "05_122306138_0105_1_2" || b.SupportItemNumber == "05_122306139_0105_1_2"
+                                            || b.SupportItemNumber == "05_122306140_0105_1_2" || b.SupportItemNumber == "05_122306141_0105_1_2" || b.SupportItemNumber == "05_122312142_0105_1_2"
+                                            || b.SupportItemNumber == "05_122315143_0105_1_2" || b.SupportItemNumber == "05_122403144_0105_1_2" || b.SupportItemNumber == "05_122707145_0105_1_2"
+                                            || b.SupportItemNumber == "05_122707146_0105_1_2" || b.SupportItemNumber == "05_122707147_0105_1_2" || b.SupportItemNumber == "05_122707148_0105_1_2"
+                                            || b.SupportItemNumber == "05_122715149_0105_1_2" || b.SupportItemNumber == "05_122718150_0105_1_2" || b.SupportItemNumber == "05_123103151_0105_1_2"
+                                            || b.SupportItemNumber == "05_123103152_0105_1_2" || b.SupportItemNumber == "05_123103153_0105_1_2" || b.SupportItemNumber == "05_123106154_0105_1_2"
+                                            || b.SupportItemNumber == "05_123112158_0105_1_2" || b.SupportItemNumber == "05_123115159_0105_1_2" || b.SupportItemNumber == "05_123603161_0105_1_2"
+                                            || b.SupportItemNumber == "05_123603162_0105_1_2" || b.SupportItemNumber == "05_123603163_0105_1_2" || b.SupportItemNumber == "05_123603164_0105_1_2"
+                                            || b.SupportItemNumber == "05_123603165_0105_1_2" || b.SupportItemNumber == "05_123603166_0105_1_2" || b.SupportItemNumber == "05_123604167_0105_1_2"
+                                            || b.SupportItemNumber == "05_123606168_0105_1_2" || b.SupportItemNumber == "05_123612169_0105_1_2" || b.SupportItemNumber == "05_180939182_0105_1_2"
+                                            || b.SupportItemNumber == "05_181003192_0105_1_2" || b.SupportItemNumber == "05_181003193_0105_1_2" || b.SupportItemNumber == "05_181006187_0105_1_2"
+                                            || b.SupportItemNumber == "05_181006188_0105_1_2" || b.SupportItemNumber == "05_181006189_0105_1_2" || b.SupportItemNumber == "05_181006190_0105_1_2"
+                                            || b.SupportItemNumber == "05_181012191_0105_1_2" || b.SupportItemNumber == "05_181024194_0105_1_2" || b.SupportItemNumber == "05_181088195_0105_1_2"
+                                            || b.SupportItemNumber == "05_181088196_0105_1_2" || b.SupportItemNumber == "05_501200307_0105_1_2" || b.SupportItemNumber == "05_501200308_0105_1_2"
+                                            || b.SupportItemNumber == "05_501224309_0105_1_2" || b.SupportItemNumber == "05_501224310_0105_1_2" || b.SupportItemNumber == "05_501236025_0105_1_2"
+                                            || b.SupportItemNumber == "05_501288435_0105_1_2" || b.SupportItemNumber == "05_701206326_0105_1_2" || b.SupportItemNumber == "05_701236327_0105_1_2"
+                                            || b.SupportItemNumber == "05_705012333_0105_1_2" || b.SupportItemNumber == "05_711206336_0105_1_2" || b.SupportItemNumber == "05_711236337_0105_1_2"
+                                            || b.SupportItemNumber == "05_715012343_0105_1_2" || b.SupportItemNumber == "05_801206345_0105_1_2" || b.SupportItemNumber == "05_801236346_0105_1_2"
+                                            || b.SupportItemNumber == "05_805012350_0105_1_2"
+                                            select b;
+
+                result = result.Union(a);
+            }
+
+
+            if (model[38].Option.Equals("yes"))
+            {
+                IEnumerable<Ndis201819> a = from b in _context.Ndis201819
+                                            where b.SupportItemNumber == "05_123903170_0113_1_2" || b.SupportItemNumber == "05_123906171_0113_1_2" || b.SupportItemNumber == "05_123909172_0113_1_2"
+                                            || b.SupportItemNumber == "05_123915173_0113_1_2" || b.SupportItemNumber == "05_220318209_0113_1_2" || b.SupportItemNumber == "05_220318243_0113_1_2"
+                                            || b.SupportItemNumber == "05_220388244_0113_1_2" || b.SupportItemNumber == "05_221200235_0113_1_2" || b.SupportItemNumber == "05_221221236_0113_1_2"
+                                            || b.SupportItemNumber == "05_221224238_0113_1_2" || b.SupportItemNumber == "05_221224239_0113_1_2" || b.SupportItemNumber == "05_221803240_0113_1_2"
+                                            || b.SupportItemNumber == "05_221818241_0113_1_2" || b.SupportItemNumber == "05_221818242_0113_1_2" || b.SupportItemNumber == "05_221821245_0113_1_2"
+                                            || b.SupportItemNumber == "05_222406258_0113_1_2" || b.SupportItemNumber == "05_223021210_0113_1_2" || b.SupportItemNumber == "05_223905273_0113_1_2"
+                                            || b.SupportItemNumber == "05_223906274_0113_1_2" || b.SupportItemNumber == "05_223906276_0113_1_2" || b.SupportItemNumber == "05_223906279_0113_1_2"
+                                            || b.SupportItemNumber == "05_502218315_0113_1_2" || b.SupportItemNumber == "05_702218330_0113_1_2" || b.SupportItemNumber == "05_712218340_0113_1_2"
+                                            || b.SupportItemNumber == "05_802218348_0113_1_2"
+                                            select b;
+
+                result = result.Union(a);
+            }
             //return Json(results, JsonRequestBehavior.AllowGet);
             return Json(result);
         }

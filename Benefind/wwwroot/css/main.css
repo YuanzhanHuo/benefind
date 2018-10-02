@@ -131,6 +131,7 @@ input, select, textarea {
 			body, input, select, textarea {
 				font-size: 11pt;
 				letter-spacing: 0.0375em;
+
 			}
 
 		}
@@ -168,7 +169,6 @@ input, select, textarea {
 		letter-spacing: 0.225em;
 		line-height: 1em;
 		margin: 0 0 1em 0;
-		text-transform: uppercase;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -2011,33 +2011,34 @@ input, select, textarea {
 		position: relative;
 	}
 
-		.icon:before {
-			-moz-osx-font-smoothing: grayscale;
-			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
-			font-style: normal;
-			font-weight: normal;
-			text-transform: none !important;
-		}
+        .icon:before {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Font Awesome 5 Free' !important;
+            font-style: normal;
+            font-weight: 900;
+            text-transform: none !important;
+        }
 
 		.icon > .label {
 			display: none;
 		}
 
-		.icon.major {
-			-moz-transform: rotate(-45deg);
-			-webkit-transform: rotate(-45deg);
-			-ms-transform: rotate(-45deg);
-			transform: rotate(-45deg);
-			border-radius: 3px;
-			border: solid 2px #fff;
-			display: inline-block;
-			font-size: 1.35em;
-			height: calc(3em + 2px);
-			line-height: 3em;
-			text-align: center;
-			width: calc(3em + 2px);
-		}
+        .icon.major {
+            box-shadow: 10px 10px 54px -6px rgba(0,0,0,0.75);
+            -moz-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            border-radius: 3px;
+            border: solid 2px #fff;
+            display: inline-block;
+            font-size: 2rem;
+            height: calc(3em + 2px);
+            line-height: 3em;
+            text-align: center;
+            width: calc(3em + 2px);
+        }
 
 			.icon.major:before {
 				-moz-transform: rotate(45deg);
@@ -2293,7 +2294,7 @@ input, select, textarea {
 			}
 
 		ul.icons.major {
-			padding: 1em 0;
+			padding: 2em 0;
 		}
 
 			ul.icons.major li {
@@ -2378,40 +2379,41 @@ input, select, textarea {
 
 /* Button */
 
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: transparent;
-		border-radius: 3px;
-		border: 0;
-		box-shadow: inset 0 0 0 2px #fff;
-		color: #fff;
-		cursor: pointer;
-		display: inline-block;
-		font-size: 0.8em;
-		font-weight: 600;
-		height: 3.125em;
-		letter-spacing: 0.225em;
-		line-height: 3.125em;
-		max-width: 30em;
-		padding: 0 2.75em;
-		text-align: center;
-		text-decoration: none;
-		text-transform: uppercase;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    border-radius: 3px;
+    border: 0;
+    box-shadow: inset 0 0 0 2px #fff;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    height: 3.125em;
+    letter-spacing: 0.225em;
+    line-height: 3.125em;
+    /* remove mixe with of buttons*/
+    /*max-width: 30em;*/
+    padding: 0 2.75em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
@@ -2796,8 +2798,8 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #21b2a6;
-			color: #c8ece9;
+			background-color: #5F4B8B;
+			color: #D8BDFF;
 		}
 
 			.wrapper.style1 strong, .wrapper.style1 b {
@@ -2822,14 +2824,14 @@ input, select, textarea {
 
 			.wrapper.style1 header p {
 				color: #a6e0db;
-			}
+			}   
 
 			.wrapper.style1 header.major h2, .wrapper.style1 header.major h3, .wrapper.style1 header.major h4, .wrapper.style1 header.major h5, .wrapper.style1 header.major h6 {
-				border-color: rgba(0, 0, 0, 0.125);
+				border-color: rgba(255, 255, 255, 0.73);
 			}
 
 			.wrapper.style1 header.major p {
-				color: #c8ece9;
+				color: white;
 			}
 
 			.wrapper.style1 label {
@@ -3320,28 +3322,28 @@ input, select, textarea {
 			z-index: 10001;
 		}
 
-	#menu {
-		-moz-transform: translateX(20em);
-		-webkit-transform: translateX(20em);
-		-ms-transform: translateX(20em);
-		transform: translateX(20em);
-		-moz-transition: -moz-transform 0.5s ease;
-		-webkit-transition: -webkit-transform 0.5s ease;
-		-ms-transition: -ms-transform 0.5s ease;
-		transition: transform 0.5s ease;
-		-webkit-overflow-scrolling: touch;
-		background: #21b2a6;
-		color: #ffffff;
-		height: 100%;
-		max-width: 80%;
-		overflow-y: auto;
-		padding: 3em 2em;
-		position: fixed;
-		right: 0;
-		top: 0;
-		width: 20em;
-		z-index: 10002;
-	}
+#menu {
+    -moz-transform: translateX(20em);
+    -webkit-transform: translateX(20em);
+    -ms-transform: translateX(20em);
+    transform: translateX(20em);
+    -moz-transition: -moz-transform 0.5s ease;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -ms-transition: -ms-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    -webkit-overflow-scrolling: touch;
+    background: #5F4B8B;
+    color: #ffffff;
+    height: 100%;
+    max-width: 80%;
+    overflow-y: auto;
+    padding: 3em 2em;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 20em;
+    z-index: 10002;
+}
 
 		#menu ul {
 			list-style: none;
@@ -3976,3 +3978,15 @@ input, select, textarea {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+
+    /* override icons*/
+.fa-medkit:before {
+    font-family: 'Font Awesome 5 Free' !important;
+    content: "\f0fa";
+    font-weight: 900;
+}
+
+/* make four benefits icons a element remove borderline*/
+.icon , .major a {
+    border-bottom: none;
+}

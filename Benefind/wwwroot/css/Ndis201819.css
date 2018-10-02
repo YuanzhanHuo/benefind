@@ -1,12 +1,133 @@
 ﻿
+
+/*style for toggle button div: mybenefits/allbenefits*/
+#toggle-btn {
+    justify-content: center;
+    padding: 1rem;
+    height: 20rem;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: large;
+}
+
+
+#btn-mybenefits, #btn-allbenefits {
+    margin: 1rem;
+}
+
+#wapper-benefits-datatable, .table-Filter-wraper {
+    margin: 1rem;
+    border: 1px solid #dee2e6;
+}
+/* color for tabs*/
+
+
+.wrapper-tab-pills-inner {
+    height: 100%;
+    background-color: #5F4B8B;
+    color: white;
+    font-weight: 600;
+}
+
+#nav-tab {
+    background-color: #fff;
+    color: #FFF;
+}
+div#nav-tab {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+    #nav-tab > .nav-item {
+        background-color: #ded0e9;
+        color: #2c1652;
+    }
+
+        #nav-tab > .nav-item.active {
+            background-color: #5F4B8B;
+            color: white;
+        }
+
+#v-pills-tab > nav-link {
+    background-color: #B19CD9;
+    color:white;
+}
+
+.nav-pills .nav-link, .nav-pills > .nav-link {
+    margin: 3px;
+    margin-right: 0;
+    color: white;
+    background-color: #B19CD9;
+    border-bottom-right-radius: 0;
+}
+
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        color: #000000;
+        background-color: #ffffff;
+    }
+/* size for tabs*/
+#nav-tab > .nav-item {
+    width: 25%;
+    text-align: center;
+}
+
+div#nav-tab {
+    height: 3rem;
+}
+
+#wrapper-tab-pills {
+    padding-right: 0;
+}
+
 /* filter content flex attributes */
 .quize-container {
-    flex-direction:column;
-    justify-content:center;
-    border:initial;
+    flex-direction: column;
+    justify-content: center;
+    border: initial;
+    margin-top: 1rem;
+    background-color: white;
 }
 
 /* quize content */
 .Single-Quize-Container{
     margin:2rem;
+}
+.table-Filter-wraper {
+    background-color: #5F4B8B;
+}
+
+#v-pills-tab {
+    margin-top: calc(1rem - 3px);
+}
+
+#wrapper-tab-content{
+    padding-left:0;
+}
+
+/* backgroung image for toggle-btn*/
+#toggle-btn {
+    background-image: url(../images/Landing/dominik-lange-389363-unsplash.jpg);
+    background-attachment: fixed;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* make the background of mybenefits datatable white*/
+div#nav-profile {
+    background-color: white;
+}
+
+.btn-danger {
+    background-color: #ef5e4a;
+    border-color: #dc3545;
+    margin-top: 2rem;
+    align-self: center;
+}
+
+/* justify padding for core description */
+.core-decription{
+    padding:3px;
+    margin-left:1rem;
+    margin-right:1rem;
 }

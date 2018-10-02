@@ -81,3 +81,36 @@
 		}
 
 })(jQuery);
+
+/* scroll down to icon description */
+$(document).ready(function () {
+    $("#Health").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#health-description").offset().top - 200
+        }, 1000);
+    });
+});
+
+$(document).ready(function () {
+    $("#Community").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#community-description").offset().top - 200
+        }, 1000);
+    });
+});
+
+$(document).ready(function () {
+    $("#Equipment").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#equipment-description").offset().top - 200
+        }, 1000);
+    });
+});
+
+$(document).ready(function () {
+    $("#Education").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#education-description").offset().top - 200
+        }, 1000);
+    });
+});

@@ -1,0 +1,157 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css />
+    <style type="text/css">
+        /*.col-3 {
+            width: 25%;
+            float: left;
+        }*/
+
+        #container {
+            width: 100%
+        }
+
+        #row {
+            height: auto;
+            width: 100%
+        }
+
+        #Person {
+            height: 300px;
+        }
+
+        #Person-description {
+            height: 300px
+        }
+
+        #Person-pciture {
+            height: 300px;
+        }
+
+        #team description {
+            text-indent: 50px;
+        }
+
+        p {
+            width: 200px;
+            text-wrap: normal;
+        }
+
+            p.Person-name {
+                font-size: 20px;
+                text-align: center
+            }
+
+        body {
+            background-image: url('../images/1.jpg.jpg');
+            background-position: 0px 250px;
+            background-size: 1900px 850px;
+            background-repeat: repeat-x;
+            background-attachment: fixed;
+        }
+
+        a:link {
+            color: black;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: black;
+        }
+
+        a:hover {
+            color: blue;
+            font-style: italic;
+        }
+
+        a:active {
+            color: blue;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="~/css/test.css" />
+</head>
+
+<body>
+    <h1> <img border="0" src="~/images/logo.jpg" alt="Team logo" width="400" height="180" /> </h1>
+    <div class="row" id="title" style="height:auto; width:100%; margin:2rem">
+        <h2 id="team description"><b><i>Team Member Description</i></b></h2>
+    </div>
+
+    <hr style="height:2px;border:none;border-top:2px solid #555555;" />
+    <div id="container">
+        <div class="row" id="row">
+            <div class="col-3" id="Person">
+                <div class="" id="Person-pciture">
+                    <div> <img src="~/images/About US/Peter.jpg" alt="Peter" width="200" height=" 250" /></div>
+                    <a class="Person-name" href="https://www.linkedin.com/in/peter-byun-a40546126/" target="_blank"><b>Joonsup Byun</b></a>
+                </div>
+
+            </div>
+            <div class="col-3">
+                <div class="" id="Person-description">
+                    <h3> Master of Data Science</h3>
+                    <p>Specialises in data integration and visualisation in this project.</p>
+                </div>
+            </div>
+            <div class="col-3" id="Person">
+                <div class="" id="Person-pciture">
+                    <div>
+                        <img src="~/images/About US/Sid.jpg" alt="Sid" width="200" height=" 250" />
+                    </div>
+                    <a class="Person-name" href="https://www.linkedin.com/in/karthik-sidhartha-a3063311b/" target="_blank"><b>Karthik Sidhartha</b></a>
+                </div>
+
+            </div>
+            <div class="col-3">
+                <div class="" id="Person-description">
+                    <h3> Masters of Business Information Systems</h3>
+                    <p>Specialises in Business Analyst role and will coordinate with team for any PM activities.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="row">
+            <div class="col-sm-6" id="Person">
+                <div class="col-sm-5" id="Person-pciture">
+                    <div>
+                        <img src="~/images/About US/JasonJr.jpg" alt="JasonJr" width="200" height=" 250" />
+                    </div>
+                    <a class="Person-name" href="https://www.linkedin.com/in/yujie-huang-67106b172/" target="_blank"><b>Yujie Huang</b></a>
+                </div>
+                <div class="col-sm-7" id="Person-description">
+                    <h3> Masters of Business Information Systems</h3>
+                    <p>Specialises in User interface design and BA Activities.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6" id="Person">
+                <div class="col-sm-5" id="Person-pciture">
+                    <div>
+                        <img src="~/images/About US/Jason Sr.jpg" alt="Sid" width="200" height=" 250" />
+                    </div>
+                    <a class="Person-name" href="https://www.linkedin.com/in/yuanzhan-huo-461aa1134/" target="_blank"><b>YuanZhan Huo</b></a>
+                </div>
+                <div class="col-sm-7" id="Person-description">
+                    <h3> Masters in Information and Technology</h3>
+                    <p>Specialises in programming and will help the team building the website on the technical front.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -19,7 +19,7 @@ namespace Benefind.Models
         [Display(Name = "Quote")]
         public string Quote { get; set; }
         [Display(Name = "Price Limit")]
-        public double? PriceLimit { get; set; }
+        public string PriceLimit { get; set; }
         [Display(Name = "Price Control")]
         public string PriceControl { get; set; }
         [Display(Name = "Support Categories")]

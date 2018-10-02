@@ -1,157 +1,151 @@
 ﻿<!DOCTYPE HTML>
 
 <html>
-	<head>
-		<title>benefind</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="icon" type="image/ico" href="~/images/titleimg.ico" />
-		<link rel="stylesheet" href="~/css/main.css" />
-		<noscript><link rel="stylesheet" href="~/css/noscript.css" /></noscript>
-	</head>
+<head>
+    <title>benefind</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="icon" type="image/ico" href="~/images/titleimg.png" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <noscript><link rel="stylesheet" href="~/css/noscript.css" /></noscript>
+</head>
 	<body class="landing is-preload">
 
 		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+        <div id="page-wrapper">
 
-				<!-- Header -->
-                <header id="header" class="alt">
-                    <h1><a asp-controller="Home" asp-action="Index">BENEFIND</a></h1>
-                    <nav id="nav">
-                        <ul>
-                            <li class="special">
-                                <a href="#menu" class="menuToggle"><span>Menu</span></a>
-                                <div id="menu">
-                                    <ul>
-                                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                                        <li><a asp-controller="Home" asp-action="Benefits">Benefits</a></li>
-                                        <li><a asp-controller="Home" asp-action="WhatisNDIS">What's NDIS</a></li>
-                                        <li><a asp-controller="Home" asp-action="JoinNDIS">Join NDIS</a></li>
-                                    </ul>
-                                </div>
-                            </li>
+            <!-- Header -->
+            <header id="header" class="alt">
+                <h1><a asp-controller="Home" asp-action="Index">BENEFIND</a></h1>
+                <nav id="nav">
+                    <ul>
+                        <li class="special">
+                            <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                            <div id="menu">
+                                <ul>
+                                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                    <li><a asp-controller="Ndis201819" asp-action="Index">Benefits</a></li>
+                                    <li><a asp-controller="Home" asp-action="WhatisNDIS">What's NDIS</a></li>
+                                    <li><a asp-controller="Home" asp-action="JoinNDIS">Join NDIS</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- Banner -->
+            <!-- Banner -->
+            <section id="banner">
+                <div class="inner">
+                    <h2>BENEFIND</h2>
+                    <p>
+                        NDIS Benefits Made easy
+
+
+                        <ul class="actions special">
+                            <li><a asp-controller="Ndis201819" asp-action="Index" class="button primary">START</a></li>
                         </ul>
-                    </nav>
-                </header>
+                </div>
+                <a href="#one" class="more scrolly">View More</a>
+            </section>
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<h2>benefind</h2>
-							<p>Your Benefits<br />
-							Your Way<br />
-							
-							<ul class="actions special">
-								<li><a href="#" class="button primary">START</a></li>
-							</ul>
-						</div>
-						<a href="#one" class="more scrolly">View More</a>
-					</section>
+            <!-- One -->
+            <section id="one" class="wrapper style1 special">
+                <div class="inner">
+                    <header class="major">
+                        <h2>600+ BENEFITS TAILOURED TO YOUR NEEDS</h2>
+                        <p>Benefind is a search tool to find NDIS benefits that are relavent to your needs</p>
+                    </header>
+                    <ul class="icons major">
+                        <li>
+                            <a href="#123" id="Health">
+                                <span class="icon fa-medkit major style1"></span><br />
+                                <br />
+                                <h3>Health</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#123" id="Community">
+                                <span class="icon fa-group major style1"></span>
+                                <br />
+                                <br />
 
-				<!-- One -->
-					<section id="one" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Expand your life with NDIS<br />
-								600+ benefits tailoured to your needs</h2>
-								
-							</header>
-							<ul class="icons major">
-                                <li><span class="icon fa-search major style1"></span><br/>
-                                <h3>Benfits</h3>
-                                </li>
-								<li><span class="icon fa-group major style2"><span class="label">NDIS</span></span></li>
-								<li><span class="icon fa-handshake-o major style3"><span class="label">Join NDIS</span></span></li>
-							</ul>
-						</div>
-					</section>
+                                <h3>Community</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#123" id="Equipment">
+                                <span class="icon fa-rocket major style1"></span><br />
+                                <br />
+                                <h3>Equipment</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#123" id="Education">
+                                <span class="icon fa-graduation-cap major style1"></span>
+                                <br />
+                                <br />
+                                <h3>Education</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
-				<!-- Two -->
-					<section id="two" class="wrapper alt style2">
-						<section class="spotlight">
-							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
-								<h2>Magna primis lobortis<br />
-								sed ullamcorper</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
-								<h2>Tortor dolore feugiat<br />
-								elementum magna</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
-								<h2>Augue eleifend aliquet<br />
-								sed condimentum</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
-					</section>
+            <!-- Two -->
+            <section id="two" class="wrapper alt style2">
+                <section class="spotlight" id="health-description">
+                    <div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
+                        <h2>Health Support</h2>
+                        <p>Nourish your physical health by consulting dietician and physical therapist. Improve your mental health with a therapist. NDIS will fund health support that are not covered by medicare</p>
+                    </div>
+                </section>
+                <section class="spotlight" id="community-description">
+                    <div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
+                        <h2>Community</h2>
+                        <p>You may need support to access available supports or join in local community activities such as social, sporting or other interests. NDIS will help give you the support you need to join the community.</p>
+                    </div>
+                </section>
+                <section class="spotlight" id="equipment-description">
+                    <div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
+                        <h2>Equipment</h2>
+                        <p>Do you need tools to help with everyday living? From wheelchairs and shower ramps, to advanced assistive technology, NDIS will get you the tools to help with everyday living.</p>
+                    </div>
+                </section>
+                <section class="spotlight" id="education-description">
+                    <div class="image"><img src="images/pic04.jpg" alt="" /></div><div class="content">
+                        <h2>Education</h2>
+                        <p>NDIS will help make your dream come true by giving you that education and training you need to realize your true potential. Get the job you've always wanted, and build the career you have dreamed about. </p>
+                    </div>
+                </section>
+                </section>
+                <section id="cta" class="wrapper style4">
+                    <div class="inner">
+                        <header>
+                            <h2>Ready to start searching?</h2>
+                            <p>Click the start button to search your benefits or learn more about NDIS benefits</p>
+                        </header>
+                        <ul class="actions stacked">
+                            <li><a asp-controller="Ndis201819" asp-action="Index" class="button fit primary">Start</a></li>
+                            <li><a href="https://www.ndis.gov.au/sdf_resources" target="_blank" class="button fit">Visit NDIS</a></li>
+                        </ul>
+                    </div>
+                </section>
 
-				<!-- Three -->
-					<section id="three" class="wrapper style3 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Accumsan mus tortor nunc aliquet</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
-							</header>
-							<ul class="features">
-								<li class="icon fa-paper-plane-o">
-									<h3>Arcu accumsan</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-laptop">
-									<h3>Ac Augue Eget</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-code">
-									<h3>Mus Scelerisque</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-headphones">
-									<h3>Mauris Imperdiet</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-heart-o">
-									<h3>Aenean Primis</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-flag-o">
-									<h3>Tortor Ut</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-							</ul>
-						</div>
-					</section>
+                <!-- Footer -->
+                <footer id="footer">
 
-				<!-- CTA -->
-					<section id="cta" class="wrapper style4">
-						<div class="inner">
-							<header>
-								<h2>Arcue ut vel commodo</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
-							</header>
-							<ul class="actions stacked">
-								<li><a href="#" class="button fit primary">Activate</a></li>
-								<li><a href="#" class="button fit">Learn More</a></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- Footer -->
-                    <footer id="footer">
+                    
                         <ul class="copyright">
-                        <li>&copy; Benefind</li>
-                        <li>About US: <a href="#">Infinite Technology</a></li>
+                            <li>&copy; Benefind</li>
+                            <li>Infinite Technology</li>
                         </ul>
                     </footer>
-
-			</div>
-
+               
+        </div>
+       
 		<!-- Scripts -->
 			<script src="~/lib/jquery.min.js"></script>
 			<script src="~/lib/jquery.scrollex.min.js"></script>

@@ -1,0 +1,110 @@
+﻿@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/vendor';
+@import 'libs/breakpoints';
+@import 'libs/html-grid';
+@import 'font-awesome.min.css';
+
+// Breakpoints.
+
+@include breakpoints(( xlarge: ( 1281px, 1680px ), large: ( 981px, 1280px ), medium: ( 737px, 980px ), small: ( 481px, 736px ), xsmall: ( null, 480px ), ));
+
+// Reset.
+// Based on meyerweb.com/eric/tools/css/reset (v2.0 | 20110126 | License: public domain)
+
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+.mynav {
+    height: inherit;
+    line-height: inherit;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+
+        > li {
+            display: inline-block;
+            padding: 0;
+
+            > a {
+                border: 0;
+                color: _palette(fg-bold);
+                display: block;
+                font-size: 0.8em;
+                letter-spacing: _size(letter-spacing-alt);
+                padding: 0 1.5em;
+                text-transform: uppercase;
+
+                &.menuToggle {
+                    outline: 0;
+                    position: relative;
+
+                    &:after {
+                        background-image: url('images/bars.svg');
+                        background-position: right center;
+                        background-repeat: no-repeat;
+                        content: '';
+                        display: inline-block;
+                        height: 3.75em;
+                        vertical-align: top;
+                        width: 2em;
+                    }
+
+                    @include breakpoint('<=small') {
+                        padding: 0 1.5em;
+
+                        span {
+                            display: none;
+                        }
+                    }
+                }
+
+                @include breakpoint('<=small') {
+                    padding: 0 0 0 1.5em;
+                }
+            }
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+&.alt {
+    background: transparent;
+
+    h1 {
+        @include vendor('pointer-events', 'none');
+        opacity: 0;
+    }
+}
+

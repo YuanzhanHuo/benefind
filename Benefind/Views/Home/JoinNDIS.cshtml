@@ -7,8 +7,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="~/css/main.css" />
     <noscript><link rel="stylesheet" href="~/css/noscript.css" /></noscript>
+    <script src="https://cdn.rawgit.com/googlemaps/v3-utility-library/cdde3b25/markerclustererplus/src/markerclusterer.js"></script>
+
 </head>
 <body class="is-preload">
+    <style>
+        .wrapper.style3 button{
+        box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.125);
+        color: #ffffff;
+        }
+        .accordion {
+            background-color: #9D9CD9;
+            color: #444;
+            cursor: pointer;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+            .active, .accordion:hover {
+                background-color: #9D9CD9;
+            }
+
+            .accordion:after {
+                content: '\002B';
+                color: #777;
+                font-weight: bold;
+                float: right;
+                margin-left: 5px;
+            }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .panel {
+            padding: 0 18px;
+            /*background-color: #E9DEFF;*/
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .inner {
+            text-align: left;
+        }
+
+        /* Set the size of the div element that contains the map */
+        #map {
+            height: 450px;
+            width: 100%;
+            color:black;    
+        }
+        #map h3{
+            color:black;
+        }
+        
+    </style>
 
     <!-- Page Wrapper -->
     <div id="page-wrapper">
@@ -23,7 +81,7 @@
                         <div id="menu">
                             <ul>
                                 <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                                <li><a href="benefits.html">Benefits</a></li>
+                                <li><a asp-controller="Ndis201819" asp-action="Index">Benefits</a></li>
                                 <li><a asp-controller="Home" asp-action="WhatisNDIS">What's NDIS</a></li>
                                 <li><a asp-controller="Home" asp-action="JoinNDIS">Join NDIS</a></li>
                             </ul>
@@ -40,7 +98,6 @@
                 <h2>Join NDIS</h2>
                 <p>
                     Check your eligbility to join NDIS <br>
-                    <a href="https://www.ndis.gov.au/people-disability/access-requirements.html" class="btn"> Find more in NDIS website</a>
                 </p>
             </header>
             <section id="three" class="wrapper style3 special">
@@ -56,112 +113,135 @@
                             These include: availability of the Scheme where you live; your age; your residency status;<br /> your disability and in some cases your early intervention requirements.
                         </p>
                     </header>
-                    <ul class="features">
-                        <li class="icon fa-paper-plane-o">
-                            <h3>
-                                Availability in your area
-                            </h3>
-                            <p>
-                                To access the NDIS right now, you must live in an area where the NDIS is available. In some of these areas, you also need to be a certain age to access the Scheme.
-                            </p>
-                            <p style="margin:0.5rem">
-                                - Australian Capital Territory
-                            </p>
-                            <p style="margin:0.5rem">
-                                - New South Wales
-                            </p>
-                            <p style="margin:0.5rem">
-                                - Queensland
-                            </p>
-                            <p style="margin:0.5rem">
-                                - South Australia
-                            </p>
-                            <p style="margin:0.5rem">
-                                - Tasmania
-                            </p>
-                            <p style="margin:0.5rem">
-                                - Victoria
-                            </p>
-                            <p style="margin:0.5rem">- Western Australia</p>
-                        </li>
-                        <li class="icon fa-laptop">
-                            <h3>
-                                Disability
-                            </h3>
-                            <p>
-                                You may meet the disability requirements if:
-                            </p>
-                            <p style="margin:0.5rem">
-                                - you have an impairment or condition that is likely to be permanent (i.e. it is likely to be life long) and
-                            </p>
-                            <p style="margin:0.5rem">
-                                - your impairment substantially reduces your ability to participate effectively in activities, or perform tasks or actions.
+                    <button class="accordion">Age</button>
+                    <div class="panel">
+                        <p>You must be under 65 years of age when you apply to join the Scheme.</p>
+                    </div>
 
-                            </p>
-                            <p style="margin:0.5rem">
-                                - your impairment affects your capacity for social and economic participation and
-                            </p>
-                            <p style="margin:0.5rem">
-                                - you are likely to require support under the NDIS for your lifetime.
-                            </p>
+                    <button class="accordion">Residency</button>
+                    <div class="panel">
+                        <p>
+                            To meet the residency requirements, you must live in Australia <strong>AND</strong>:
+                            <ul>
+                                <li>be an Australian citizen <strong>OR</strong></li>
+                                <li>hold a Permanent Visa <strong>OR</strong></li>
+                                <li>
+                                    hold a Protected Special Category Visa, that is you
+                                    <ul style="list-style-type:circle">
+                                        <li>were in Australia on a Special Category Visa on 26 February 2001 or</li>
+                                        <li>had been in Australia for at least 12 months in the 2 years immediately before 26 February 2001 and you returned to Australia after that day.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                    <button class="accordion">disability</button>
+                    <div class="panel">
+                        <p>You may meet the disability requirements if:</p>
+                        <ul>
+                            <li>you have an impairment or condition that is likely to be permanent (i.e. it is likely to be life long) <strong>AND</strong></li>
+                            <li>
+                                your impairment substantially reduces your ability to participate effectively in activities, or perform tasks or actions unless you have:
+                                <ul>
+                                    <li style="list-style-type:circle">assistance from other people <strong>OR</strong></li>
+                                    <li style="list-style-type:circle">you have assistive technology or equipment (other than common items such as glasses) <strong>OR</strong></li>
+                                    <li style="list-style-type:circle">you can't participate effectively even with assistance or aides and equipment <strong>AND</strong></li>
+                                </ul>
+                            </li>
+                            <li>your impairment affects your capacity for social and economic participation <strong>AND</strong></li>
+                            <li>you are likely to require support under the NDIS for your lifetime.</li>
+                        </ul>
 
-                        </li>
-                        <li class="icon fa-code">
-                            <h3>
-                                Age
-                            </h3>
-                            <p>
-                                You must be under 65 years of age when you apply to join the Scheme.
-                            </p>
-                        </li>
-                        <li class="icon fa-headphones">
-                            <h3>
-                                Residency
-                            </h3>
-                            <p>
-                                To meet the residency requirements, you must live in Australia and:
-                                be an Australian citizen OR
-                                hold a Permanent Visa OR
-                                hold a Protected Special Category Visa
-                            </p>
-                        </li>
+                    </div>
 
-                    </ul>
+                    <button class="accordion">Availability in your area</button>
+                    <div class="panel">
+
+
+
+                        <p>
+                            To access the NDIS right now, you must live in an area where the NDIS is available. In some of these areas, you also need to be a certain age to access the Scheme.
+                        </p>
+                        <p style="margin:0.5rem">
+                            - Australian Capital Territory
+                        </p>
+                        <p style="margin:0.5rem">
+                            - New South Wales
+                        </p>
+                        <p style="margin:0.5rem">
+                            - Queensland
+                        </p>
+                        <p style="margin:0.5rem">
+                            - South Australia
+                        </p>
+                        <p style="margin:0.5rem">
+                            - Tasmania
+                        </p>
+                        <p style="margin:0.5rem">
+                            - Victoria
+                        </p>
+                        <p style="margin:0.5rem">- Western Australia</p>
+                    </div>
+                    <p>
+                        <br>If you want to become an NDIS participant call NDIS at 1800 800 110, or visit a local NDIS office near your home.
+                        <a href="https://www.ndis.gov.au/people-disability/access-requirements.html" target="_blank" class="btn"> Find more in NDIS website</a>
+
+                    </p>
+
+                    <script>
+                        var acc = document.getElementsByClassName("accordion");
+                        var i;
+
+                        for (i = 0; i < acc.length; i++) {
+                            acc[i].addEventListener("click", function () {
+                                this.classList.toggle("active");
+                                var panel = this.nextElementSibling;
+                                if (panel.style.maxHeight) {
+                                    panel.style.maxHeight = null;
+                                } else {
+                                    panel.style.maxHeight = panel.scrollHeight + "px";
+                                }
+                            });
+                        }
+                    </script>
+
+                    <h2 >NDIS OFFICE LOCATIONS</h2>
+                    <div id="map"></div>
+
                 </div>
             </section>
             @*<section class="wrapper style5">
 
-            <div class="inner">
+                    <div class="inner">
 
-                <h3>Age</h3>
-                <p>You must be under 65 years of age when you apply to join the Scheme.</p>
+                        <h3>Age</h3>
+                        <p>You must be under 65 years of age when you apply to join the Scheme.</p>
 
-                <hr />
-                <h3>Residency</h3>
-                <p>
-                    To meet the residency requirements, you must live in Australia and:
-                </p>
-                <p>- be an Australian citizen OR</p>
-                <p>- hold a Permanent Visa OR</p>
-                <p>- hold a Protected Special Category Visa</p>
-                <hr />
-                <h3>Disability</h3>
-                <p>You may meet the disability requirements if:</p>
-                <p>- you have an impairment or condition that is likely to be permanent (i.e. it is likely to be life long) and</p>
-                <p>- your impairment substantially reduces your ability to participate effectively in activities</p>
-                <p>- your impairment affects your capacity for social and economic participation and</p>
-                <p>
-                    - you are likely to require support under the NDIS for your lifetime.
-                </p>
-                <a href="https://www.ndis.gov.au/people-disability/access-requirements.html" class="btn"> Find more in NDIS website</a>
+                        <hr />
+                        <h3>Residency</h3>
+                        <p>
+                            To meet the residency requirements, you must live in Australia and:
+                        </p>
+                        <p>- be an Australian citizen OR</p>
+                        <p>- hold a Permanent Visa OR</p>
+                        <p>- hold a Protected Special Category Visa</p>
+                        <hr />
+                        <h3>Disability</h3>
+                        <p>You may meet the disability requirements if:</p>
+                        <p>- you have an impairment or condition that is likely to be permanent (i.e. it is likely to be life long) and</p>
+                        <p>- your impairment substantially reduces your ability to participate effectively in activities</p>
+                        <p>- your impairment affects your capacity for social and economic participation and</p>
+                        <p>
+                            - you are likely to require support under the NDIS for your lifetime.
+                        </p>
+                        <a href="https://www.ndis.gov.au/people-disability/access-requirements.html" class="btn"> Find more in NDIS website</a>
 
-                <hr />
-            </div>
-        </section>*@
+                        <hr />
+                    </div>
+                </section>*@
 
 
-
-            <div id="map"></div>
+            
 
             <script>
                 var locations = [[-35.264144, 149.1324313, 'Braddon', '212 Northbourne Ave, Braddon ACT 2612', 'N/A', 'N/A', 'N/A', 'N/A'],
@@ -583,19 +663,7 @@
             <script src="https://cdn.rawgit.com/googlemaps/v3-utility-library/cdde3b25/markerclustererplus/src/markerclusterer.js"></script>
 
 
-            <font face="arial">
-                <div style="color:darkblue;">
-                    <h2 style="margin:2rem"> &nbsp;&nbsp; NDIS Office Locations</h2>
-                </div>
-            </font>
-            <style>
-                /* Set the size of the div element that contains the map */
-                #map {
-                    height: 450px; /* The height is 400 pixels */
-                    width: 80%; /* The width is the width of the web page */
-                    margin: 3rem;
-                }
-            </style>
+           
         </article>
 
         <!-- Footer -->
@@ -603,7 +671,7 @@
 
             <ul class="copyright">
                 <li>&copy; Benefind</li>
-                <li>About US: <a href="#">Infinite Technology</a></li>
+                <li>Infinite Technology</li>
             </ul>
         </footer>
 

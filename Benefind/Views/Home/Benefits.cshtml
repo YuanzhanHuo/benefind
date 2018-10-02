@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <!-- Bootstrap Style sheet -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    @*<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">*@
     <!-- My Style sheet-->
     <link rel="icon" type="image/ico" href="~/images/titleimg.ico" />
     <link rel="stylesheet" href="~/css/main.css" />
@@ -25,6 +25,9 @@
     <!-- JS library for Datatable -->
 
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+    <!-- css for tabs-->
+    <link rel="stylesheet" href="~/css/tabs.css">
 </head>
 
 <body class="landing is-preload">
@@ -55,6 +58,48 @@
                 <p>Aliquam ut ex ut interdum donec amet imperdiet eleifend</p>
             </header>
             <section class="wrapper style5">
+                <!-- New tabs-->
+                <!-- Tab links -->
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+                    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                </div>
+
+                <!-- Tab content -->
+                <div id="London" class="tabcontent">
+                    <!-- Vertical tabs-->
+                    <div class="vertical-tab">
+                        <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+                        <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                    </div>
+
+                    <div id="London" class="tabcontent">
+                        <h3>London</h3>
+                        <p>London is the capital city of England.</p>
+                    </div>
+
+                    <div id="Paris" class="tabcontent">
+                        <h3>Paris</h3>
+                        <p>Paris is the capital of France.</p>
+                    </div>
+
+                    <div id="Tokyo" class="tabcontent">
+                        <h3>Tokyo</h3>
+                        <p>Tokyo is the capital of Japan.</p>
+                    </div>
+                </div>
+
+                <div id="Paris" class="tabcontent">
+                    <h3>Paris</h3>
+                    <p>Paris is the capital of France.</p>
+                </div>
+
+                <div id="Tokyo" class="tabcontent">
+                    <h3>Tokyo</h3>
+                    <p>Tokyo is the capital of Japan.</p>
+                </div>
                 <div class="table-Filter-wraper">
                     <!-- nav items -->
                     <nav>
@@ -112,11 +157,11 @@
                                                         </label>
                                                     </div>
                                                     @*<div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="radio-age" id="age-gt65" value="gt65">
-                                                            <label class="form-check-label" for="radio-age">
-                                                                Over 65
-                                                            </label>
-                                                        </div>*@
+                                                <input class="form-check-input" type="radio" name="radio-age" id="age-gt65" value="gt65">
+                                                <label class="form-check-label" for="radio-age">
+                                                    Over 65
+                                                </label>
+                                            </div>*@
                                                 </div>
                                                 <!-- Region dropdown list-->
                                                 <div class="Single-Quize-Container" id="quiz-region-dropdown">
@@ -164,6 +209,7 @@
                                                         </label>
                                                     </div>
                                                 </div>
+                                                
                                             </div>
 
                                         </div>
@@ -497,13 +543,13 @@
                                 <h2>All Benefits in NDIS</h2>
                                 <hr />
                                 @*<div class="row">
-                                        <div class="btn-group" role="group" aria-label="Category button">
-                                            <a type="button" class="btn btn-secondary" href="/Ndis201819/index?category=1">Health</a>
-                                            <a type="button" class="btn btn-secondary" href="/Ndis201819/index?category=4">Community</a>
-                                            <a type="button" class="btn btn-secondary" href="/Ndis201819/index?category=5">Equipment</a>
-                                            <a type="button" class="btn btn-secondary" href="/Ndis201819/index?category=15">Education</a>
-                                        </div>
-                                    </div>*@
+                            <div class="btn-group" role="group" aria-label="Category button">
+                                <a type="button" class="btn btn-secondary" href="/Ndis201819/index?category=1">Health</a>
+                                <a type="button" class="btn btn-secondary" href="/Ndis201819/index?category=4">Community</a>
+                                <a type="button" class="btn btn-secondary" href="/Ndis201819/index?category=5">Equipment</a>
+                                <a type="button" class="btn btn-secondary" href="/Ndis201819/index?category=15">Education</a>
+                            </div>
+                        </div>*@
 
                                 <div>
 
@@ -526,24 +572,24 @@
                                         </thead>
                                         <tbody>
                                             @foreach (var item in Model)
-                            {
-                                            <tr>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.RegistrationGroup)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.SupportItem)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.SupportItemDescription)
-                                                </td>
-                                                <td>
-                                                    @*<a asp-action="Edit" asp-route-id="@item.SupportItemNumber">Edit</a> |*@
-                                                    <a asp-action="Details" asp-route-id="@item.SupportItemNumber">Details</a>
-                                                    @*<a asp-action="Delete" asp-route-id="@item.SupportItemNumber">Delete</a>*@
-                                                </td>
-                                            </tr>
-                            }
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.RegistrationGroup)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.SupportItem)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.SupportItemDescription)
+                                                    </td>
+                                                    <td>
+                                                        @*<a asp-action="Edit" asp-route-id="@item.SupportItemNumber">Edit</a> |*@
+                                                        <a asp-action="Details" asp-route-id="@item.SupportItemNumber">Details</a>
+                                                        @*<a asp-action="Delete" asp-route-id="@item.SupportItemNumber">Delete</a>*@
+                                                    </td>
+                                                </tr>
+                                            }
                                         </tbody>
                                     </table>
                                 </div>
@@ -564,4 +610,5 @@
     <script src="~/js/util.js"></script>
     <script src="~/js/main.js"></script>
     <script src="~/js/DataTable.js"></script>
+    <script src="~/js/tabs.js"></script>
 </body>

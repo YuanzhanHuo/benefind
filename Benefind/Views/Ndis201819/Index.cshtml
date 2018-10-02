@@ -1,467 +1,1162 @@
 ﻿@model IEnumerable<Benefind.Models.Ndis201819>
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @{
+        ViewData["Title"] = "Index";
+    }
+    <!-- Style sheet for Datatable-->
+    @*<link rel="stylesheet" href= https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css />*@
+    @*<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />*@
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!-- Style sheet for Ndis201819 index-->
+    <link href="~/css/Ndis201819.css" rel="stylesheet" />
 
-@{
-    ViewData["Title"] = "Index";
-}
-<!-- Style sheet for Datatable-->
-@*<link rel="stylesheet" href= https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css />*@
-@*<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />*@
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
-
-<!-- Style sheet for Ndis201819 index-->
-<link href="~/css/Ndis201819.css" rel="stylesheet" />
-
-<!-- JS library for Datatable -->
-
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!-- Style sheet for fontawsome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 
+    
+    <!-- JS library for Datatable -->
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
 
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip({
+                placement: 'top'
+            });
+        });
 
-<!-- Main content -->
-<div class="table-Filter-wraper">
-    <!-- nav items -->
-    <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Filter</a>
-            <a class="nav-item nav-link" id="nav-showresult-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">My benefits</a>
-            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">All benefits</a>
+       
+    </script>
+    <style type="text/css">
+        .btn-pre-next-container {
+            align-self: center;
+        }
+        .quiz-nav-btn {
+            border-radius: 5px;
+            margin: 2rem;
+            width: 100px;
+        }
+        .bs-example {
+            margin: 50px;
+        }
+
+            .bs-example a {
+                font-size: 22px;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+
+        .my_tip {
+            color: skyblue;
+        }
+
+        .tooltip-inner {
+            color: black;
+            background: #eeeeee;
+            text-align: left
+        }
+
+        .tooltip.top .tooltip-arrow {
+            border-top-color: #eeeeee;
+        }
+
+        .numberCircle {
+            font: 32px Arial, sans-serif;
+            padding: .5px 3px;
+            width: 2em;
+            height: 2em;
+            box-sizing: initial;
+            background: #8d87eb;
+            border: 0.1em solid #fff;
+            color: #fff;
+            text-align: center;
+            border-radius: 46%;
+            line-height: 2em;
+            box-sizing: content-box;
+        }
+
+        .circleGroup {
+            display: inline-flex;
+            align-items: center;
+            color: #5b54b3;
+        }
+
+            .circleGroup > i {
+                margin-right: 1rem;
+                font-size: 9px
+            }
+
+        .fas .fa-question-circle:before {
+            font-family: 'Font Awesome 5 Free' !important;
+            content: '\f059';
+            font-size: 1.45rem;
+        }
+
+        i.fas.fa-question-circle {
+            font-size: 1rem;
+            margin-left: 0.5rem;
+        }
+       
+    </style>
+
+    <!-- Navbar from template -->
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="d-flex flex-grow-1">
+            <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
+            <a class="navbar-brand d-none d-lg-inline-block" asp-controller="Home" asp-action="Index">
+                Benefind
+            </a>
+
+            <div class="w-100 text-right">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+                <li class="nav-item">
+                    <a class="nav-item nav-link m-2 menu-item" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link m-2 menu-item" asp-controller="Ndis201819" asp-action="Index">Benefits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link m-2 menu-item" asp-controller="Home" asp-action="WhatisNDIS">What's NDIS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link m-2 menu-item" asp-controller="Home" asp-action="JoinNDIS">Join NDIS</a>
+                </li>
+
+            </ul>
         </div>
     </nav>
-    <!-- each nav tab content -->
-    <div class="tab-content" id="nav-tabContent">
 
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-            <!-- filter component-->
-            <!-- filter pills-->
-            <div class="row">
-                <div class="col-xm-2 col-md-3">
-                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active" id="v-pills-core-tab" data-toggle="pill" href="#v-pills-core" role="tab" aria-controls="v-pills-core" aria-selected="true">Core</a>
-                        <a class="nav-link" id="v-pills-DailyLiving-tab" data-toggle="pill" href="#v-pills-DailyLiving" role="tab" aria-controls="v-pills-DailyLiving" aria-selected="false">Daily Living</a>
-                        <a class="nav-link" id="v-pills-PlanManagement-tab" data-toggle="pill" href="#v-pills-PlanManagement" role="tab" aria-controls="v-pills-PlanManagement" aria-selected="false">Plan Management</a>
-                        @*<a class="nav-link" id="v-pills-Education&Work-tab" data-toggle="pill" href="#v-pills-Education&Work" role="tab" aria-controls="v-pills-Education&Work" aria-selected="false">Education & Work</a>*@
-                        <a class="nav-link" id="v-pills-ImprovedHealth-tab" data-toggle="pill" href="#v-pills-ImprovedHealth" role="tab" aria-controls="v-pills-ImprovedHealth" aria-selected="false">Improved Health </a>
-                        <a class="nav-link" id="v-pills-HomeModifications-tab" data-toggle="pill" href="#v-pills-HomeModifications" role="tab" aria-controls="v-pills-HomeModifications" aria-selected="false">Education & Work</a>
-                        @*<a class="nav-link" id="v-pills-Consumables-tab" data-toggle="pill" href="#v-pills-Consumables" role="tab" aria-controls="v-pills-Consumables" aria-selected="false">Consumables</a>*@
 
+
+    <!-- Main content -->
+    <div class="d-flex" id="toggle-btn">
+        <h3>Benefits and Services</h3>
+        <p> NDIS provides a range of personalised services and supports to help people with disability
+        , <br>their families and carers connect with their community and live an ordinary life.</p>
+        <div class="d-flex">
+            <button type="button" id="btn-mybenefits" class="btn btn-primary btn-lg">My Benefits</button>
+            <button type="button" id="btn-allbenefits" class="btn btn-secondary btn-lg">All Benefits</button>
+        </div>
+    </div>
+
+
+    <!-- chars -->
+    @*<div class="chart-container" style="position: relative; height:40vh; width:80vw">
+        <canvas id="myChart-1"></canvas>
+        <canvas id="myChart-2"></canvas>
+    </div>*@
+    <!-- my benefits and quiz -->
+    <div class="table-Filter-wraper active">
+        <!-- nav items -->
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                @*<div class="nav-tab-inner">*@
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Answer Questions</a>
+                <a class="nav-item nav-link" id="nav-showresult-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Show Results</a>
+                @*</div>*@
+                @*<button type="button" id="btn-applyfilter" class="btn btn-danger ml-auto">Apply Filter</button>*@
+
+                @*<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">All benefits</a>*@
+            </div>
+        </nav>
+        <!-- nav tab contents -->
+        <div class="tab-content" id="nav-tabContent">
+
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <!-- filter component-->
+                <!-- filter pills-->
+                <div class="row">
+                    <div class="col-xm-2 col-md-3" id="wrapper-tab-pills">
+                        <div class="wrapper-tab-pills-inner">
+                            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <a class="nav-link active" id="v-pills-core-tab" data-toggle="pill" href="#v-pills-core" role="tab" aria-controls="v-pills-core" aria-selected="true">Core</a>
+                                <a class="nav-link" id="v-pills-DailyLiving-tab" data-toggle="pill" href="#v-pills-DailyLiving" role="tab" aria-controls="v-pills-DailyLiving" aria-selected="false">Daily Living</a>
+                                <a class="nav-link" id="v-pills-PlanManagement-tab" data-toggle="pill" href="#v-pills-PlanManagement" role="tab" aria-controls="v-pills-PlanManagement" aria-selected="false">Plan Management</a>
+                                @*<a class="nav-link" id="v-pills-Education&Work-tab" data-toggle="pill" href="#v-pills-Education&Work" role="tab" aria-controls="v-pills-Education&Work" aria-selected="false">Education & Work</a>*@
+                                <a class="nav-link" id="v-pills-ImprovedHealth-tab" data-toggle="pill" href="#v-pills-ImprovedHealth" role="tab" aria-controls="v-pills-ImprovedHealth" aria-selected="false">Improved Health </a>
+                                <a class="nav-link" id="v-pills-HomeModifications-tab" data-toggle="pill" href="#v-pills-HomeModifications" role="tab" aria-controls="v-pills-HomeModifications" aria-selected="false">Education & Work</a>
+                                @*<a class="nav-link" id="v-pills-Consumables-tab" data-toggle="pill" href="#v-pills-Consumables" role="tab" aria-controls="v-pills-Consumables" aria-selected="false">Consumables</a>*@
+                                <a class="nav-link" id="v-pills-RealHomeMod-tab" data-toggle="pill" href="#v-pills-RealHomeMod" role="tab" aria-controls="v-pills-RealHomeMod" aria-selected="false">Home Modification </a>
+                                <a class="nav-link" id="v-pills-Consumables-tab" data-toggle="pill" href="#v-pills-Consumables" role="tab" aria-controls="v-pills-Consumables" aria-selected="false">Consumables</a>
+                                <a class="nav-link" id="v-pills-AssistiveTech-tab" data-toggle="pill" href="#v-pills-AssistiveTech" role="tab" aria-controls="v-pills-AssistiveTech" aria-selected="false">Assitive Technology</a>
+                                <button type="button" id="btn-applyfilter" class="btn btn-danger center">Show Results</button>
+
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- filter contents-->
-                <div class="col-xm-10 col-md-9 border-left">
-                    <div class="tab-content" id="v-pills-tabContent">
-                        <!-- Core quize -->
-                        <div class="tab-pane fade show active" id="v-pills-core" role="tabpanel" aria-labelledby="v-pills-core-tab">
-                            <div class="quize-container d-flex" role="tabpanel" aria-labelledby="v-pills-core-tab">
-                                <!-- Age radio-->
-                                <div class="Single-Quize-Container">
-                                    <h6>Q1. What is your age?</h6>
-                                    <p>You need to be under 65 years of age to join NDIS</p>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="radio-age" id="age-st6" value="st6">
-                                        <label class="form-check-label" for="radio-age">
-                                            Under 6
-                                        </label>
+                    <!-- filter contents-->
+                    <div class="col-xm-10 col-md-9" id="wrapper-tab-content">
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <!-- Core quize -->
+                            <div class="tab-pane fade show active" id="v-pills-core" role="tabpanel" aria-labelledby="v-pills-core-tab">
+                                <div class="quize-container d-flex" role="tabpanel" aria-labelledby="v-pills-core-tab">
+                                    <div class="core-decription">
+                                        <p> Please answer the questions in this tab, and click ‘View Results’ tab to see what benefits you or a loved one may be eligible to receive. You do not have to answer every question, but results will only show benefits which correspond to your answered questions.</p>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="radio-age" id="age-gt6-lt18" value="gt6lt18">
-                                        <label class="form-check-label" for="radio-age">
-                                            Over 6 and Under 18
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="radio-age" id="age-gt18-lt65" value="gt18lt65">
-                                        <label class="form-check-label" for="radio-age">
-                                            Over 18 and Under 65
-                                        </label>
-                                    </div>
-                                    @*<div class="form-check">
-                                        <input class="form-check-input" type="radio" name="radio-age" id="age-gt65" value="gt65">
-                                        <label class="form-check-label" for="radio-age">
-                                            Over 65
-                                        </label>
-                                    </div>*@
-                                </div>
-                                <!-- Region dropdown list-->
-                                <div class="Single-Quize-Container" id="quiz-region-dropdown">
-                                    <h6>Q2. Where do you live?</h6>
-                                    <select class="custom-select">
-                                        <option selected>Open this select menu</option>
-                                        <option value="VIC">VIC</option>
-                                        <option value="NSW">NSW</option>
-                                        <option value="QLD">QLD</option>
-                                        <option value="TAS">TAS</option>
-                                        <option value="ACT">ACT</option>
-                                        <option value="NT">NT</option>
-                                        <option value="SA">SA</option>
-                                        <option value="WA">WA</option>
-                                        <option value="Remote">Remote</option>
-                                        <option value="Very Remote">Very Remote</option>
-                                    </select>
-                                </div>
-                                <!-- residency radio-->
-                                <div class="Single-Quize-Container">
-                                    <h6>Q3. What is your residency status?</h6>
-                                    <p> To be an NDIS participant, you must either be an Australian citizen, have a permanent residency visa, or have a protected special category visa</p>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="radio-residency" id="residency-AC" value="AustralianCitizen">
-                                        <label class="form-check-label" for="radio-residency">
-                                            I am an Australian Citizen
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="radio-residency" id="residency-PR" value="PR">
-                                        <label class="form-check-label" for="radio-residency">
-                                            I have a Permanent Residency visa
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="radio-residency" id="age-gt18-lt65" value="gt18lt65">
-                                        <label class="form-check-label" for="radio-residency">
-                                            Protected Special Category Visa
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="radio-residency" id="age-gt65" value="gt65">
-                                        <label class="form-check-label" for="radio-residency">
-                                            Other
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+                                    <!-- Age radio-->
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">1</i>
+                                            What is your age?
+                                            <i class="fas fa-question-circle" data-toggle="tooltip" data-original-title="You need to be under 65 years of age to join NDIS
 
-                        </div>
-                        <!-- DailyLiving quize-->
-                        <div class="tab-pane fade" id="v-pills-DailyLiving" role="tabpanel" aria-labelledby="v-pills-DailyLiving-tab">
+"></i>
+                                        </p>
 
-                            <div class="Single-Quize-Container">
-                                <h6>Q1. Do you need assistance with daily personal activities due to disability?</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="daily-activities" id="daily-activities-yes" value="yes">
-                                    <label class="form-check-label" for="daily-activities">
-                                        Yes
-                                    </label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio-age" id="age-st6" value="st6">
+                                            <label class="form-check-label" for="radio-age">
+                                                Under 6
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio-age" id="age-gt6-lt18" value="gt6lt18">
+                                            <label class="form-check-label" for="radio-age">
+                                                Over 6 and Under 18
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio-age" id="age-gt18-lt65" value="gt18lt65">
+                                            <label class="form-check-label" for="radio-age">
+                                                Over 18 and Under 65
+                                            </label>
+                                        </div>
+                                        @*<div class="form-check">
+                <input class="form-check-input" type="radio" name="radio-age" id="age-gt65" value="gt65">
+                <label class="form-check-label" for="radio-age">
+                    Over 65
+                </label>
+            </div>*@
+                                    </div>
+                                    <!-- Region dropdown list-->
+                                    <div class="Single-Quize-Container" id="quiz-region-dropdown">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">2</i>
+                                            Where do you live?
+                                        </p>
+                                        <select class="custom-select">
+                                            <option selected>Open this select menu</option>
+                                            <option value="VIC">VIC</option>
+                                            <option value="NSW">NSW</option>
+                                            <option value="QLD">QLD</option>
+                                            <option value="TAS">TAS</option>
+                                            <option value="ACT">ACT</option>
+                                            <option value="NT">NT</option>
+                                            <option value="SA">SA</option>
+                                            <option value="WA">WA</option>
+                                            <option value="Remote">Remote</option>
+                                            <option value="Very Remote">Very Remote</option>
+                                        </select>
+                                    </div>
+                                    <!-- residency radio-->
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">3</i>
+                                            What is your residency status?
+                                            <i class="fas fa-question-circle" data-toggle="tooltip" data-original-title="See ‘Join NDIS’ page to learn more about residency requirements"></i>
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio-residency" id="residency-AC" value="AustralianCitizen">
+                                            <label class="form-check-label" for="radio-residency">
+                                                I am an Australian Citizen
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio-residency" id="residency-PR" value="PR">
+                                            <label class="form-check-label" for="radio-residency">
+                                                I have a Permanent Residency visa
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio-residency" id="age-gt18-lt65" value="gt18lt65">
+                                            <label class="form-check-label" for="radio-residency">
+                                                Protected Special Category Visa
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio-residency" id="age-gt65" value="gt65">
+                                            <label class="form-check-label" for="radio-residency">
+                                                Other
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="btn-pre-next-container" >
+                                        <button class="btn-secondary quiz-nav-btn" id="core-btn-pre"> Previous</button>
+                                        <button class="btn-primary quiz-nav-btn" id="core-btn-next"> Next</button>
+                                    </div>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="daily-activities" id="daily-activities-no" value="no">
-                                    <label class="form-check-label" for="daily-activities">
-                                        No
-                                    </label>
+
+                            </div>
+                            <!-- DailyLiving quize-->
+                            <div class="tab-pane fade" id="v-pills-DailyLiving" role="tabpanel" aria-labelledby="v-pills-DailyLiving-tab">
+                                <div class="quize-container d-flex" role="tabpanel" aria-labelledby="v-pills-DailyLiving-tab">
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">1</i>
+                                            Do you need assistance with daily personal activities due to disability?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="daily-activities" id="daily-activities-yes" value="yes">
+                                            <label class="form-check-label" for="daily-activities">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="daily-activities" id="daily-activities-no" value="no">
+                                            <label class="form-check-label" for="daily-activities">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container" id="transportation">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">2</i>
+                                            Do you have difficulty using transportation due to disability?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="transportation" id="transportation-yes" value="yes">
+                                            <label class="form-check-label" for="transportation">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="transportation" id="transportation-no" value="no">
+                                            <label class="form-check-label" for="transportation">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">3</i>
+                                            Due to disability, do you have difficulty participating in social and community activities?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="diff-social" id="diff-social-yes" value="yes">
+                                            <label class="form-check-label" for="diff-social">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="diff-social" id="diff-social-no" value="no">
+                                            <label class="form-check-label" for="diff-social">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="btn-pre-next-container">
+                                        <button class="btn-primary quiz-nav-btn" id="DailyLiving-btn-pre"> Previous</button>
+                                        <button class="btn-primary quiz-nav-btn" id="DailyLiving-btn-next"> Next</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="Single-Quize-Container" id="transportation">
-                                <h6>Q2. Do you have difficulty using transportation due to disability? </h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="transportation" id="transportation-yes" value="yes">
-                                    <label class="form-check-label" for="transportation">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="transportation" id="transportation-no" value="no">
-                                    <label class="form-check-label" for="transportation">
-                                        No
-                                    </label>
+                            <!-- Plan management quize-->
+                            <div class="tab-pane fade" id="v-pills-PlanManagement" role="tabpanel" aria-labelledby="v-pills-PlanManagement-tab">
+                                <div class="quize-container d-flex" role="tabpanel" aria-labelledby="v-pills-PlanManagement-tab">
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">1</i>
+                                            Are you receiving any disability benefits from other government organizations?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="receive-from-gov" id="receive-from-gov-yes" value="yes">
+                                            <label class="form-check-label" for="receive-from-gov">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="receive-from-gov" id="receive-from-gov-no" value="no">
+                                            <label class="form-check-label" for="receive-from-gov">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div><div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">2</i>
+                                            Do you need assistance looking for disability services?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="assistance-looking-service" id="assistance-looking-service-yes" value="yes">
+                                            <label class="form-check-label" for="assistance-looking-service">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="assistance-looking-service" id="assistance-looking-service-no" value="no">
+                                            <label class="form-check-label" for="assistance-looking-service">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">3</i>
+                                            Do you need assistance with budget planning?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="assistance-budget-plan" id="assistance-budget-plan-yes" value="yes">
+                                            <label class="form-check-label" for="assistance-budget-plan">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="assistance-budget-plan" id="assistance-budget-plan-no" value="no">
+                                            <label class="form-check-label" for="assistance-budget-plan">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="btn-pre-next-container">
+                                        <button class="btn-primary quiz-nav-btn" id="plan-btn-pre"> Previous</button>
+                                        <button class="btn-primary quiz-nav-btn" id="plan-btn-next"> Next</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="Single-Quize-Container">
-                                <h6>Q3. Due to disability, do you have difficulty participating in social and community activities?</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="diff-social" id="diff-social-yes" value="yes">
-                                    <label class="form-check-label" for="diff-social">
-                                        Yes
-                                    </label>
+                            <!-- Education and Work quize-->
+                            <div class="tab-pane fade" id="v-pills-Education&Work" role="tabpanel" aria-labelledby="v-pills-Education&Work-tab">
+
+                            </div>
+                            <!-- Improved Health quize-->
+                            <div class="tab-pane fade" id="v-pills-ImprovedHealth" role="tabpanel" aria-labelledby="v-pills-ImprovedHealth-tab">
+                                <div class="quize-container d-flex" role="tabpanel" aria-labelledby="v-pills-ImprovedHealth-tab">
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">1</i>
+                                            Do you need behavior intervention support?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="behavior-intervention-support" id="behavior-intervention-support-yes" value="yes">
+                                            <label class="form-check-label" for="behavior-intervention-support">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="behavior-intervention-support" id="behavior-intervention-support-no" value="no">
+                                            <label class="form-check-label" for="behavior-intervention-support">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">2</i>
+                                            Do you need psychiatric counseling due to disability?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="psychiatric-counseling" id="psychiatric-counseling-yes" value="yes">
+                                            <label class="form-check-label" for="psychiatric-counseling">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="psychiatric-counseling" id="psychiatric-counseling-no" value="no">
+                                            <label class="form-check-label" for="psychiatric-counseling">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">3</i>
+                                            Do you need to consult a dietician to improve your nutrition and health?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="consult-dietician" id="consult-dietician-yes" value="yes">
+                                            <label class="form-check-label" for="consult-dietician">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="consult-dietician" id="consult-dietician-no" value="no">
+                                            <label class="form-check-label" for="consult-dietician">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">4</i>
+                                            Do you need to consult a physical therapist to improve your physical wellbeing?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="consult-physical-therapist" id="consult-physical-therapist-yes" value="yes">
+                                            <label class="form-check-label" for="consult-physical-therapist">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="consult-physical-therapist" id="consult-physical-therapist-no" value="no">
+                                            <label class="form-check-label" for="consult-physical-therapist">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="btn-pre-next-container">
+                                        <button class="btn-primary quiz-nav-btn" id="health-btn-pre"> Previous</button>
+                                        <button class="btn-primary quiz-nav-btn" id="health-btn-next"> Next</button>
+                                    </div>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="diff-social" id="diff-social-no" value="no">
-                                    <label class="form-check-label" for="diff-social">
-                                        No
-                                    </label>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-HomeModifications" role="tabpanel" aria-labelledby="v-pills-HomeModifications-tab">
+                                <div class="quize-container d-flex" role="tabpanel" aria-labelledby="v-pills-HomeModifications-tab">
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">1</i>
+                                            Do you need help with finding a job?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="finding-job" id="finding-job-yes" value="yes">
+                                            <label class="form-check-label" for="finding-job">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="finding-job" id="finding-job-no" value="no">
+                                            <label class="form-check-label" for="finding-job">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">2</i>
+                                            Do you have difficulty at work due to disability?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="diff-at-work" id="diff-at-work-yes" value="yes">
+                                            <label class="form-check-label" for="diff-at-work">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="diff-at-work" id="diff-at-work-no" value="no">
+                                            <label class="form-check-label" for="diff-at-work">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">3</i>
+                                            Are you currently employed under Disability Maintenance. Instrument (DMI)?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="dmi" id="dmi-yes" value="yes">
+                                            <label class="form-check-label" for="dmi">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="dmi" id="dmi-no" value="no">
+                                            <label class="form-check-label" for="dmi">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">4</i>
+                                            Are you currently employed, or looking for employment, by an Australian Disability Enterprises (ADE)?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="ade" id="ade-yes" value="yes">
+                                            <label class="form-check-label" for="ade">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="ade" id="ade-no" value="no">
+                                            <label class="form-check-label" for="ade">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">5</i>
+                                            Do you need assistance transitioning from school to further education?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="school-trasition" id="school-trasition-yes" value="yes">
+                                            <label class="form-check-label" for="school-trasition">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="school-trasition" id="school-trasition-no" value="no">
+                                            <label class="form-check-label" for="school-trasition">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">6</i>
+                                            Does your carer need training in matters related to caring for a person with disability?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="caring-training" id="caring-training-yes" value="yes">
+                                            <label class="form-check-label" for="caring-training">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="caring-training" id="caring-training-no" value="no">
+                                            <label class="form-check-label" for="caring-training">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">7</i>
+                                            Does your carer need training in behavior management strategy to assist with your disability?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="behavior-management-training" id="behavior-management-training-yes" value="yes">
+                                            <label class="form-check-label" for="behavior-management-training">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="behavior-management-training" id="behavior-management-training-no" value="no">
+                                            <label class="form-check-label" for="behavior-management-training">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="btn-pre-next-container">
+                                        <button class="btn-primary quiz-nav-btn" id="edu-work-btn-pre"> Previous</button>
+                                        <button class="btn-primary quiz-nav-btn" id="edu-work-health-btn-next"> Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-RealHomeMod" role="tabpanel" aria-labelledby="v-pills-RealHomeMod-tab">
+                                <div class="quize-container d-flex" role="tabpanel" aria-labelledby="v-pills-RealHomeMod-tab">
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">1</i>
+                                            Do you use wheelchair or mobility scooter?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="wheelchair-scooter" id="wheelchair-scooter-yes" value="yes">
+                                            <label class="form-check-label" for="wheelchair-scooter">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="wheelchair-scooter" id="wheelchair-scooter-no" value="no">
+                                            <label class="form-check-label" for="wheelchair-scooter">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">2</i>
+                                            Do you need bathroom modifications to help with disability?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="bathroom-moditication" id="bathroom-moditication-yes" value="yes">
+                                            <label class="form-check-label" for="bathroom-moditication">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="bathroom-moditication" id="bathroom-moditication-no" value="no">
+                                            <label class="form-check-label" for="bathroom-moditication">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">3</i>
+                                            Do you need kitchen modifications to help with disability?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="kitchen-modification" id="kitchen-modification-yes" value="yes">
+                                            <label class="form-check-label" for="kitchen-modification">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="kitchen-modification" id="kitchen-modification-no" value="no">
+                                            <label class="form-check-label" for="kitchen-modification">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">4</i>
+                                            Do you have difficulty moving up and down stairs?
+                                            <i class="fas fa-question-circle" data-toggle="tooltip" data-original-title="For example, due to your disability are you unabled to move upstairs without an elevator?"></i>
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="difficulty-using-stairs" id="difficulty-using-stairs-yes" value="yes">
+                                            <label class="form-check-label" for="difficulty-using-stairs">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="difficulty-using-stairs" id="difficulty-using-stairs-no" value="no">
+                                            <label class="form-check-label" for="difficulty-using-stairs">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">5</i>
+                                            Do you need specialist accomodation due to extreme functional impairment?
+                                            <i class="fas fa-question-circle" data-toggle="tooltip" data-original-title="One of the supports that may be funded for some participants is Specialist Disability Accommodation (SDA). SDA refers to accommodation for people who require specialist housing solutions, including to assist with the delivery of supports that cater for their extreme functional impairment or very high support needs. Funding is only provided to a small proportion of NDIS participants with extreme functional impairment or very high support needs who meet specific eligibility criteria."></i>
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="Specialist-disability-accomodation" id="Specialist-disability-accomodation-yes" value="yes">
+                                            <label class="form-check-label" for="Specialist-disability-accomodation">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="Specialist-disability-accomodation" id="Specialist-disability-accomodation-no" value="no">
+                                            <label class="form-check-label" for="Specialist-disability-accomodation">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">6</i>
+                                            Do you need any other home modifications that was not mentioned above?
+                                            <i class="fas fa-question-circle" data-toggle="tooltip" data-original-title="Lower cost adaptions such as door adjustments, safety installations and bathroom fittings"></i>
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="other-modifications" id="other-modifications-yes" value="yes">
+                                            <label class="form-check-label" for="other-modifications">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="other-modifications" id="other-modifications-no" value="no">
+                                            <label class="form-check-label" for="other-modifications">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="btn-pre-next-container">
+                                        <button class="btn-primary quiz-nav-btn" id="homemodification-btn-pre"> Previous</button>
+                                        <button class="btn-primary quiz-nav-btn" id="homemodification-btn-next"> Next</button>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Conumables QUiZ-->
+                            <div class="tab-pane fade" id="v-pills-Consumables" role="tabpanel" aria-labelledby="v-pills-Consumables-tab">
+                                <div class="quize-container d-flex" role="tabpanel" aria-labelledby="v-pills-Consumables-tab">
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">1</i>
+                                            Do you need equipments to help with incontinence?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="incontinence" id="incontinence-yes" value="yes">
+                                            <label class="form-check-label" for="incontinence">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="incontinence" id="incontinence-no" value="no">
+                                            <label class="form-check-label" for="incontinence">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">2</i>
+                                            Do you need enternal feeding equipment?
+                                            <i class="fas fa-question-circle" data-toggle="tooltip" data-original-title="Enteral feeding refers to the delivery of a nutritionally complete feed, containing protein, carbohydrate, fat, water, minerals and vitamins, directly into the stomach"></i>
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="enternal-feeding" id="enternal-feeding-yes" value="yes">
+                                            <label class="form-check-label" for="enternal-feeding">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="enternal-feeding" id="enternal-feeding-no" value="no">
+                                            <label class="form-check-label" for="lenternal-feeding">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">3</i>
+                                            Do you need language services to help with communication?
+                                            <i class="fas fa-question-circle" data-toggle="tooltip" data-original-title="language services include translation, translation, and training for Auslan or sign language"></i>
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="language-service" id="language-service-yes" value="yes">
+                                            <label class="form-check-label" for="language-service">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="language-service" id="language-service-no" value="no">
+                                            <label class="form-check-label" for="language-service">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">4</i>
+                                            Do you need any other consumables for daily living that is not mentioned above?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="consumables-other" id="consumables-other-yes" value="yes">
+                                            <label class="form-check-label" for="consumables-other">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="consumables-other" id="consumables-other-no" value="no">
+                                            <label class="form-check-label" for="consumables-other">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="btn-pre-next-container">
+                                        <button class="btn-primary quiz-nav-btn" id="Consumables-btn-pre"> Previous</button>
+                                        <button class="btn-primary quiz-nav-btn" id="Consumables-btn-next"> Next</button>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Assistive Technology QUiZ-->
+                            <div class="tab-pane fade" id="v-pills-AssistiveTech" role="tabpanel" aria-labelledby="v-pills-AssistiveTech-tab">
+                                <div class="quize-container d-flex" role="tabpanel" aria-labelledby="v-pills-AssistiveTech-tab">
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">1</i>
+                                            Do you need assistance dog? (including guide dog)
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="guide-dog" id="guide-dog-yes" value="yes">
+                                            <label class="form-check-label" for="guide-dog">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="guide-dog" id="guide-dog-no" value="no">
+                                            <label class="form-check-label" for="guide-dog">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">1</i>
+                                            Do you need assistance dog? (including guide dog)
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="guide-dog" id="guide-dog-yes" value="yes">
+                                            <label class="form-check-label" for="guide-dog">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="guide-dog" id="guide-dog-no" value="no">
+                                            <label class="form-check-label" for="guide-dog">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">2</i>
+                                            Do you require adapted vehicle when traveling?
+                                            <i class="fas fa-question-circle" data-toggle="tooltip" data-original-title="Benefits cover vehicle modifications to cater for disability needs, as well as rental of adapated vehicle"></i>
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="adapted-vehicle" id="adapted-vehicle-yes" value="yes">
+                                            <label class="form-check-label" for="adapted-vehicle">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="adapted-vehicle" id="adapted-vehicle-no" value="no">
+                                            <label class="form-check-label" for="adapted-vehicle">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">3</i>
+                                            Do you need assistive equipments for recreation activities?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="recreation-activities" id="recreation-activities-yes" value="yes">
+                                            <label class="form-check-label" for="recreation-activities">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="recreation-activities" id="recreation-activities-no" value="no">
+                                            <label class="form-check-label" for="recreation-activities">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">4</i>
+                                            Do you need assistive products for household tasks?
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="household-tasks" id="household-tasks-yes" value="yes">
+                                            <label class="form-check-label" for="household-tasks">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="household-tasks" id="household-tasks-no" value="no">
+                                            <label class="form-check-label" for="household-tasks">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">5</i>
+                                            Do you need assistive products for personal care and safety?
+                                            <i class="fas fa-question-circle" data-toggle="tooltip" data-original-title="Personal care and safety products include toilet use assistance products, shower assistance products, standing frames, assistive bed products"></i>
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="personal-care-safety" id="personal-care-safety-yes" value="yes">
+                                            <label class="form-check-label" for="personal-care-safety">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="personal-care-safety" id="personal-care-safety-no" value="no">
+                                            <label class="form-check-label" for="personal-care-safety">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">6</i>
+                                            Do you need equipment for communication and information?
+                                            <i class="fas fa-question-circle" data-toggle="tooltip" data-original-title="Communication and information equipments include hardware devices like voice generators, eye gaze system, etc. Also softwares to help with communication and information is covered by benefits"></i>
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="communication-information-equipment" id="communication-information-equipment-yes" value="yes">
+                                            <label class="form-check-label" for="communication-information-equipment">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="communication-information-equipment" id="communication-information-equipment-no" value="no">
+                                            <label class="form-check-label" for="communication-information-equipment">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">7</i>
+                                            Do you need customised prosthetic body parts?
+                                            <i class="fas fa-question-circle" data-toggle="tooltip" data-original-title="Benefits cover purhcase of customsed prosthetics, fees for customising prosthetics, as well as repairing of prosthetics"></i>
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="prosthetics" id="prosthetics-yes" value="yes">
+                                            <label class="form-check-label" for="prosthetics">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="prosthetics" id="prosthetics-no" value="no">
+                                            <label class="form-check-label" for="prosthetics">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">8</i>
+                                            Do you need hearing equipments and services?
+                                            <i class="fas fa-question-circle" data-toggle="tooltip" data-original-title="This category of benefits include general personal sound amplifiers, speakers, music players, as well as specialised hearing services and services"></i>
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="hearing-equipment" id="hearing-equipment-yes" value="yes">
+                                            <label class="form-check-label" for="hearing-equipment">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="hearing-equipment" id="hearing-equipment-no" value="no">
+                                            <label class="form-check-label" for="hearing-equipment">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">9</i>
+                                            Do you need personal mobility equipments?
+                                            <i class="fas fa-question-circle" data-toggle="tooltip" data-original-title="Personal mobility equipments include wheelchairs, mobility scooters, crutches, walking stick and more. Benefits also cover delivery and repair fees of mobility equipments"></i>
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="mobility-equipment" id="mobility-equipment-yes" value="yes">
+                                            <label class="form-check-label" for="mobility-equipment">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="mobility-equipment" id="mobility-equipment-no" value="no">
+                                            <label class="form-check-label" for="mobility-equipment">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="Single-Quize-Container">
+                                        <p class="circleGroup">
+                                            <i class="numberCircle">10</i>
+                                            Do you need equipments to help with vision impairment?
+                                            <i class="fas fa-question-circle" data-toggle="tooltip" data-original-title="This category of benefit includes equipments that will help with everyday living for people who have vision impairment"></i>
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="vision-equipment" id="vision-equipment-yes" value="yes">
+                                            <label class="form-check-label" for="vision-equipment">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="vision-equipment" id="vision-equipment-no" value="no">
+                                            <label class="form-check-label" for="vision-equipment">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="btn-pre-next-container">
+                                        <button class="btn-primary quiz-nav-btn" id="AssistiveTech-btn-pre"> Previous</button>
+                                        <button class="btn-secondary quiz-nav-btn" id="AssistiveTech-btn-next"> Next</button>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-Consumables" role="tabpanel" aria-labelledby="v-pills-Consumables-tab">...</div>
+                            </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Plan management quize-->
-                        <div class="tab-pane fade" id="v-pills-PlanManagement" role="tabpanel" aria-labelledby="v-pills-PlanManagement-tab">
-                            <div class="Single-Quize-Container">
-                                <h6>Q1. Are you receiving any disability benefits from other government organizations?</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="receive-from-gov" id="receive-from-gov-yes" value="yes">
-                                    <label class="form-check-label" for="receive-from-gov">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="receive-from-gov" id="receive-from-gov-no" value="no">
-                                    <label class="form-check-label" for="receive-from-gov">
-                                        No
-                                    </label>
-                                </div>
-                            </div><div class="Single-Quize-Container">
-                                <h6>Q2. Do you need assistance looking for disability services? </h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="assistance-looking-service" id="assistance-looking-service-yes" value="yes">
-                                    <label class="form-check-label" for="assistance-looking-service">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="assistance-looking-service" id="assistance-looking-service-no" value="no">
-                                    <label class="form-check-label" for="assistance-looking-service">
-                                        No
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Single-Quize-Container">
-                                <h6>Q3. Do you need assistance with budget planning?</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="assistance-budget-plan" id="assistance-budget-plan-yes" value="yes">
-                                    <label class="form-check-label" for="assistance-budget-plan">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="assistance-budget-plan" id="assistance-budget-plan-no" value="no">
-                                    <label class="form-check-label" for="assistance-budget-plan">
-                                        No
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Education and Work quize-->
-                        <div class="tab-pane fade" id="v-pills-Education&Work" role="tabpanel" aria-labelledby="v-pills-Education&Work-tab">
-                            
-                        </div>
-                        <!-- Improved Health quize-->
-                        <div class="tab-pane fade" id="v-pills-ImprovedHealth" role="tabpanel" aria-labelledby="v-pills-ImprovedHealth-tab">
-                            <div class="Single-Quize-Container">
-                                <h6>Q1. Do you need behavior intervention support?</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="behavior-intervention-support" id="behavior-intervention-support-yes" value="yes">
-                                    <label class="form-check-label" for="behavior-intervention-support">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="behavior-intervention-support" id="behavior-intervention-support-no" value="no">
-                                    <label class="form-check-label" for="behavior-intervention-support">
-                                        No
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Single-Quize-Container">
-                                <h6>Q2. Do you need psychiatric counseling due to disability?</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="psychiatric-counseling" id="psychiatric-counseling-yes" value="yes">
-                                    <label class="form-check-label" for="psychiatric-counseling">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="psychiatric-counseling" id="psychiatric-counseling-no" value="no">
-                                    <label class="form-check-label" for="psychiatric-counseling">
-                                        No
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Single-Quize-Container">
-                                <h6>Q3. Do you need to consult a dietician to improve your nutrition and health?</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="consult-dietician" id="consult-dietician-yes" value="yes">
-                                    <label class="form-check-label" for="consult-dietician">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="consult-dietician" id="consult-dietician-no" value="no">
-                                    <label class="form-check-label" for="consult-dietician">
-                                        No
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Single-Quize-Container">
-                                <h6>Q4. Do you need to consult a physical therapist to improve your physical wellbeing?</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="consult-physical-therapist" id="consult-physical-therapist-yes" value="yes">
-                                    <label class="form-check-label" for="consult-physical-therapist">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="consult-physical-therapist" id="consult-physical-therapist-no" value="no">
-                                    <label class="form-check-label" for="consult-physical-therapist">
-                                        No
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-HomeModifications" role="tabpanel" aria-labelledby="v-pills-HomeModifications-tab">
-                            <div class="Single-Quize-Container">
-                                <h6>Q1. Do you need help with finding a job?</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="finding-job" id="finding-job-yes" value="yes">
-                                    <label class="form-check-label" for="finding-job">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="finding-job" id="finding-job-no" value="no">
-                                    <label class="form-check-label" for="finding-job">
-                                        No
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Single-Quize-Container">
-                                <h6>Q2. Do you have difficulty at work due to disability?</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="diff-at-work" id="diff-at-work-yes" value="yes">
-                                    <label class="form-check-label" for="diff-at-work">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="diff-at-work" id="diff-at-work-no" value="no">
-                                    <label class="form-check-label" for="diff-at-work">
-                                        No
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Single-Quize-Container">
-                                <h6>Q3. Are you currently employed under Disability Maintenance. Instrument (DMI)?</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="dmi" id="dmi-yes" value="yes">
-                                    <label class="form-check-label" for="dmi">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="dmi" id="dmi-no" value="no">
-                                    <label class="form-check-label" for="dmi">
-                                        No
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Single-Quize-Container">
-                                <h6>Q4. Are you currently employed, or looking for employment, by an Australian Disability Enterprises (ADE)?</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ade" id="ade-yes" value="yes">
-                                    <label class="form-check-label" for="ade">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ade" id="ade-no" value="no">
-                                    <label class="form-check-label" for="ade">
-                                        No
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Single-Quize-Container">
-                                <h6>Q5. Do you need assistance transitioning from school to further education?</h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="school-trasition" id="school-trasition-yes" value="yes">
-                                    <label class="form-check-label" for="school-trasition">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="school-trasition" id="school-trasition-no" value="no">
-                                    <label class="form-check-label" for="school-trasition">
-                                        No
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Single-Quize-Container">
-                                <h6>Q6. Does your carer need training in matters related to caring for a person with disability? </h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="caring-training" id="caring-training-yes" value="yes">
-                                    <label class="form-check-label" for="caring-training">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="caring-training" id="caring-training-no" value="no">
-                                    <label class="form-check-label" for="caring-training">
-                                        No
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="Single-Quize-Container">
-                                <h6>Q7. Does your carer need training in behavior management strategy to assist with your disability? </h6>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="behavior-management-training" id="behavior-management-training-yes" value="yes">
-                                    <label class="form-check-label" for="behavior-management-training">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="behavior-management-training" id="behavior-management-training-no" value="no">
-                                    <label class="form-check-label" for="behavior-management-training">
-                                        No
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-Consumables" role="tabpanel" aria-labelledby="v-pills-Consumables-tab">...</div>
+
+</div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+                <!-- Data table -->
+                <div class="benefits-datatable">
+                    <h2>Filter Result</h2>
+                    <hr />
+                    <div>
+
+                        <table class="table table-hover table-bordered table-striped" id="tb-benefits">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>
+                                        Registration Group
+                                    </th>
+
+                                    <th>
+                                        Support Item Number
+                                    </th>
+                                    <th>
+                                        Item Name
+                                    </th>
+                                    <th>
+                                        Description
+                                    </th>
+                                    <th>
+                                        Price Limit($)
+                                    </th>
+                                    <th>
+                                        Quote
+                                    </th>
+                                    <th>
+                                        Unit
+                                    </th>
+                                    <th>
+                                        Price Control
+                                    </th>
+                                    <th>
+                                        Support Categories
+                                    </th>
+                                    <th>
+                                        Support Category Number
+                                    </th>
+                                </tr>
+                            </thead>
+
+                        </table>
                     </div>
                 </div>
             </div>
+
         </div>
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
-            <!-- Data table -->
-            <div class="benefits-datatable">
-                <h2>My benefits filtered by questions</h2>
-                <hr />
-                <div>
 
-                    <table class="table table-hover table-bordered table-striped" id="tb-benefits">
-                        <thead class="thead-light">
-                            <tr>
-                                <th>
-                                    RegistrationGroup
-                                </th>
-
-                                <th>
-                                    SupportItemNumber
-                                </th>
-                                <th>
-                                    SupportItem
-                                </th>
-                                <th>
-                                    SupportItemDescription
-                                </th>
-                                <th>
-                                    UnitOfMeasure
-                                </th>
-                                <th>
-                                    Quote
-                                </th>
-                                <th>
-                                    PriceLimit
-                                </th>
-                                <th>
-                                    PriceControl
-                                </th>
-                                <th>
-                                    SupportCategories
-                                </th>
-                                <th>
-                                    SupportCategoryNumber
-                                </th>
-                            </tr>
-                        </thead>
-                        
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-            <!-- Data table -->
-            <div class="benefits-datatable">
-                <h2>All Benefits in NDIS</h2>
-                <hr />
-                @*<div class="row">
+    </div>
+    <!-- all benefits-->
+    <div id="wapper-benefits-datatable">
+        <!-- Data table -->
+        <div class="benefits-datatable">
+            <h2>All Benefits</h2>
+            <hr />
+            @*<div class="row">
                     <div class="btn-group" role="group" aria-label="Category button">
                         <a type="button" class="btn btn-secondary" href="/Ndis201819/index?category=1">Health</a>
                         <a type="button" class="btn btn-secondary" href="/Ndis201819/index?category=4">Community</a>
@@ -470,51 +1165,141 @@
                     </div>
                 </div>*@
 
-                <div>
+            <div>
 
-                    <table class="table table-hover table-bordered table-striped" id="table-all-benefits">
-                        <thead class="thead-dark">
+                <table class="table table-hover table-bordered table-striped" id="table-all-benefits">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>
+                                Benefit Group
+                            </th>
+
+                            <th>
+                                Support Item
+                            </th>
+                            <th>
+                                Description
+                            </th>
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
                             <tr>
-                                <th>
-                                    Benefit Group
-                                </th>
-
-                                <th>
-                                    Support Item
-                                </th>
-                                <th>
-                                    Description
-                                </th>
-
-                                <th></th>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RegistrationGroup)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SupportItem)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SupportItemDescription)
+                                </td>
+                                <td>
+                                    @*<a asp-action="Edit" asp-route-id="@item.SupportItemNumber">Edit</a> |*@
+                                    <a asp-action="Details" asp-route-id="@item.SupportItemNumber">Details</a>
+                                    @*<a asp-action="Delete" asp-route-id="@item.SupportItemNumber">Delete</a>*@
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.RegistrationGroup)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.SupportItem)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.SupportItemDescription)
-                                    </td>
-                                    <td>
-                                        @*<a asp-action="Edit" asp-route-id="@item.SupportItemNumber">Edit</a> |*@
-                                        <a asp-action="Details" asp-route-id="@item.SupportItemNumber">Details</a>
-                                        @*<a asp-action="Delete" asp-route-id="@item.SupportItemNumber">Delete</a>*@
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
+                        }
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-</div>
+    <style>
+        .table .thead-dark  th {
+            background-color: #5F4B8B;
+        }
 
-<script src="~/js/DataTable.js"></script>
+        .table .thead-light th {
+            background-color: #5F4B8B;
+            color:white;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#wapper-benefits-datatable').hide();
+        });
+        $('#btn-mybenefits').click(function () {
+            $('#btn-mybenefits').toggleClass('btn-secondary btn-primary');
+            $('#btn-allbenefits').toggleClass('btn-primary btn-secondary ');
+            $('#wapper-benefits-datatable').hide();
+            $('.table-Filter-wraper').show();
+        });
+        $('#btn-allbenefits').click(function () {
+            $('#btn-mybenefits').toggleClass('btn-primary btn-secondary ');
+            $('#btn-allbenefits').toggleClass('btn-secondary btn-primary');
+            $('.table-Filter-wraper').hide();
+            $('#wapper-benefits-datatable').show();
+        });
+
+        $('#btn-applyfilter').click(function () {
+            $('#nav-showresult-tab').trigger('click');
+
+        });
+
+        /* quiz nav button*/
+        $('#core-btn-next').click(function () {
+            $('#v-pills-DailyLiving-tab').trigger('click');
+        });
+        //daily living
+        $('#DailyLiving-btn-pre').click(function () {
+            $('#v-pills-core-tab').trigger('click');
+        });
+        $('#DailyLiving-btn-next').click(function () {
+            $('#v-pills-PlanManagement-tab').trigger('click');
+        });
+
+        //improved health
+        $('#health-btn-pre').click(function () {
+            $('#v-pills-PlanManagement-tab').trigger('click');
+        });
+        $('#health-btn-next').click(function () {
+            $('#v-pills-HomeModifications-tab').trigger('click');
+        });
+
+        //plan management
+        $('#plan-btn-pre').click(function () {
+            $('#v-pills-DailyLiving-tab').trigger('click');
+        });
+        $('#plan-btn-next').click(function () {
+            $('#v-pills-ImprovedHealth-tab').trigger('click');
+        });
+
+        //education and work
+        $('#edu-work-btn-pre').click(function () {
+            $('#v-pills-ImprovedHealth-tab').trigger('click');
+        });
+        $('#edu-work-health-btn-next').click(function () {
+            $('#v-pills-RealHomeMod-tab').trigger('click');
+        });
+        //home modification
+        $('#homemodification-btn-pre').click(function () {
+            $('#v-pills-HomeModifications-tab').trigger('click');
+        }); 
+        $('#homemodification-btn-next').click(function () {
+            $('#v-pills-Consumables-tab').trigger('click');
+        });
+        //consumbles
+        $('#Consumables-btn-pre').click(function () {
+            $('#v-pills-RealHomeMod-tab').trigger('click');
+        });
+        $('#Consumables-btn-next').click(function () {
+            $('#v-pills-AssistiveTech-tab').trigger('click');
+        });
+        //assitive tech
+        $('#AssistiveTech-btn-pre').click(function () {
+            $('#v-pills-Consumables-tab').trigger('click');
+        });
+    </script>
+    <!-- Bootstrap JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!--Chartjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script src="~/js/DataTable.js"></script>
+</body>

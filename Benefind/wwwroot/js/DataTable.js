@@ -15,7 +15,12 @@ var filterTable;
 var sourceTable;
 $(document).ready(function () {
     //filterTable = $('#tb-benefits').DataTable();
-    sourceTable = $('#table-all-benefits').DataTable();
+    sourceTable = $('#table-all-benefits').DataTable({
+        language: {
+            search: "_INPUT_",
+            searchPlaceholder: "    Enter keyword"
+        }
+    });
     //filterTable.draw();
     sourceTable.draw();
     $('.dataTables_length').addClass('browser-default');
@@ -26,6 +31,11 @@ $(document).ready(function () {
 
     filterTable = $('#tb-benefits').DataTable({
         searching: true,
+        
+        language: {
+            search: "_INPUT_",
+            searchPlaceholder: "    Enter keyword"
+        }  ,
         "ajax": {
             "url": "/Ndis201819/FilterResultAll",
             "type": "GET",
@@ -37,9 +47,9 @@ $(document).ready(function () {
             { "data": "supportItemNumber" },
             { "data": "supportItem" },
             { "data": "supportItemDescription" },
-            { "data": "unitOfMeasure" },
-            { "data": "quote" },
             { "data": "priceLimit" },
+            { "data": "quote" },
+            { "data": "unitOfMeasure" }, 
             { "data": "priceControl" },
             { "data": "supportCategories" },
             { "data": "supportCategoryNumber" }
@@ -47,7 +57,7 @@ $(document).ready(function () {
         ],
         "columnDefs": [
             {
-                "targets": [1, 4, 5, 6, 7, 8, 9],
+                "targets": [1,5, 7, 8, 9],
                 "visible": false,
                 'searchable': true,
                 'orderable': false
